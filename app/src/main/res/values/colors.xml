@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#e8d8c9</color>
+    <color name="colorPrimaryDark">#e8d8c9</color>
+    <color name="colorPrimaryDarkss">#80e8d8c9</color>
+    <color name="colorPrimaryDarks">#50e8d8c9</color>
+    <color name="colorAccent">#643820</color>
+    <color name="colorAccents">#60643820</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colors">#00000000</color>
+    <color name="colorBlacks">#f2eded</color>
+    <color name="colorGray">#CCCCCC</color>
+    <color name="actionbar_title_primary">#26221e</color>
+    <color name="actionbar_title_secondary">#8c8883</color>
+
+    <color name="colorActivityBgGradient_start">#d7ba9a</color>
+    <color name="colorActivityBgGradient_end">#a5948a</color>
+    <color name="colorActivityBgGradient1">#CDAA8A</color>
+    <color name="colorActivityBgGradient2">#D3B497</color>
+    <color name="colorActivityBgGradient3">#D1B295</color>
+
+    <color name="tab_text_select">#f98e1a</color>
+    <color name="tab_text">#9A9997</color>
+
+    <color name="arcBackgroundColor">#eee</color>
+    <color name="completedColor">#54d795</color>
+    <color name="plannedColor">#fbb03b</color>
+    <color name="canceledColor">#fe8661</color>
+
+    <color name="textGray">#68696b</color>
+    <color name="WhiteBG">#ffffff</color>
+    <color name="transparentWhiteBG">#5fffffff</color>
+
+    <color name="transparentCoditionLeft">#dad8d1</color>
+    <color name="transparentCoditionright">#f1f0f0</color>
+
+
+    <color name="delete_orange">#FF9001</color>
+    <color name="delete_green">#22B173</color>
+    <color name="delete_blue">#3FA3EF </color>
+    <color name="delete_red">#FF0000</color>
+
+    <color name="condition_left">#D4D1CE</color>
+    <color name="condition_left_text">#AEACAA</color>
+    <color name="condition_right">#EFEEEE</color>
+    <color name="list_item_content_color">#15120d</color>
+    <color name="list_item_label_color">#3f4146</color>
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.plans.DailyCallEditorActivity"
+    tools:showIn="@layout/activity_daily_call_editor">
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__item_customer"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_customer" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__customer_value"
+                style="@style/editableItemValue"
+                android:text="Customer Name" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_task" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__task_value"
+                style="@style/editableItemValue"
+                android:text="Task value" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_subject" />
+
+            <TextView
+                android:id="@+id/subject"
+                style="@style/editableItemValue"
+                android:text="subject value" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_type" />
+
+            <TextView
+                android:id="@+id/type"
+                style="@style/editableItemValue"
+                android:text="type value" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_date" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/editableItemValue"
+                android:text="date" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_status" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/editableItemValue"
+                android:text="state Name" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <LinearLayout style="@style/editableGroupRows">
+
+                <TextView
+                    style="@style/editableItemLabelRow"
+                    android:text="@string/prompt_description" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/editableItemValueRow"
+                    android:text="description value" />
+            </LinearLayout>
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <LinearLayout style="@style/editableGroupRows">
+
+                <TextView
+                    style="@style/editableItemLabelRow"
+                    android:text="@string/prompt_meeting_content" />
+
+                <TextView
+                    android:id="@+id/meeting_content"
+                    style="@style/editableItemValueRow"
+                    android:text="metting content value" />
+            </LinearLayout>
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <LinearLayout style="@style/editableGroupRows">
+
+                <TextView
+                    style="@style/editableItemLabelRow"
+                    android:text="@string/prompt_note" />
+
+                <TextView
+                    android:id="@+id/note"
+                    style="@style/editableItemValueRow"
+                    android:text="note value" />
+            </LinearLayout>
+
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_result" />
+
+            <TextView
+                android:id="@+id/result"
+                style="@style/editableItemValue"
+                android:text="result value" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

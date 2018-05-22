@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.plans.DailyCallListActivity">
+
+    <item
+        android:id="@+id/action_daily_call_search"
+        android:icon="@drawable/icon_search"
+        android:title="@string/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/action_daily_call_condition"
+        android:icon="@drawable/icon_shaixuan"
+        android:title="@string/action_condition"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/action_daily_call_add"
+        android:icon="@drawable/ic_add"
+        android:title="@string/action_add"
+        app:showAsAction="ifRoom" />
+</menu>

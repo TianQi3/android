@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.plans.DailyCallEditorActivity"
+    tools:showIn="@layout/activity_daily_call_editor">
+
+    <TextView
+        android:id="@+id/activity_daily_call_editor__sales_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="12dp"
+        android:clickable="false"
+        android:visibility="gone"
+        android:text="name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparentWhiteBG"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__item_customer"
+            style="@style/editableItemGroup">
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__customer_label"
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_customer" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__customer_value"
+                style="@style/editableItemValue"
+                android:ellipsize="end"
+                android:singleLine="true" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__task"
+            style="@style/editableItemGroup">
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__task_label"
+                style="@style/editableItemLabel"
+                android:text="@string/add_task_task" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__task_value"
+                android:ellipsize="end"
+                android:singleLine="true"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__accompany"
+            style="@style/editableItemGroup">
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__accompany_label"
+                style="@style/editableItemLabel"
+                android:text="@string/add_task_accompany" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__accompany_value"
+                android:ellipsize="end"
+                android:singleLine="true"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_daily_call_editor__one"
+        style="@style/editableItemGroupBox"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__subject_add"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_subject" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__subject_value_add"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__type_add"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_type" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__type_value_add"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_daily_call_editor__two"
+        style="@style/editableItemGroupBox"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__start_time_add"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_start_time" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__start_time_value_add"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__end_time_add"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_end_time" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__end_time_value_add"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_daily_call_editor__one1"
+        style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__subject"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_subject" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__subject_value"
+                style="@style/editableItemValue"
+                android:ellipsize="end"
+                android:singleLine="true" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__type"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_type" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__type_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__status"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_status" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__status_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__start_time"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_start_time" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__start_time_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__end_time"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_end_time" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__end_time_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__location"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_location" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__location_value"
+                android:ellipsize="end"
+                android:singleLine="true"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__call_plan"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_call_plan" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__call_plan_value"
+                android:ellipsize="end"
+                android:singleLine="true"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__note"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_note" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__note_value"
+                style="@style/editableItemValue"
+                android:ellipsize="end"
+                android:singleLine="true" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--<LinearLayout
+        style="@style/editableswitch">
+
+        <TextView
+            style="@style/editableTargetLeadsTitle"
+            android:text="state Name" />
+        <Switch
+            android:id="@+id/switch1"
+            style="@style/editableTargetLeadsSwitch"
+            />
+    </LinearLayout>-->
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__comment"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_comment" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__comment_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__follow_up"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_follow_up" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__follow_up_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__result"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_result" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__result_value"
+                android:ellipsize="end"
+                android:singleLine="true"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__photo"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/prompt_photo" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__photo_value"
+                style="@style/editableItemValue"
+                android:text="@string/prompt_photo" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

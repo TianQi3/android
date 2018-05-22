@@ -1,0 +1,80 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.humming.asc.sales.activity.MainActivity">
+
+    <item
+        android:id="@+id/action_search_customer"
+        android:icon="@drawable/icon_search"
+        android:title="@string/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView">
+
+    </item>
+    <item
+        android:id="@+id/action_customer"
+        android:icon="@drawable/icon_shaixuan"
+        android:title="XXX1"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_customer_K"
+                    android:checked="true"
+                    android:title="@string/menu_item_customer_k" />
+                <item
+                    android:id="@+id/menu_customer_O"
+                    android:title="@string/menu_item_customer_o" />
+                <item
+                    android:id="@+id/menu_customer_target_l"
+                    android:title="@string/menu_item_customer_target_l" />
+                <item
+                    android:id="@+id/menu_customer_untarget_l"
+                    android:title="@string/menu_item_customer_untarget_l" />
+                <item
+                    android:id="@+id/menu_customer_chain"
+                    android:title="@string/leads_chain" />
+            </group>
+        </menu>
+    </item>
+
+    <!--<item
+        android:id="@+id/action_stocks"
+        android:icon="@android:drawable/ic_lock_lock"
+        android:title="XXX2"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/menu_item2"
+                android:icon="@android:drawable/ic_lock_lock"
+                android:title="stocks item 1" />
+        </menu>
+    </item>-->
+    <item
+        android:id="@+id/action_date"
+        android:icon="@drawable/icon_wenhao"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView">
+
+    </item>
+    <item
+        android:id="@+id/action_plans"
+        android:icon="@drawable/icon_shaixuan"
+        android:title="Filter"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_plans_week"
+                    android:checked="true"
+                    android:title="@string/menu_item_plans_week" />
+                <item
+                    android:id="@+id/menu_plans_month"
+                    android:title="@string/menu_item_plans_month" />
+                <item
+                    android:id="@+id/menu_plans_year"
+                    android:title="@string/menu_item_plans_year" />
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="plans_daily_call_details_item">
+        <attr name="icons" format="integer" />
+        <attr name="labels" format="string" />
+    </declare-styleable>
+</resources>

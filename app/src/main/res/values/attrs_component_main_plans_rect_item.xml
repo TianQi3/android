@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="component_main_plans_rect_item">
+        <attr name="iconSrc" format="integer" />
+        <attr name="label" format="string" />
+        <attr name="topLabel" format="string" />
+        <attr name="bottomLabel" format="string" />
+        <attr name="topValue" format="string" />
+        <attr name="bottomValue" format="string" />
+    </declare-styleable>
+</resources>

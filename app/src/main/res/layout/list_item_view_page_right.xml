@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#FFE6CC">
+
+
+    <Button
+        android:id="@+id/right_dailycall"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/delete_orange"
+        android:visibility="gone"
+        android:text="+Daily Call"
+        android:textColor="#fff" />
+    <Button
+        android:id="@+id/right_task"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/right_dailycall"
+        android:background="@color/delete_red"
+        android:text="+TASK"
+        android:visibility="gone"
+        android:textColor="#fff" />
+    <Button
+        android:id="@+id/right_untarget"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/right_task"
+        android:background="@color/delete_blue"
+        android:text="Untarget"
+        android:textColor="#fff" />
+    <Button
+        android:id="@+id/right_competitor"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/right_untarget"
+        android:background="@color/delete_green"
+        android:text="Target"
+        android:textColor="#fff" />
+    <Button
+        android:id="@+id/right_product"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/right_competitor"
+        android:background="@color/delete_red"
+        android:visibility="gone"
+        android:text="+Product"
+        android:textColor="#fff" />
+
+</RelativeLayout>

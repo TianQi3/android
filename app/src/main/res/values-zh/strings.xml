@@ -1,0 +1,301 @@
+<resources>
+    <string name="app_name">SalesMobile</string>
+
+    <string name="prompt_username">员工号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_logout">退出当前账号</string>
+    <string name="action_sign_in_short">登录</string>
+
+    <string name="prompt_customer">*Customer</string>
+    <string name="prompt_task">Task</string>
+    <string name="prompt_subject">*Subject</string>
+    <string name="prompt_type">*Type</string>
+    <string name="prompt_date">Date</string>
+    <string name="prompt_status">*Status</string>
+    <string name="prompt_description">Description</string>
+    <string name="prompt_meeting_content">Meeting Content</string>
+    <string name="prompt_note">Note</string>
+    <string name="prompt_result">Result</string>
+    <string name="prompt_start_time">*StartTime</string>
+    <string name="prompt_end_time">*EndTime</string>
+    <string name="prompt_photo">Photo</string>
+    <string name="prompt_follow_up">Follow Up</string>
+    <string name="prompt_comment">Comments</string>
+    <string name="prompt_location">Location</string>
+    <string name="prompt_call_plan">*Call Plan</string>
+    <string name="prompt_call_plans">Call Plan</string>
+
+    <string name="daily_call_list">Daily Call List</string>
+    <string name="add_task_customer">*Customer</string>
+    <string name="add_task_task">*Task</string>
+    <string name="add_task_accompany">*Accompany</string>
+    <string name="add_task_start_time">*Start Time</string>
+    <string name="add_task_end_time">*End Time</string>
+    <string name="add_task_type">*Type</string>
+    <string name="add_task_status">Status</string>
+    <string name="add_task_description">Description</string>
+    <string name="edit_task_product">Product</string>
+    <string name="edit_task_daily_call">Daily Call</string>
+
+    <string name="tab_customer">客户</string>
+    <string name="tab_stocks">库存</string>
+    <string name="tab_plans">计划总结</string>
+    <string name="tab_settings">设置</string>
+
+    <string name="error_invalid_employee_id">用户ID无效</string>
+    <string name="error_invalid_password">密码长度过短</string>
+    <string name="error_incorrect_password">您的设备未注册,请联系IT</string>
+    <string name="error_login_failed">员工号或密码错误</string>
+    <string name="error_field_required">此字段必填</string>
+    <string name="error_network_unreachable">网络未连接</string>
+    <string name="error_network_timeout">网络超时</string>
+    <string name="error_server">服务器错误</string>
+    <string name="error_auth_failure">验证失败</string>
+    <string name="abnormal_system">系统异常</string>
+    <string name="error_data_format">数据格式错误</string>
+    <string name="error_time">结束日期应该大于开始日期</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_my_daily_call"> Daily Call</string>
+    <string name="title_activity_my_leads">My Leads</string>
+    <string name="title_activity_add_leads">Add Leads</string>
+    <string name="title_activity_add_daily_call">Add Daily Call</string>
+    <string name="title_activity_edit_daily_call">Edit Daily Call</string>
+    <string name="title_activity_follow_up"> Follow Up</string>
+    <string name="title_activity_info_address">Contact Address</string>
+    <string name="user_manger">Setting</string>
+
+    <string name="menu_target_leads">Target Leads</string>
+    <string name="menu_untarget_leads">Untarget Leads</string>
+    <string name="menu_target">Target</string>
+    <string name="menu_untarget">Untarget</string>
+    <string name="title_activity_edit_leads">Edit Leads</string>
+    <string name="leads_city_enble">请先选择Province</string>
+    <string name="leads_sub_chain_enble">请先选择Chain</string>
+    <string name="leads_sub_channel_enble">请先选择Channel</string>
+    <string name="leads_sales_name">Sales Name</string>
+    <string name="leads_english_name">*English Name</string>
+    <string name="leads_english_names">English Name</string>
+    <string name="leads_chinese_name">Chinese Name</string>
+    <string name="leads_classes">Classes</string>
+    <string name="leads_status">*Status</string>
+    <string name="leads_region">*Region</string>
+    <string name="leads_province">*Province</string>
+    <string name="leads_city">*City</string>
+    <string name="leads_address">Address</string>
+    <string name="leads_channel">*Channel</string>
+    <string name="leads_sub_channel">*Sub Channel</string>
+    <string name="leads_chain">Chain</string>
+    <string name="leads_sub_chain">Sub Chain</string>
+    <string name="leads_contact_frist_name">Contact FristName</string>
+    <string name="leads_contact_lastname">Contact LastName</string>
+    <string name="leads_job_title">Job Title</string>
+    <string name="leads_work_phone">Work Phone</string>
+    <string name="leads_mobile_phone">Mobile Phone</string>
+    <string name="leads_email">Email</string>
+    <string name="leads_target_yes">Target Leads:YES</string>
+    <string name="leads_target_no">Target Leads:NO</string>
+    <string name="leads_target_customer">*Customer</string>
+    <string name="leads_target_stage">*Stage</string>
+    <string name="leads_estimate_month">*Estimate Month</string>
+    <string name="leads_estimate_sales">*Estimate Sales</string>
+    <string name="leads_estimate_saless">Estimate Sales</string>
+    <string name="leads_customer_demand">Customer Demand</string>
+    <string name="leads_developement_plan">Developement  Plan</string>
+    <string name="leads_customer_tag">Customer Tag1</string>
+    <string name="leads_customer_tag2">Customer Tag2</string>
+    <string name="leads_customer_tag3">Customer Tag3</string>
+    <string name="leads_customer_tag4">Customer Tag4</string>
+    <string name="leads_customer_tag5">Customer Tag5</string>
+
+
+    <string name="action_search">搜索</string>
+    <string name="action_add">新增</string>
+    <string name="action_condition">筛选</string>
+    <string name="action_go">完成</string>
+    <string name="action_change">切换</string>
+    <string name="action_save">完成</string>
+    <string name="title_activity_text_editor">请输入文字</string>
+    <string name="title_activity_customer_selector">选择客户</string>
+    <string name="title_activity_customer_detials">客户详情</string>
+    <string name="drafts">草稿箱</string>
+
+    <string name="title_activity_task_list">Task</string>
+    <string name="title_activity_daily_call_photo">Photo</string>
+    <string name="status">Status</string>
+    <string name="type">Type</string>
+    <string name="stage">Stage</string>
+    <string name="classes">Classes</string>
+    <string name="subject">Subject</string>
+    <string name="region">Region</string>
+    <string name="province">Province</string>
+    <string name="channel">Channel</string>
+    <string name="sub_channel">Sub Channel</string>
+    <string name="city">城市</string>
+
+    <string name="menu_item_plans_week">This Week</string>
+    <string name="menu_item_plans_month">This Month</string>
+    <string name="menu_item_plans_year">This Year</string>
+
+    <string name="menu_item_customer_k">Key Account</string>
+    <string name="menu_item_customer_o">Other Account</string>
+    <string name="menu_item_customer_target_l">Target Leads</string>
+    <string name="menu_item_customer_untarget_l">Untarget Leads</string>
+
+    <string name="menu_item_customer_selector_filter_key_account">Key Account</string>
+    <string name="menu_item_customer_selector_filter_other_account">Other Account</string>
+    <string name="menu_item_customer_selector_target_l">Target Leads</string>
+    <string name="menu_item_customer_selector_untarget_l">Untarget Leads</string>
+
+    <string name="label_completed">Completed</string>
+    <string name="label_planned">Planned</string>
+    <string name="label_canceled">Canceled</string>
+    <string name="label_key_account">Key Account</string>
+    <string name="label_other_account">Other Account</string>
+    <string name="label_leads">Leads</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_task_condition">Task Condition</string>
+    <string name="title_activity_leads_condition">Leads Condition</string>
+    <string name="details"> 详情</string>
+
+    <string name="customer_information">客户信息</string>
+
+    <string name="leads_details"> Leads Details</string>
+    <string name="task_add"> Add Task</string>
+    <string name="edit_add"> Edit Task</string>
+
+    <string name="customer_message"> 客户信息</string>
+    <string name="customer_ar"> AR</string>
+    <string name="customer_order"> 客户订单</string>
+    <string name="customer_cg"> CG</string>
+    <string name="customer_task">Task</string>
+    <string name="customer_contact">联系人和地址</string>
+    <string name="customer_dailycall"> Daily Call</string>
+
+    <string name="text_edit"> 请输入文字</string>
+    <string name="text_edit_hint"> 请输入文字</string>
+    <string name="text_edit_number_hint"> 请输入数字</string>
+    <string name="application_exit">再按一次退出程序</string>
+    <string name="Incomplete_information">信息填写不完整</string>
+    <string name="select_product_change_type">请增加product或者修改type</string>
+
+
+    <string name="date_cancel">取消</string>
+    <string name="date_submit">确定</string>
+
+    <string name="sales">Sales</string>
+    <string name="qty">Qty</string>
+    <string name="Date">Date</string>
+
+    <string name="item_code">*Item Code</string>
+    <string name="forecast_qty">*Forecast Qty</string>
+    <string name="fore_date">*Forecast Date</string>
+    <string name="actual_sales">Actual Sales</string>
+    <string name="forecast_sales">*Forecast Sales</string>
+    <string name="actual_qty">Actual Qty</string>
+    <string name="actual_date">Actual Date</string>
+
+    <string name="edit_product">Product</string>
+    <string name="edit_product_item_code">Item Code</string>
+    <string name="delete_product_success">删除Product成功 </string>
+    <string name="comments">Comments</string>
+    <string name="add_my_comments">Add My Comments</string>
+    <string name="delete">Delete</string>
+
+
+    <string name="activity_client_cg__label_customer_name">公司名称:</string>
+    <string name="activity_client_cg__label_total_quantity">总数量:</string>
+    <string name="activity_client_cg__label_credit">信用额度:</string>
+
+    <string name="msg_at_least_one_item">请输入至少一项</string>
+    <string name="content_inventory__label_pls_input">输入查询项目</string>
+    <string name="content_inventory__label_item_code">Item code:</string>
+    <string name="content_inventory__label_item_codes">Itemcode:</string>
+    <string name="content_inventory__label_name">名称:</string>
+    <string name="content_inventory__label_brand">品牌:</string>
+    <string name="content_inventory__label_category">类别:</string>
+    <string name="content_inventory__button_search">搜索</string>
+    <string name="content_inventory__button_reset">重置</string>
+    <string name="title_inventory_query">库存查询</string>
+    <string name="page_query_without_data">没有查询到数据</string>
+    <string name="cancel">取消</string>
+
+    <!--<string name="title_inventory_query_result">搜索结果</string>
+    <string name="activity_inventory_list__label_inventory">库存:</string>-->
+
+    <string name="title_inventory_query_result">搜索结果</string>
+    <string name="activity_inventory_list__label_inventory">库存:</string>
+    <string name="icon_char_right">&gt;</string>
+    <string name="stock_title">请输入搜索内容</string>
+    <string name="stock_brand">品牌:</string>
+    <string name="stock_category">分类:</string>
+
+    <string name="ar_1">信用额度:</string>
+    <string name="ar_2">账期:</string>
+    <string name="ar_3">应收账款:</string>
+    <string name="activity_client_order__label_no">NO:</string>
+    <string name="activity_client_order__label_date">Date:</string>
+    <string name="activity_client_order__label_total">Total:</string>
+    <string name="activity_client_order_detail__label_total">合计:</string>
+    <string name="activity_client_order_detail__label_need_wjd">货票同行:</string>
+    <string name="activity_client_order_detail__label_need_invoice">卫检单:</string>
+    <string name="activity_client_order_detail__label_address">送货地址:</string>
+    <string name="activity_client_order_detail__label_remark">备注:</string>
+    <string name="title_order_no">单号:</string>
+    <string name="cg_year">年份</string>
+    <string name="welcome">欢迎您:</string>
+    <string name="version">版本号: </string>
+
+
+    <string name="activity_client_product__label_name_cn">中文名:</string>
+    <string name="activity_client_product__label_name_en">英文名:</string>
+    <string name="activity_client_product__label_volume">净含量:</string>
+    <string name="activity_client_product__label_specification">规格:</string>
+    <string name="activity_client_product__label_price">价格:</string>
+    <string name="activity_client_product__label_item_group">产品类别:</string>
+    <string name="activity_client_product__label_inventory">剩余库存</string>
+    <string name="activity_client_product__button_details">查看详情</string>
+    <string name="activity_client_product__button_channel">Channel:</string>
+    <string name="activity_client_product__button_calculator">计算器</string>
+    <string name="activity_label_accompany">Accompany</string>
+
+    <string name="activity_inventory_detail__label_wots">WOTS</string>
+    <string name="activity_inventory_detail__label_booking">BOOKING</string>
+
+    <string name="activity_inventory_list__label_inventorys">仓库:</string>
+    <string name="activity_inventory_list__label_sum">数量:</string>
+    <string name="icon_char_down">&#8744;</string>
+    <string name="list_item_inventory_detail__warehouse">仓库:</string>
+    <string name="list_item_inventory_detail__quantity">数量:</string>
+    <string name="title_wots">WOTS</string>
+    <string name="title_booking">Booking</string>
+    <string name="list_item_wots__date">日期</string>
+    <string name="list_item_wots__num">大陆</string>
+    <string name="list_item_wots__num_hk">香港</string>
+    <string name="unknow">未知</string>
+    <string name="list_item_booking__client">客户:</string>
+    <string name="list_item_booking__sales">销售:</string>
+    <string name="list_item_booking__date">日期:</string>
+
+    <string name="list_item_booking__quantity">数量:</string>
+
+    <string name="product_message_manger">产品信息管理</string>
+    <string name="my_mails">我的草稿箱</string>
+    <string name="change_language">切换语言至英文</string>
+    <string name="position">职位</string>
+
+    <string name="save_notification">您有编辑的信息没有保存,确认保存么</string>
+    <string name="save">保存</string>
+    <string name="not_save">不保存</string>
+    <string name="current_view">留在当前页面</string>
+    <string name="today">今</string>
+    <string name="mainland_segmentation">大陆可售渠道:</string>
+    <string name="hk_mc_segmentation">香港/澳门可售渠道:</string>
+    <string name="update_prompt">更新提示</string>
+    <string name="net_type_message">当前使用的是移动网络(非wifi),是否确认下载?</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="PieChart">
+        <attr name="arcBackgrounColor" format="color"></attr>
+        <attr name="completedColor" format="color"></attr>
+        <attr name="plannedColor" format="color"></attr>
+        <attr name="canceledColor" format="color"></attr>
+    </declare-styleable>
+</resources>

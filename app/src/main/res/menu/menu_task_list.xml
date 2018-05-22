@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.plans.TaskListActivity">
+
+    <item
+        android:id="@+id/action_task_search"
+        android:icon="@drawable/icon_search"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+    <item
+        android:id="@+id/action_task_condition"
+        android:icon="@drawable/icon_shaixuan"
+        android:title="@string/action_condition"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_task_add"
+        android:icon="@drawable/ic_add"
+        android:title="@string/action_add"
+        app:showAsAction="ifRoom|collapseActionView" />
+</menu>

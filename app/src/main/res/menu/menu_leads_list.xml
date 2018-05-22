@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.plans.DailyCallListActivity">
+   <!-- <item
+        android:id="@+id/menu_leads"
+        android:title="Target"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_target_leads"
+                    android:checked="true"
+                    android:title="@string/menu_target_leads" />
+                <item
+                    android:id="@+id/menu_untarget_leads"
+                    android:title="@string/menu_untarget_leads" />
+            </group>
+        </menu>
+    </item>-->
+    <item android:id="@+id/action_leads_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/icon_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
+    <item android:id="@+id/action_leads_condition"
+        android:title="@string/action_condition"
+        android:icon="@drawable/icon_shaixuan"
+        app:showAsAction="ifRoom|collapseActionView"
+        />
+    <item android:id="@+id/action_leads_add"
+        android:title="@string/action_add"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="ifRoom"/>
+
+</menu>

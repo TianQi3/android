@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/colorActivityBgGradient2"
+        android:centerColor="@color/colorActivityBgGradient2"
+        android:endColor="@color/colorActivityBgGradient2"
+        android:angle="-270" />
+    <!--android:startColor="@color/colorActivityBgGradient_start"
+       android:endColor = "@color/colorActivityBgGradient_end"-->
+</shape>

@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__sales_name"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_sales_name" />
+
+            <TextView
+                android:id="@+id/content_add_leads__sales_name_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__english_name"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_english_name" />
+
+            <TextView
+                android:id="@+id/content_add_leads__english_name_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__chinese_name"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_chinese_name" />
+
+            <TextView
+                android:id="@+id/content_add_leads__chinese_name_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__classes"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_classes" />
+
+            <TextView
+                android:id="@+id/content_add_leads__classes_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__status"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_status" />
+
+            <TextView
+                android:id="@+id/content_add_leads__status_value"
+                android:text="Active"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__region"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_region" />
+
+            <TextView
+                android:id="@+id/content_add_leads__region_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__province"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_province" />
+
+            <TextView
+                android:id="@+id/content_add_leads__province_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__city"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_city" />
+
+            <TextView
+                android:id="@+id/content_add_leads__city_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__address"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_address" />
+
+            <TextView
+                android:id="@+id/content_add_leads__address_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__channal"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_channel" />
+
+            <TextView
+                android:id="@+id/content_add_leads__channal_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__subchannal"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_sub_channel" />
+
+            <TextView
+                android:id="@+id/content_add_leads__subchannal_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__chain"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_chain" />
+
+            <TextView
+                android:id="@+id/content_add_leads__chain_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__sub_chain"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_sub_chain" />
+
+            <TextView
+                android:id="@+id/content_add_leads__sub_chain_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__constact_frist"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_contact_frist_name" />
+
+            <TextView
+                android:id="@+id/content_add_leads__constact_frist_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__constact_last"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_contact_lastname" />
+
+            <TextView
+                android:id="@+id/content_add_leads__constact_last_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__jobtitle"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_job_title" />
+
+            <TextView
+                android:id="@+id/content_add_leads__jobtitle_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__workphone"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_work_phone" />
+
+            <TextView
+                android:id="@+id/content_add_leads__workphone_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__mobilephone"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_mobile_phone" />
+
+            <TextView
+                android:id="@+id/content_add_leads__mobilephone_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+               style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__email"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_email" />
+
+            <TextView
+                android:id="@+id/content_add_leads__email_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableswitch">
+
+        <TextView
+            android:id="@+id/content_add_leads__Target_checked"
+            style="@style/editableTargetLeadsTitle"
+            android:text="@string/leads_target_no"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/content_add_leads_switch"
+            style="@style/editableTargetLeadsSwitch" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/content_add_leads_trun_off"
+        style="@style/editableItemGroupBox"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__target_customer"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_target_customer" />
+
+            <TextView
+                android:id="@+id/content_add_leads__target_customer_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__target_stage"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_target_stage" />
+
+            <TextView
+                android:id="@+id/content_add_leads__target_stage_value"
+                android:text="Reach/Exploration"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__estimate_month"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_estimate_month" />
+
+            <TextView
+                android:id="@+id/content_add_leads__estimate_month_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__estimate_sales"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_estimate_sales" />
+
+            <TextView
+                android:id="@+id/content_add_leads__estimate_sales_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer_demand"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_demand" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_demand_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__developement_plan"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_developement_plan" />
+
+            <TextView
+                android:id="@+id/content_add_leads__developement_plan_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer_tag"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_tag" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_tag_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer_tag2"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_tag2" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_tag2_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer3_tag"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_tag3" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_tag3_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer_tag4"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_tag4" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_tag4_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__customer_tag5"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/leads_customer_tag5" />
+
+            <TextView
+                android:id="@+id/content_add_leads__customer_tag5_value"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/editableItemGroupBox">
+
+        <LinearLayout
+            android:id="@+id/content_add_leads__daily_call"
+            style="@style/editableItemGroup">
+
+            <TextView
+                style="@style/editableItemLabel"
+                android:text="@string/edit_task_daily_call" />
+
+            <TextView
+                android:id="@+id/content_add_leads__daily_call_value"
+                style="@style/editableItemValue" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.CustomerSelectorActivity">
+    <item
+        android:id="@+id/action_customer_search"
+        android:icon="@drawable/icon_search"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+    <item
+        android:id="@+id/action_customer_filter"
+        android:icon="@drawable/icon_shaixuan"
+        android:visible="false"
+        android:title="Filter"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_customer_selector__key_account"
+                    android:checked="true"
+                    android:title="@string/menu_item_customer_selector_filter_key_account" />
+                <item
+                    android:id="@+id/menu_customer_selector__other_account"
+                    android:title="@string/menu_item_customer_selector_filter_other_account" />
+                <item
+                    android:id="@+id/menu_customer_selector__targetleads"
+                    android:title="@string/menu_item_customer_selector_target_l" />
+                <item
+                    android:id="@+id/menu_customer_selector__untargetleads"
+                    android:title="@string/menu_item_customer_selector_untarget_l" />
+            </group>
+        </menu>
+    </item>
+</menu>

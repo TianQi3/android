@@ -1,0 +1,339 @@
+<resources>
+    <string name="app_name">SalesMobile</string>
+
+    <string name="prompt_username">Employee ID</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_logout">Exit current account</string>
+    <string name="action_sign_in_short">Login</string>
+
+    <string name="prompt_customer">*Customer</string>
+    <string name="prompt_task">Task</string>
+    <string name="prompt_subject">*Subject</string>
+    <string name="prompt_type">*Type</string>
+    <string name="prompt_date">Date</string>
+    <string name="prompt_status">*Status</string>
+    <string name="prompt_description">Description</string>
+    <string name="prompt_meeting_content">Meeting Content</string>
+    <string name="prompt_note">Note</string>
+    <string name="prompt_result">Result</string>
+    <string name="prompt_start_time">*StartTime</string>
+    <string name="prompt_end_time">*EndTime</string>
+    <string name="prompt_photo">Photo</string>
+    <string name="prompt_follow_up">Follow Up</string>
+    <string name="prompt_comment">Comments</string>
+    <string name="prompt_location">Location</string>
+    <string name="prompt_call_plan">*Call Plan</string>
+    <string name="prompt_call_plans">Call Plan</string>
+
+    <string name="daily_call_list">Daily Call List</string>
+    <string name="add_task_customer">*Customer</string>
+    <string name="add_task_task">*Task</string>
+    <string name="add_task_accompany">*Accompany</string>
+    <string name="add_task_start_time">*Start Time</string>
+    <string name="add_task_end_time">*End Time</string>
+    <string name="add_task_type">*Type</string>
+    <string name="add_task_status">Status</string>
+    <string name="add_task_description">Description</string>
+    <string name="edit_task_product">Product</string>
+    <string name="edit_task_daily_call">Daily Call</string>
+
+    <string name="tab_customer">Customer</string>
+    <string name="tab_stocks">Stocks</string>
+    <string name="tab_plans">Plans</string>
+    <string name="tab_settings">Settings</string>
+    <string name="welcome">Welcome: </string>
+    <string name="version">Version: </string>
+
+    <string name="error_invalid_employee_id">This employee ID is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This device need register from IT, because you have more than 1 device</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="abnormal_system">Abnormal system</string>
+    <string name="error_login_failed">Employee number or password error</string>
+    <string name="error_network_unreachable">Network is unreachable</string>
+    <string name="error_network_timeout">Network timeout</string>
+    <string name="error_server">Server error</string>
+    <string name="error_auth_failure">Auth error</string>
+    <string name="error_data_format">Data format error</string>
+    <string name="error_time">End date should be greater than the start date</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_my_daily_call"> Daily Call</string>
+    <string name="title_activity_my_leads">My Leads</string>
+    <string name="title_activity_add_leads">Add Leads</string>
+    <string name="title_activity_add_daily_call">Add Daily Call</string>
+    <string name="title_activity_edit_daily_call">Edit Daily Call</string>
+    <string name="title_activity_follow_up"> Follow Up</string>
+    <string name="title_activity_info_address">Contact Address</string>
+    <string name="user_manger">Setting</string>
+
+    <string name="menu_target_leads">Target Leads</string>
+    <string name="menu_untarget_leads">Untarget Leads</string>
+    <string name="menu_target">Target</string>
+    <string name="menu_untarget">Untarget</string>
+    <string name="title_activity_edit_leads">Edit Leads</string>
+    <string name="leads_city_enble">Please select Province</string>
+    <string name="leads_sub_chain_enble">Please select Chain</string>
+    <string name="leads_sub_channel_enble">Please select Channel</string>
+    <string name="leads_sales_name">Sales Name</string>
+    <string name="leads_english_name">*English Name</string>
+    <string name="leads_english_names">English Name</string>
+    <string name="leads_chinese_name">Chinese Name</string>
+    <string name="leads_classes">Classes</string>
+    <string name="leads_status">*Status</string>
+    <string name="leads_region">*Region</string>
+    <string name="leads_province">*Province</string>
+    <string name="leads_city">*City</string>
+    <string name="leads_address">Address</string>
+    <string name="leads_channel">*Channel</string>
+    <string name="leads_sub_channel">*Sub Channel</string>
+    <string name="leads_chain">Chain</string>
+    <string name="leads_sub_chain">Sub Chain</string>
+    <string name="leads_contact_frist_name">Contact FristName</string>
+    <string name="leads_contact_lastname">Contact LastName</string>
+    <string name="leads_job_title">Job Title</string>
+    <string name="leads_work_phone">Work Phone</string>
+    <string name="leads_mobile_phone">Mobile Phone</string>
+    <string name="leads_email">Email</string>
+    <string name="leads_target_yes">Target Leads:YES</string>
+    <string name="leads_target_no">Target Leads:NO</string>
+    <string name="leads_target_customer">*Customer</string>
+    <string name="leads_target_stage">*Stage</string>
+    <string name="leads_estimate_month">*Estimate Month</string>
+    <string name="leads_estimate_sales">*Estimate Sales</string>
+    <string name="leads_estimate_saless">Estimate Sales</string>
+    <string name="leads_customer_demand">Customer Demand</string>
+    <string name="leads_developement_plan">Developement  Plan</string>
+    <string name="leads_customer_tag">Customer Tag1</string>
+    <string name="leads_customer_tag2">Customer Tag2</string>
+    <string name="leads_customer_tag3">Customer Tag3</string>
+    <string name="leads_customer_tag4">Customer Tag4</string>
+    <string name="leads_customer_tag5">Customer Tag5</string>
+
+
+    <string name="action_search">Search</string>
+    <string name="action_add">Add</string>
+    <string name="action_condition">Condition</string>
+    <string name="action_go">Go</string>
+    <string name="action_save">Save</string>
+    <string name="title_activity_text_editor">Text Editor</string>
+    <string name="title_activity_customer_selector">Customer Selector</string>
+    <string name="title_activity_customer_detials">Customer Detials</string>
+    <string name="drafts">Drafts</string>
+
+    <string name="title_activity_task_list">Task</string>
+    <string name="title_activity_daily_call_photo">Photo</string>
+    <string name="status">Status</string>
+    <string name="type">Type</string>
+    <string name="stage">Stage</string>
+    <string name="classes">Classes</string>
+    <string name="subject">Subject</string>
+    <string name="region">Region</string>
+    <string name="province">Province</string>
+    <string name="channel">Channel</string>
+    <string name="sub_channel">Sub Channel</string>
+    <string name="city">City</string>
+
+    <string name="menu_item_plans_week">This Week</string>
+    <string name="menu_item_plans_month">This Month</string>
+    <string name="menu_item_plans_year">This Year</string>
+
+    <string name="menu_item_customer_k">Key Account</string>
+    <string name="menu_item_customer_o">Other Account</string>
+    <string name="menu_item_customer_target_l">Target Leads</string>
+    <string name="menu_item_customer_untarget_l">Untarget Leads</string>
+
+    <string name="menu_item_customer_selector_filter_key_account">Key Account</string>
+    <string name="menu_item_customer_selector_filter_other_account">Other Account</string>
+    <string name="menu_item_customer_selector_target_l">Target Leads</string>
+    <string name="menu_item_customer_selector_untarget_l">Untarget Leads</string>
+
+    <string name="label_completed">Completed</string>
+    <string name="label_planned">Planned</string>
+    <string name="label_canceled">Canceled</string>
+    <string name="label_key_account">Key Account</string>
+    <string name="label_other_account">Other Account</string>
+    <string name="label_leads">Leads</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_task_condition">Task Condition</string>
+    <string name="title_activity_leads_condition">Leads Condition</string>
+    <string name="details"> Details</string>
+
+    <string name="customer_information">Customer Information</string>
+
+    <string name="leads_details"> Leads Details</string>
+    <string name="task_add"> Add Task</string>
+    <string name="edit_add"> Edit Task</string>
+
+    <string name="customer_message"> Customer Info</string>
+    <string name="customer_ar"> AR</string>
+    <string name="customer_order"> Orders</string>
+    <string name="customer_cg"> CG</string>
+    <string name="customer_task">Task</string>
+    <string name="customer_contact">Contact Info</string>
+    <string name="customer_dailycall"> Daily Call</string>
+
+    <string name="text_edit"> Text Edit</string>
+    <string name="text_edit_hint">Please enter text </string>
+    <string name="text_edit_number_hint"> please enter a number</string>
+    <string name="application_exit">Then click one exit procedure</string>
+    <string name="Incomplete_information">Incomplete information</string>
+    <string name="select_product_change_type">Please add product or modify type</string>
+
+    <string name="date_cancel">Cancel</string>
+    <string name="date_submit">Submit</string>
+    <!--<string name="date_cancel">取消</string>
+    <string name="date_submit">确定</string>-->
+
+    <string name="sales">Sales</string>
+    <string name="qty">Qty</string>
+    <string name="Date">Date</string>
+
+    <string name="item_code">*Item Code</string>
+    <string name="forecast_qty">*Forecast Qty</string>
+    <string name="fore_date">*Forecast Date</string>
+    <string name="actual_sales">Actual Sales</string>
+    <string name="forecast_sales">*Forecast Sales</string>
+    <string name="actual_qty">Actual Qty</string>
+    <string name="actual_date">Actual Date</string>
+
+    <string name="edit_product">Product</string>
+    <string name="edit_product_item_code">Item Code</string>
+    <!--<string name="delete_product_success">删除Product成功 </string>-->
+    <string name="delete_product_success">Delete product success </string>
+    <string name="comments">Comments</string>
+    <string name="add_my_comments">Add My Comments</string>
+    <string name="delete">Delete</string>
+
+    <string name="activity_client_cg__label_customer_name">Customer Name:</string>
+    <string name="activity_client_cg__label_total_quantity">Total Quantity:</string>
+    <string name="activity_client_cg__label_credit">Credit limit:</string>
+    <!--<string name="activity_client_cg__label_customer_name">公司名称:</string>
+    <string name="activity_client_cg__label_total_quantity">总数量:</string>
+    <string name="activity_client_cg__label_credit">信用额度</string>-->
+
+    <string name="msg_at_least_one_item">Please entry at least one item</string>
+    <string name="content_inventory__label_pls_input">Please input query item</string>
+    <string name="content_inventory__label_item_code">Item code:</string>
+    <string name="content_inventory__label_item_codes">Itemcode:</string>
+    <string name="content_inventory__label_name">Name:</string>
+    <string name="content_inventory__label_brand">Brand:</string>
+    <string name="content_inventory__label_category">Category:</string>
+    <string name="content_inventory__button_search">Search</string>
+    <string name="content_inventory__button_reset">Reset</string>
+    <string name="title_inventory_query">Inventory Query</string>
+    <string name="page_query_without_data">Page query without data</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_inventory_query_result">Search Result</string>
+    <string name="activity_inventory_list__label_inventory">Stock:</string>
+    <!--<string name="title_inventory_query_result">搜索结果</string>
+    <string name="activity_inventory_list__label_inventory">库存:</string>-->
+    <string name="icon_char_right">&gt;</string>
+    <string name="stock_title">Search Condition</string>
+    <string name="stock_brand">Brand:</string>
+    <string name="stock_category">Category:</string>
+    <!--<string name="title_inventory_query_result">搜索结果</string>
+    <string name="activity_inventory_list__label_inventory">库存:</string>
+    <string name="icon_char_right">&gt;</string>
+    <string name="stock_title">请输入搜索内容</string>
+    <string name="stock_brand">品牌:</string>
+    <string name="stock_category">分类:</string>-->
+
+    <string name="ar_1">Credit Limit:</string>
+    <string name="ar_2">Payment Term:</string>
+    <string name="ar_3">AR:</string>
+    <!--<string name="ar_1">信用额度:</string>
+    <string name="ar_2">账期:</string>
+    <string name="ar_3">应收账款:</string>-->
+    <string name="activity_client_order__label_no">NO:</string>
+    <string name="activity_client_order__label_date">Date:</string>
+    <string name="activity_client_order__label_total">Total:</string>
+    <string name="activity_client_order_detail__label_total">Total Amount:</string>
+    <string name="activity_client_order_detail__label_need_wjd">Delivery With Invoice:</string>
+    <string name="activity_client_order_detail__label_need_invoice">Hygiene Certificate:</string>
+    <string name="activity_client_order_detail__label_address">Deliver Address:</string>
+    <string name="activity_client_order_detail__label_remark">Note:</string>
+    <string name="title_order_no">Order NO:</string>
+    <string name="cg_year">particular year</string>
+
+    <string name="activity_client_product__label_name_cn">Chinese Name:</string>
+    <string name="activity_client_product__label_name_en">English Name:</string>
+    <string name="activity_client_product__label_volume">Net Volumn:</string>
+    <string name="activity_client_product__label_specification">Unit:</string>
+    <string name="activity_client_product__label_price">Price:</string>
+    <string name="activity_client_product__label_item_group">Item Group:</string>
+    <string name="activity_client_product__label_inventory">Stock QTY</string>
+    <string name="activity_client_product__button_details">Details</string>
+    <string name="activity_client_product__button_channel">Channel:</string>
+    <string name="activity_client_product__button_calculator">Calculator</string>
+    <string name="activity_label_accompany">Accompany</string>
+    <!--<string name="activity_client_product__label_name_cn">中文名:</string>
+    <string name="activity_client_product__label_name_en">英文名:</string>
+    <string name="activity_client_product__label_volume">净含量:</string>
+    <string name="activity_client_product__label_specification">规格:</string>
+    <string name="activity_client_product__label_price">价格:</string>
+    <string name="activity_client_product__label_inventory">剩余库存</string>
+    <string name="activity_client_product__button_details">查看详情</string>-->
+
+    <string name="activity_inventory_detail__label_wots">WOTS</string>
+    <string name="activity_inventory_detail__label_booking">BOOKING</string>
+    <string name="activity_inventory_list__label_inventorys">Warehours:</string>
+    <string name="activity_inventory_list__label_sum">QTY:</string>
+    <!--<string name="activity_inventory_list__label_inventorys">仓库:</string>
+    <string name="activity_inventory_list__label_sum">数量:</string>-->
+    <string name="icon_char_down">&#8744;</string>
+    <string name="list_item_inventory_detail__warehouse">Warehouse:</string>
+    <string name="list_item_inventory_detail__quantity">Quantity:</string>
+    <string name="title_wots">WOTS</string>
+    <string name="title_booking">Booking</string>
+    <string name="list_item_wots__date">Date</string>
+    <string name="list_item_wots__num">Mainland</string>
+    <string name="list_item_wots__num_hk">HK</string>
+    <!-- <string name="list_item_wots__date">日期:</string>
+     <string name="list_item_wots__num">在途数量:</string>-->
+    <string name="unknow">unknow</string>
+    <string name="list_item_booking__client">Account:</string>
+    <string name="list_item_booking__sales">Sales:</string>
+    <string name="list_item_booking__date">Date:</string>
+    <string name="list_item_booking__quantity">Quantity:</string>
+    <string name="product_message_manger">Product Info</string>
+    <string name="my_mails">My Draft Box</string>
+    <string name="change_language">Switch the language into Chinese </string>
+    <string name="position">position</string>
+    <!--<string name="product_message_manger">产品信息管理</string>
+    <string name="my_mails">我的草稿箱</string>-->
+
+    <string name="save_notification">Do you have any information that is edited to be saved?</string>
+    <string name="save">Save</string>
+    <string name="not_save">Not save</string>
+    <string name="current_view">Stay on the current page</string>
+    <string name="today">Today</string>
+    <string name="update_prompt">Update prompt</string>
+    <string name="net_type_message">The current use of the mobile network (non WiFi), whether to confirm the download?</string>
+    <string name="mainland_segmentation">Mainland Segmentation:</string>
+    <string name="hk_mc_segmentation">HK/MC Segmentation:</string>
+    <string name="action_change">Change</string>
+    <string name="calculator">Calculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="divide">÷</string>
+    <string name="multply">×</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="point">.</string>
+    <string name="equal">=</string>
+</resources>
