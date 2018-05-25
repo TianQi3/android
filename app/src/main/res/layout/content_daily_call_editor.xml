@@ -14,19 +14,19 @@
         android:id="@+id/activity_daily_call_editor__sales_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="false"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="12dp"
-        android:clickable="false"
-        android:visibility="gone"
-        android:text="name" />
+        android:text="name"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:background="@color/transparentWhiteBG"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin">
 
         <LinearLayout
@@ -51,6 +51,27 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@drawable/bg_w"></View>
+        <LinearLayout
+            android:id="@+id/activity_daily_call_editor__accompany"
+            style="@style/editableItemGroup">
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__accompany_label"
+                style="@style/editableItemLabel"
+                android:text="@string/add_task_accompany" />
+
+            <TextView
+                android:id="@+id/activity_daily_call_editor__accompany_value"
+                style="@style/editableItemValue"
+                android:ellipsize="end"
+                android:singleLine="true" />
+
+            <ImageView style="@style/editableItemRightArrow" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bg_w"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__task"
@@ -63,26 +84,9 @@
 
             <TextView
                 android:id="@+id/activity_daily_call_editor__task_value"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                android:singleLine="true"
-                style="@style/editableItemValue" />
-
-            <ImageView style="@style/editableItemRightArrow" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/activity_daily_call_editor__accompany"
-            style="@style/editableItemGroup">
-
-            <TextView
-                android:id="@+id/activity_daily_call_editor__accompany_label"
-                style="@style/editableItemLabel"
-                android:text="@string/add_task_accompany" />
-
-            <TextView
-                android:id="@+id/activity_daily_call_editor__accompany_value"
-                android:ellipsize="end"
-                android:singleLine="true"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -274,6 +278,8 @@
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
+
+
     </LinearLayout>
 
     <LinearLayout style="@style/editableItemGroupBox">
@@ -288,9 +294,9 @@
 
             <TextView
                 android:id="@+id/activity_daily_call_editor__location_value"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                android:singleLine="true"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -310,9 +316,9 @@
 
             <TextView
                 android:id="@+id/activity_daily_call_editor__call_plan_value"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                android:singleLine="true"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -400,9 +406,9 @@
 
             <TextView
                 android:id="@+id/activity_daily_call_editor__result_value"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                android:singleLine="true"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>

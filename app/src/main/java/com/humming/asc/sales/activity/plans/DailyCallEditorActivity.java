@@ -64,6 +64,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
     private TextEditorData textEditorData;
     private Context context = Application.getInstance().getBaseContext();
     private String customerRowId = "";
+    private String acRowId = "";
     private boolean taskShow = true;
     private DailyCallService service;
     public static final String ASSOC_TYPE = "assoc_type";
@@ -131,6 +132,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
             dbDailycall = Application.getInstance().getDbDailycall();
             customerRowId = dbDailycall.getCustomerRowId();
             task_id = dbDailycall.getTaskId();
+            acRowId = dbDailycall.getAcRowId();
             assoc_type = dbDailycall.getAssocType();
             if ("new".equals(dbDailycall.getRemark())) {
                 //草稿箱添加
@@ -224,6 +226,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
         locationValue.setText(dbDailycall.getLocation());
         noteVale.setText(dbDailycall.getNote());
         callplanValue.setText(dbDailycall.getMeetingContent());
+        acCompanyValue.setText(dbDailycall.getAcName());
         // commentsValue.setText(dbDailycall.getCommentsCount() + "");
         resultValut.setText(dbDailycall.getResult());
         //  photoValue.setText(dbDailycall.getPicList().size() + "");
@@ -242,6 +245,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
         locationValue.setText(dbDailycall.getLocation());
         noteVale.setText(dbDailycall.getNote());
         callplanValue.setText(dbDailycall.getMeetingContent());
+        acCompanyValue.setText(dbDailycall.getAcName());
         // commentsValue.setText(dbDailycall.getCommentsCount() + "");
         resultValut.setText(dbDailycall.getResult());
         //  photoValue.setText(dbDailycall.getPicList().size() + "");
@@ -281,6 +285,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
         commentsValue.setText(dailyCallDetail.getCommentsCount() + "");
         resultValut.setText(dailyCallDetail.getResult());
         photoValue.setText(dailyCallDetail.getPicList().size() + "");
+        acCompanyValue.setText(dailyCallDetail.getAcmpUserName());
         if ("true".equals(followUp)) {
             customerValue.setTextColor(this.getResources().getColor(R.color.textGray));
             taskValue.setTextColor(this.getResources().getColor(R.color.textGray));
@@ -346,8 +351,6 @@ public class DailyCallEditorActivity extends AbstractActivity {
         itemTask.setOnClickListener(itemClickListener);
         itemAccompany.setOnClickListener(itemClickListener);
         itemSubject.setOnClickListener(itemClickListener);
-        itemTask.setOnClickListener(itemClickListener);
-        itemTask.setOnClickListener(itemClickListener);
         itemType.setOnClickListener(itemClickListener);
         itemStatus.setOnClickListener(itemClickListener);
         itemStartTime.setOnClickListener(itemClickListener);
@@ -556,7 +559,6 @@ public class DailyCallEditorActivity extends AbstractActivity {
                 break;
 
 
-
         }
     }
 
@@ -574,7 +576,10 @@ public class DailyCallEditorActivity extends AbstractActivity {
                 break;
             case AcCompanyListActivity.ACTIVITY_ACCOMPANY_CODE:
                 resultBundle = data.getExtras();
-
+                String AcName = resultBundle
+                        .getString(AcCompanyListActivity.ACTIVITY_ACCOMPANY);
+                acRowId = resultBundle.getString(AcCompanyListActivity.ACTIVITY_ACCOMPANY_ID);
+                acCompanyValue.setText(AcName);
                 break;
             case CustomerTypeSelectorActivity.ACTIVITY_CUSTOMER_SELECTOR_RESULT:
                 resultBundle = data.getExtras();
@@ -602,11 +607,15 @@ public class DailyCallEditorActivity extends AbstractActivity {
                 }
                 if (CustomerTypeSelectorActivity.judge != 1) {
                     taskShow = false;
-                    //   taskValue.setTextColor(getApplication().getColor(R.color.transparentCoditionLeft));
+                    // taskValue.setTextColor(getApplication().getColor(R.color.transparentCoditionLeft));
                     // taskValue.setTextColor(R.color.transparentCoditionLeft);
                     taskLabel.setTextColor(this.getResources().getColor(R.color.textGray));
+                    itemTask.setClickable(false);
                 } else {
+                    taskShow = true;
                     taskLabel.setTextColor(this.getResources().getColor(R.color.colorAccent));
+
+                    itemTask.setClickable(true);
                 }
                 break;
             case TypeAndStatusSelectActivity.ACTIVITY_ADD_UPDATE_DAILY_CALL_STATUS_SELECT:
@@ -783,6 +792,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         updateDailyCallRO.setNote(noteVale.getText().toString());
                         updateDailyCallRO.setType(typeValue.getText().toString());
                         updateDailyCallRO.setSubject(subjectValue.getText().toString());
+                        updateDailyCallRO.setAcmpUserId(acRowId);
                         service.updateDailyCall(new ICallback<ResultVO>() {
                             @Override
                             public void onDataReady(ResultVO data) {
@@ -794,7 +804,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                     Intent resultIntent = new Intent();
                                     resultIntent.putExtra(DraftsDailyCallListActivity.RESULT_TEXT_DAILY_CALL, "");
                                     setResult(RESULT_OK, resultIntent);
-                                    Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Leads成功", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
                                     finish();
                                 } else {
                                     if ("true".equalsIgnoreCase(ifTrueDCList)) {
@@ -835,7 +845,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                 DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                                 DBDailycall dbDailycall = new DBDailycall("update", dailyCallDetail.getRowId(), dailyCallDetail.getTaskId(), customerValue.getText().toString(), customerRowId, dailyCallDetail.getAssocType(),
                                         callplanValue.getText().toString(), resultValut.getText().toString(), noteVale.getText().toString(), "", startTimeValue.getText().toString(), endTimeValue.getText().toString(), typeValue.getText().toString(),
-                                        statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "");
+                                        statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "", acRowId, acCompanyValue.getText().toString());
                                 dbManger.InsertDailyCallListTable(dbDailycall);
                                 Toast.makeText(DailyCallEditorActivity.this, "已添加到草稿箱", Toast.LENGTH_SHORT).show();
                             }
@@ -856,6 +866,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         addDailyCallRO.setType(typeAddValue.getText().toString());
                         addDailyCallRO.setMeetingContent(callplanValue.getText().toString());
                         addDailyCallRO.setResult("");
+                        addDailyCallRO.setAcmpUserId(acRowId);
                         if (Application.getInstance().getImageList() != null) {
                             int sum = Application.getInstance().getImageList().size();
                             StringBuffer sb = new StringBuffer();
@@ -912,7 +923,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                     DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                                     DBDailycall dbDailycall = new DBDailycall("new", "", task_id, customerValue.getText().toString(), customerRowId, assoc_type, callplanValue.getText().toString(), "",
                                             noteVale.getText().toString(), "", startTimeAddValue.getText().toString(), endTimeAddValue.getText().toString(),
-                                            typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "");
+                                            typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "", acRowId, acCompanyValue.getText().toString());
                                     dbManger.InsertDailyCallListTable(dbDailycall);
                                     Toast.makeText(DailyCallEditorActivity.this, "已添加到草稿箱", Toast.LENGTH_SHORT).show();
                                 }
@@ -939,7 +950,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                             Intent resultIntent = new Intent();
                                             resultIntent.putExtra(DraftsDailyCallListActivity.RESULT_TEXT_DAILY_CALL, "");
                                             setResult(RESULT_OK, resultIntent);
-                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Leads成功", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
                                             finish();
                                         } else {
                                             Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
@@ -956,7 +967,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                     DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                                     DBDailycall dbDailycall = new DBDailycall("new", "", task_id, customerValue.getText().toString(), customerRowId, assoc_type, callplanValue.getText().toString(), "",
                                             noteVale.getText().toString(), "", startTimeAddValue.getText().toString(), endTimeAddValue.getText().toString(),
-                                            typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "");
+                                            typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "", acRowId, acCompanyValue.getText().toString());
                                     dbManger.InsertDailyCallListTable(dbDailycall);
                                     Toast.makeText(DailyCallEditorActivity.this, "已添加到草稿箱", Toast.LENGTH_SHORT).show();
                                 }
@@ -980,6 +991,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
         } else if (!"".equals(noteVale.getText().toString())) {
             result = true;
         } else if (!"".equals(callplanValue.getText().toString())) {
+            result = true;
+        } else if (!"".equals(acCompanyValue.getText().toString())) {
             result = true;
         } else if (!"".equals(locationValue.getText().toString())) {
             result = true;
@@ -1014,6 +1027,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
             result = true;
         } else if (!locationValue.getText().toString().equals(dailyCallDetail.getLocation().toString())) {
             result = true;
+        }else if (!acCompanyValue.getText().toString().equals(dailyCallDetail.getAcmpUserName().toString())) {
+            result = true;
         } else if (!subjectValue.getText().toString().equals(dailyCallDetail.getSubject().toString())) {
             result = true;
         } else if (!typeValue.getText().toString().equals(dailyCallDetail.getType().toString())) {
@@ -1046,6 +1061,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
         } else if (!callplanValue.getText().toString().equals(dbDailycall.getMeetingContent().toString())) {
             result = true;
         } else if (!locationValue.getText().toString().equals(dbDailycall.getLocation().toString())) {
+            result = true;
+        } else if (!acCompanyValue.getText().toString().equals(dbDailycall.getAcName().toString())) {
             result = true;
         }
         if ("update".equals(dbDailycall.getRemark())) {
@@ -1104,7 +1121,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                         DBDailycall dbDailycalls = new DBDailycall("update", dbDailycall.getRowId(), dbDailycall.getTaskId(), customerValue.getText().toString(), customerRowId, dbDailycall.getAssocType(),
                                 callplanValue.getText().toString(), resultValut.getText().toString(), noteVale.getText().toString(), "", startTimeValue.getText().toString(), endTimeValue.getText().toString(), typeValue.getText().toString(),
-                                statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "");
+                                statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "", acRowId, acCompanyValue.getText().toString());
                         dbManger.UpdateDailyCallById(dbDailycalls, dbDailycall.getId());
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra(DraftsDailyCallListActivity.RESULT_TEXT_DAILY_CALL, "true");
@@ -1115,7 +1132,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                         DBDailycall dbDailycall = new DBDailycall("update", dailyCallDetail.getRowId(), dailyCallDetail.getTaskId(), customerValue.getText().toString(), customerRowId, dailyCallDetail.getAssocType(),
                                 callplanValue.getText().toString(), resultValut.getText().toString(), noteVale.getText().toString(), "", startTimeValue.getText().toString(), endTimeValue.getText().toString(), typeValue.getText().toString(),
-                                statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "");
+                                statusValue.getText().toString(), locationValue.getText().toString(), subjectValue.getText().toString(), "", photoName, date, salesTitleValue.getText().toString(), "", acRowId, acCompanyValue.getText().toString());
                         dbManger.InsertDailyCallListTable(dbDailycall);
                     }
                 } else {
@@ -1125,7 +1142,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                         DBDailycall dbDailycalls = new DBDailycall("new", "", task_id, customerValue.getText().toString(), customerRowId, assoc_type, callplanValue.getText().toString(), "",
                                 noteVale.getText().toString(), "", startTimeAddValue.getText().toString(), endTimeAddValue.getText().toString(),
-                                typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "");
+                                typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "", acRowId, acCompanyValue.getText().toString());
                         dbManger.UpdateDailyCallById(dbDailycalls, dbDailycall.getId());
                         // Toast.makeText(DailyCallEditorActivity.this, "已添加到草稿箱", Toast.LENGTH_SHORT).show();
                         Intent resultIntent = new Intent();
@@ -1138,7 +1155,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                         DBManger dbManger = new DBManger(DailyCallEditorActivity.this);
                         DBDailycall dbDailycall = new DBDailycall("new", "", task_id, customerValue.getText().toString(), customerRowId, assoc_type, callplanValue.getText().toString(), "",
                                 noteVale.getText().toString(), "", startTimeAddValue.getText().toString(), endTimeAddValue.getText().toString(),
-                                typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "");
+                                typeAddValue.getText().toString(), "Planned", locationValue.getText().toString(), subjectAddValue.getText().toString(), "", photoName, date, "", "", acRowId, acCompanyValue.getText().toString());
                         dbManger.InsertDailyCallListTable(dbDailycall);
                         Toast.makeText(DailyCallEditorActivity.this, "已添加到草稿箱", Toast.LENGTH_SHORT).show();
                         //   Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Leads成功", Toast.LENGTH_SHORT).show();

@@ -23,6 +23,8 @@ public class DBDailycall {
 	private String saleName;
 	private int Id;
 	private String creator;
+	private String acRowId;
+	private String acName;
 
 	public String getCreator() {
 		return creator;
@@ -204,7 +206,23 @@ public class DBDailycall {
 
 	}
 
-	public DBDailycall(String remark, String rowId, String taskId, String accountName, String customerRowId, String assocType, String meetingContent, String result, String note, String taskName, String startTime, String endTime, String type, String status, String location, String subject, String lastUpd, String pics, String createTime, String saleName,String creator) {
+	public String getAcRowId() {
+		return acRowId;
+	}
+
+	public void setAcRowId(String acRowId) {
+		this.acRowId = acRowId;
+	}
+
+	public String getAcName() {
+		return acName;
+	}
+
+	public void setAcName(String acName) {
+		this.acName = acName;
+	}
+
+	public DBDailycall(String remark, String rowId, String taskId, String accountName, String customerRowId, String assocType, String meetingContent, String result, String note, String taskName, String startTime, String endTime, String type, String status, String location, String subject, String lastUpd, String pics, String createTime, String saleName,String creator,String acRowId, String acName) {
 		this.remark = remark;
 		this.rowId = rowId;
 		this.taskId = taskId;
@@ -226,5 +244,7 @@ public class DBDailycall {
 		this.createTime = createTime;
 		this.saleName = saleName;
 		this.creator = creator;
+		this.acRowId = acRowId;
+		this.acName = acName;
 	}
 }

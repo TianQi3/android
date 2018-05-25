@@ -33,10 +33,10 @@ public class DBManger {
     public void InsertDailyCallListTable(DBDailycall dbDailycall) {
         SQLiteDatabase db = helper.getWritableDatabase();
         //方式二
-        String sql = "insert into " + DatebaseHelper.TABLE_NAME_DAILYCALL + "(remark,rowId,taskId,accountName,customerRowId,assocType,meetingContent,result,note,taskName,startTime,endTime,type,status,location,subject,lastUpd,pics,createTime,saleName,creator)values('"
+        String sql = "insert into " + DatebaseHelper.TABLE_NAME_DAILYCALL + "(remark,rowId,taskId,accountName,customerRowId,assocType,meetingContent,result,note,taskName,startTime,endTime,type,status,location,subject,lastUpd,pics,createTime,saleName,creator,acRowId,acName)values('"
                 + dbDailycall.getRemark() + "','" + dbDailycall.getRowId() + "','" + dbDailycall.getTaskId() + "','" + dbDailycall.getAccountName() + "','" + dbDailycall.getCustomerRowId() + "','" + dbDailycall.getAssocType() + "','" + dbDailycall.getMeetingContent() + "','" + dbDailycall.getResult() +
                 "','" + dbDailycall.getNote() + "','" + dbDailycall.getTaskName() + "','" + dbDailycall.getStartTime() + "','" + dbDailycall.getEndTime() + "','" + dbDailycall.getType() + "','" + dbDailycall.getStatus() + "','" + dbDailycall.getLocation() + "','" + dbDailycall.getSubject() + "','" + dbDailycall.getLastUpd()
-                + "','" + dbDailycall.getPics() + "','" + dbDailycall.getCreateTime() + "','" + dbDailycall.getSaleName() + "','" + dbDailycall.getCreator() + "')";
+                + "','" + dbDailycall.getPics() + "','" + dbDailycall.getCreateTime() + "','" + dbDailycall.getSaleName() + "','" + dbDailycall.getCreator() + "','" + dbDailycall.getAcRowId() + "','" + dbDailycall.getAcName() + "')";
         db.execSQL(sql);
         db.close();
     }
@@ -47,7 +47,7 @@ public class DBManger {
         String sql = "insert into " + DatebaseHelper.TABLE_NAME_LEADS + "(remark,rowId,targetFlg,nameEn,nameCn,saleEid,saleName,classes,status,region,province,provinceId,city,channel,channelId,address,subChannel,chain,chainId,subChain,conFstName," +
                 "conLastName,jobTitle,workPhNum,cellPhNum,email,acntId,accountName,stage,actDate,actSales,estDate,estSales,demand,devPlan,tag1,tag2,tag3,tag4,tag5,createTime,creator)values('"
                 + dbLeads.getRemark() + "','" + dbLeads.getRowId() + "','" + dbLeads.getTargetFlg() + "','" + dbLeads.getNameEn() + "','" + dbLeads.getNameCn() + "','" + dbLeads.getSaleEid() + "','" + dbLeads.getSaleName() + "','" + dbLeads.getClasses() + "','" +
-                dbLeads.getStatus() + "','" + dbLeads.getRegion() + "','" + dbLeads.getProvince() + "','" + dbLeads.getProvinceId() + "','"+ dbLeads.getCity() + "','" + dbLeads.getChannel() + "','" + dbLeads.getChannelId() + "','" + dbLeads.getAddress() + "','" + dbLeads.getSubChannel() + "','" + dbLeads.getChain()
+                dbLeads.getStatus() + "','" + dbLeads.getRegion() + "','" + dbLeads.getProvince() + "','" + dbLeads.getProvinceId() + "','" + dbLeads.getCity() + "','" + dbLeads.getChannel() + "','" + dbLeads.getChannelId() + "','" + dbLeads.getAddress() + "','" + dbLeads.getSubChannel() + "','" + dbLeads.getChain()
                 + "','" + dbLeads.getChainId() + "','" + dbLeads.getSubChain() + "','" + dbLeads.getConFstName() + "','" + dbLeads.getConLastName() + "','" + dbLeads.getJobTitle() + "','" + dbLeads.getCellPhNum() + "','" + dbLeads.getWorkPhNum() + "','" + dbLeads.getEmail() + "','" + dbLeads.getAcntId() + "','" + dbLeads.getAccountName() + "','" + dbLeads.getStage() + "','" + dbLeads.getActDate()
                 + "','" + dbLeads.getActSales() + "','" + dbLeads.getEstDate() + "','" + dbLeads.getEstSales() + "','" + dbLeads.getDemand() + "','" + dbLeads.getDevPlan() + "','" + dbLeads.getTag1() + "','" + dbLeads.getTag2() + "','" + dbLeads.getTag3() + "','" + dbLeads.getTag4() + "','" + dbLeads.getTag5() + "','" + dbLeads.getCreateTime() + "','" + dbLeads.getCreator() + "')";
         db.execSQL(sql);
@@ -82,7 +82,7 @@ public class DBManger {
     }
 
     //update task
-    public void UpdateTaskById(DBTask dbTask,int id) {
+    public void UpdateTaskById(DBTask dbTask, int id) {
         SQLiteDatabase db = helper.getWritableDatabase();
         //方式二
         String sql = "update " + DatebaseHelper.TABLE_NAME_TASK + " set taskId='" + dbTask.getTaskId() + "',customerRowId='" + dbTask.getCustomerRowId()
@@ -96,7 +96,7 @@ public class DBManger {
     }
 
     //update dailycall
-    public void UpdateDailyCallById(DBDailycall dbDailycall ,int id) {
+    public void UpdateDailyCallById(DBDailycall dbDailycall, int id) {
         SQLiteDatabase db = helper.getWritableDatabase();
         //方式二
         String sql = "update " + DatebaseHelper.TABLE_NAME_DAILYCALL + " set rowId='" + dbDailycall.getRowId() + "',taskId='" + dbDailycall.getTaskId()
@@ -105,13 +105,13 @@ public class DBManger {
                 + "',taskName='" + dbDailycall.getTaskName() + "',startTime='" + dbDailycall.getStartTime() + "',endTime='" + dbDailycall.getEndTime()
                 + "',type='" + dbDailycall.getType() + "',status='" + dbDailycall.getStatus() + "',location='" + dbDailycall.getLocation()
                 + "',subject='" + dbDailycall.getSubject() + "',lastUpd='" + dbDailycall.getLastUpd() + "',pics='" + dbDailycall.getPics()
-                + "',createTime='" + dbDailycall.getCreateTime() + "',creator='" + dbDailycall.getCreator() + "' where id=" + id;
+                + "',createTime='" + dbDailycall.getCreateTime() + "',creator='" + dbDailycall.getCreator() + "',acRowId='" + dbDailycall.getAcRowId() + "',acName='" + dbDailycall.getAcName() + "' where id=" + id;
         db.execSQL(sql);
         db.close();
     }
 
     //update leads
-    public void UpdateLeadsById(DBLeads dbLeads,int id) {
+    public void UpdateLeadsById(DBLeads dbLeads, int id) {
         SQLiteDatabase db = helper.getWritableDatabase();
         //方式二
         String sql = "update " + DatebaseHelper.TABLE_NAME_LEADS + " set rowId='" + dbLeads.getRowId() + "',targetFlg='" + dbLeads.getTargetFlg()
@@ -131,6 +131,7 @@ public class DBManger {
         db.execSQL(sql);
         db.close();
     }
+
 
     //select task
     public List<DBTask> SelectTaskList() {
@@ -154,7 +155,7 @@ public class DBManger {
                 String remark = c.getString(11);
                 String createTime = c.getString(12);
                 String saleName = c.getString(13);
-                String creator  = c.getString(14);
+                String creator = c.getString(14);
                 DBTask dbTask = new DBTask();
                 dbTask.setTaskId(taskId);
                 dbTask.setId(id);
@@ -208,6 +209,8 @@ public class DBManger {
                 String createTime = c.getString(19);
                 String saleName = c.getString(20);
                 String creator = c.getString(21);
+                String acRowId = c.getString(22);
+                String acName = c.getString(23);
                 DBDailycall dbDailycall = new DBDailycall();
                 dbDailycall.setRemark(remark);
                 dbDailycall.setRowId(rowId);
@@ -231,6 +234,8 @@ public class DBManger {
                 dbDailycall.setSaleName(saleName);
                 dbDailycall.setId(id);
                 dbDailycall.setCreator(creator);
+                dbDailycall.setAcRowId(acRowId);
+                dbDailycall.setAcName(acName);
                 dbDailycallList.add(dbDailycall);
             }
         }

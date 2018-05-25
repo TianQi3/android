@@ -356,7 +356,6 @@ public class CustomerDailyCallListActivity extends AbstractActivity {
             intent.putExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL, "true");
             intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, dcId);
             //intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, "Other Account");
-            Log.v("xxxxx","----"+getIntent().getStringExtra(OTHER_OR_KEY));
             if ("true".equals(getIntent().getStringExtra(OTHER_OR_KEY))) {
                 intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, "Key Account");
             } else {

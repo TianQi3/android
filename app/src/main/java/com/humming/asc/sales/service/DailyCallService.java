@@ -11,6 +11,7 @@ import com.humming.asc.dp.presentation.vo.cp.dailycall.CalendarTotalResultVO;
 import com.humming.asc.dp.presentation.vo.cp.dailycall.CommentsResultVO;
 import com.humming.asc.dp.presentation.vo.cp.dailycall.DailyCallDetailResultVO;
 import com.humming.asc.dp.presentation.vo.cp.dailycall.DailyCallQueryResultVO;
+import com.humming.asc.dp.presentation.vo.cp.dailycall.QueryAllEmployeeResultVO;
 import com.humming.asc.sales.Config;
 
 import java.io.File;
@@ -158,6 +159,11 @@ public class DailyCallService extends AbstractService {
     //add Daily call
     public void addDailyCall(ICallback callback, AddDailyCallRO addDailyCallRO) {
         this.post(Config.URL_SERVICE_DAILY_CALL_ADD, addDailyCallRO, callback, ResultVO.class, null);
+    }
+
+    //获取所有员工的信息
+    public void queryAllEmployee(ICallback callback) {
+        this.get(Config.URL_SERVICE_QUERY_ALL_EMPLOYEE, null, callback, QueryAllEmployeeResultVO.class, null);
     }
 
     //edit Daily call

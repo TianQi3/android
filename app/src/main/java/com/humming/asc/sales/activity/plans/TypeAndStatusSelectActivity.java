@@ -78,12 +78,14 @@ public class TypeAndStatusSelectActivity extends AbstractActivity implements ICa
                     listsDate = data.getData();
                     mLoading.hide();
                     lists = new ArrayList<String>();
-                    for (int i = 0; i < listsDate.size(); i++) {
-                        lists.add(listsDate.get(i).getSubjcet());
-                    }
-                    if ("true".equals(DailyCallEditorActivity.followUp)) {
-                        for (int i = 1; i < 3; i++) {
-                            lists.remove(lists.size()-i);
+                    if (listsDate != null && listsDate.size() > 0) {
+                        for (int i = 0; i < listsDate.size(); i++) {
+                            lists.add(listsDate.get(i).getSubjcet());
+                        }
+                        if ("true".equals(DailyCallEditorActivity.followUp)) {
+                            for (int i = 1; i < 3; i++) {
+                                lists.remove(lists.size() - i);
+                            }
                         }
                     }
                     MyArrayAdapter arrayAdapter = new MyArrayAdapter(Application.getInstance().getCurrentActivity(), R.layout.list_item_textview, lists);

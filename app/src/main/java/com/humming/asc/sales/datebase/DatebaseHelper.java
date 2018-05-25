@@ -9,7 +9,7 @@ public class DatebaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_TASK = "TaskListTable";//表名
     public static final String TABLE_NAME_DAILYCALL = "DailyCallListTable";//表名
     public static final String TABLE_NAME_LEADS = "LeadsListTable";//表名
-    private static final int version = 2;
+    private static final int version = 3;
     private Context context;
 
     public DatebaseHelper(Context context) {
@@ -24,7 +24,7 @@ public class DatebaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TASK + "(id INTEGER PRIMARY KEY AUTOINCREMENT,taskId TEXT,customerRowId TEXT,accountName TEXT,customerCode TEXT, taskName TEXT,startDate TEXT,endDate TEXT,type TEXT,status TEXT,description TEXT,remark TEXT,createTime TEXT,saleName TEXT)";
         db.execSQL(sql);
-        String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_DAILYCALL + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT, rowId TEXT,taskId TEXT,accountName TEXT,customerRowId TEXT,assocType TEXT,meetingContent TEXT,result TEXT,note TEXT,taskName TEXT,startTime TEXT,endTime TEXT,type TEXT,status TEXT,location TEXT,subject TEXT,lastUpd TEXT,pics TEXT,createTime TEXT,saleName TEXT)";
+        String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_DAILYCALL + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT, rowId TEXT,taskId TEXT,accountName TEXT,customerRowId TEXT,assocType TEXT,meetingContent TEXT,result TEXT,note TEXT,taskName TEXT,startTime TEXT,endTime TEXT,type TEXT,status TEXT,location TEXT,subject TEXT,lastUpd TEXT,pics TEXT,createTime TEXT,saleName TEXT,creator TEXT,acRowId TEXT,acName TEXT)";
         db.execSQL(sql2);
         String sql3 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_LEADS + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT,rowId TEXT,targetFlg TEXT,nameEn TEXT,nameCn TEXT,saleName TEXT,saleEid TEST,classes TEXT,status TEXT,region TEXT,province TEXT,provinceId TEXT,city TEXT,channel TEXT,channelId TEXT,address TEXT,subChannel TEXT,chain TEXT,chainId TEXT,subChain TEXT,conFstName TEXT,conLastName TEXT,jobTitle TEXT,workPhNum TEXT,cellPhNum TEXT,email TEXT,acntId TEXT,accountName TEXT,stage TEXT,actDate TEXT,actSales TEXT,estDate TEXT,estSales TEXT,demand TEXT,devPlan TEXT,tag1 TEXT,tag2 TEXT,tag3 TEXT,tag4 TEXT,tag5 TEXT,createTime TEXT)";
         db.execSQL(sql3);
@@ -40,7 +40,7 @@ public class DatebaseHelper extends SQLiteOpenHelper {
             String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TASK + "(id INTEGER PRIMARY KEY AUTOINCREMENT,taskId TEXT,customerRowId TEXT,accountName TEXT,customerCode TEXT, taskName TEXT,startDate TEXT,endDate TEXT,type TEXT,status TEXT,description TEXT,remark TEXT,createTime TEXT,saleName TEXT,creator TEXT)";
             db.execSQL(sql);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_DAILYCALL);
-            String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_DAILYCALL + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT, rowId TEXT,taskId TEXT,accountName TEXT,customerRowId TEXT,assocType TEXT,meetingContent TEXT,result TEXT,note TEXT,taskName TEXT,startTime TEXT,endTime TEXT,type TEXT,status TEXT,location TEXT,subject TEXT,lastUpd TEXT,pics TEXT,createTime TEXT,saleName TEXT,creator TEXT)";
+            String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_DAILYCALL + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT, rowId TEXT,taskId TEXT,accountName TEXT,customerRowId TEXT,assocType TEXT,meetingContent TEXT,result TEXT,note TEXT,taskName TEXT,startTime TEXT,endTime TEXT,type TEXT,status TEXT,location TEXT,subject TEXT,lastUpd TEXT,pics TEXT,createTime TEXT,saleName TEXT,creator TEXT,acRowId TEXT,acName TEXT)";
             db.execSQL(sql2);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_LEADS);
             String sql3 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_LEADS + "(id INTEGER PRIMARY KEY AUTOINCREMENT,remark TEXT,rowId TEXT,targetFlg TEXT,nameEn TEXT,nameCn TEXT,saleName TEXT,saleEid TEST,classes TEXT,status TEXT,region TEXT,province TEXT,provinceId TEXT,city TEXT,channel TEXT,channelId TEXT,address TEXT,subChannel TEXT,chain TEXT,chainId TEXT,subChain TEXT,conFstName TEXT,conLastName TEXT,jobTitle TEXT,workPhNum TEXT,cellPhNum TEXT,email TEXT,acntId TEXT,accountName TEXT,stage TEXT,actDate TEXT,actSales TEXT,estDate TEXT,estSales TEXT,demand TEXT,devPlan TEXT,tag1 TEXT,tag2 TEXT,tag3 TEXT,tag4 TEXT,tag5 TEXT,createTime TEXT,creator TEXT)";

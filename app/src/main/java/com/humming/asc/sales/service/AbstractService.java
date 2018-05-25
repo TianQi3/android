@@ -146,14 +146,12 @@ public abstract class AbstractService {
         try {
             T result = mapper.readValue(response, resultVOClass);
             callback.onDataReady(result);
-            if (result instanceof AbsResultVO) {
+            /*if (result instanceof AbsResultVO) {
                 AbsResultVO absResultVO = (AbsResultVO) result;
                 if (absResultVO.getState() == -10 || absResultVO.getState() == 10) {
                     backLogin();
                 }
-
-
-            }
+            }*/
         } catch (IOException e) {
             handleException(callback, e);
         }

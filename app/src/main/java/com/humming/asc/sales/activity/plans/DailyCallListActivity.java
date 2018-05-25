@@ -84,7 +84,10 @@ public class DailyCallListActivity extends AbstractActivity {
                 mLoading.hide();
                 if ("1".equals(pageNos)) {
                     dclists = currentlist;
-                    int sum = currentlist.size();
+                    int sum = 0;
+                    if(currentlist!=null &&currentlist.size()>0){
+                        sum = currentlist.size();
+                    }
                     getSupportActionBar().setTitle(app.getString(R.string.edit_task_daily_call) + "(" + sum + ")");
                     MyArrayAdapter arrayAdapter = new MyArrayAdapter(app.getCurrentActivity(),
                             R.layout.list_item_view_pager_delete, currentlist, itemPageResArray, 0, "");

@@ -5,9 +5,9 @@ package com.humming.asc.sales;
  */
 public class Config {
     public static final boolean DEBUG = false;
-    // public static final String URL_SERVICE = "http://101.231.101.70:8080/dp/service/";//测试环境
-    // public static final String URL_SERVICE = "http://101.231.101.70:8089/dp/service/";//测试环境
-    public static final String URL_SERVICE = "http://sm.asc-wines.com/dp/service/";//正式环境
+    //public static final String URL_SERVICE = "http://101.231.101.70:8080/dp/service/";//测试环境
+     public static final String URL_SERVICE = "http://101.231.101.70:8089/dp/service/";//测试环境
+    //public static final String URL_SERVICE = "http://sm.asc-wines.com/dp/service/";//正式环境
     public static final String SERVER = "sm.asc-wines.com/dp";
 
     public static final String URL_SERVICE_LOGIN = Config.URL_SERVICE + "login";
@@ -46,6 +46,10 @@ public class Config {
     public static final String URL_SERVICE_CUSTOMER_QUERY_BY_CHAIN = Config.URL_SERVICE + "info/cusByChain";
 
     public static final String URL_SERVICE_INFO_BASE_DATA = Config.URL_SERVICE + "info/getQueryMenu";
+
+    public static final String URL_SERVICE_QUERY_ALL_EMPLOYEE = Config.URL_SERVICE + "dc/queryAllEmployee";
+
+
     //leads
     public static final String URL_SERVICE_LEADS_ITEM_QUERYBYID = Config.URL_SERVICE + "leads/queryById";
     public static final String URL_SERVICE_LEADS_QUERY = Config.URL_SERVICE + "leads/query";

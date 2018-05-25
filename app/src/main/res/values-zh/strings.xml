@@ -29,7 +29,7 @@
     <string name="daily_call_list">Daily Call List</string>
     <string name="add_task_customer">*Customer</string>
     <string name="add_task_task">*Task</string>
-    <string name="add_task_accompany">*Accompany</string>
+    <string name="add_task_accompany">Accompany</string>
     <string name="add_task_start_time">*Start Time</string>
     <string name="add_task_end_time">*End Time</string>
     <string name="add_task_type">*Type</string>
