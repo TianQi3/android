@@ -350,6 +350,7 @@ public class DailyCallListActivity extends AbstractActivity {
                             Application.getInstance().setDailyCallDetail4Edit(data1);
                             Intent intent = new Intent(getBaseContext(), DailyCallEditorActivity.class);
                             intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, data1.getAssocType());
+                            intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME,items.get(position).getAccountName());
                             if ("Key Account".equals(data1.getAssocType())) {
                               //  intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, data1.getRowId());
                                 intent.putExtra(DailyCallEditorActivity.TASK_ID, data1.getTaskId());

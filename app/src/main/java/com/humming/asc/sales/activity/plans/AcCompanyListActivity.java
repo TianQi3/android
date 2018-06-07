@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +40,7 @@ public class AcCompanyListActivity extends AbstractActivity {
 
 
     private List<QueryAllEmployeeVO> lists;
+    private List<QueryAllEmployeeVO> listss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class AcCompanyListActivity extends AbstractActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(Application.getInstance().getString(R.string.activity_label_accompany));
+        listss = new ArrayList<>();
         listView = (ListView) findViewById(R.id.content_class_status_list);
         DailyCallService dailyCallservice = Application.getDailyCallService();
         mLoading.show();
@@ -57,7 +58,9 @@ public class AcCompanyListActivity extends AbstractActivity {
 
             @Override
             public void onDataReady(QueryAllEmployeeResultVO data) {
-                lists = data.getData();
+                listss.clear();
+                listss = data.getData();
+                lists = listss;
                 mLoading.hide();
                 MyArrayAdapter arrayAdapter = new MyArrayAdapter(Application.getInstance().getCurrentActivity(), R.layout.list_item_textview, lists);
                 listView.setAdapter(arrayAdapter);
@@ -165,9 +168,8 @@ public class AcCompanyListActivity extends AbstractActivity {
     private void setQueryDataByKeyWord(String query) {
         List<QueryAllEmployeeVO> queryLists = new ArrayList<>();
         queryLists.clear();
-        for (QueryAllEmployeeVO queryAllEmployeeVO : lists) {
-            if (queryAllEmployeeVO.getShowName().contains(query)) {
-                Log.v("xxxx", queryAllEmployeeVO.getShowName());
+        for (QueryAllEmployeeVO queryAllEmployeeVO : listss) {
+            if (queryAllEmployeeVO.getShowName().toLowerCase().contains(query.toLowerCase())) {
                 queryLists.add(queryAllEmployeeVO);
             }
         }

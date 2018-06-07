@@ -6,12 +6,11 @@ package com.humming.asc.sales;
 public class Config {
     public static final boolean DEBUG = false;
     //public static final String URL_SERVICE = "http://101.231.101.70:8080/dp/service/";//测试环境
-     public static final String URL_SERVICE = "http://101.231.101.70:8089/dp/service/";//测试环境
+    public static final String URL_SERVICE = "http://101.231.101.70:8089/dp/service/";//测试环境
     //public static final String URL_SERVICE = "http://sm.asc-wines.com/dp/service/";//正式环境
     public static final String SERVER = "sm.asc-wines.com/dp";
 
     public static final String URL_SERVICE_LOGIN = Config.URL_SERVICE + "login";
-
     public static final String URL_SERVICE_ALIIMAGE = Config.URL_SERVICE + "img/addPic";
 
     //version

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,10 +66,13 @@ public class LeadsDailyCallListActivity extends AbstractActivity implements ICal
                         DailyCallDetailVO data1 = data.getData();
                         Application.getInstance().setDailyCallDetail4Edit(data1);
                         Intent intent = new Intent(getBaseContext(), DailyCallEditorActivity.class);
+                        intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME,accountName);
+                        intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, getIntentRowId);
                         intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, data1.getAssocType());
                         intent.putExtra(DailyCallEditorActivity.FOLLOW_UP, "true");
                         intent.putExtra(DailyCallEditorActivity.TASK_ID, data1.getTaskId());
                         startActivity(intent);
+                        finish();
                     }
 
                     @Override
@@ -98,9 +100,9 @@ public class LeadsDailyCallListActivity extends AbstractActivity implements ICal
             case R.id.action_product_add:
                 Intent intent = new Intent(Application.getInstance().getCurrentActivity(), DailyCallEditorActivity.class);
                 Application.getInstance().setDailyCallDetail4Edit(null);
-                Log.v("xxxx","----"+accountName);
                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME,accountName);
                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_ADD_DAILY_CALL, "true");
+                intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, "Leads");
                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_ADD_DAILY_CALL_TYPE, "Leads");
                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, getIntentRowId);
                 Application.getInstance().getCurrentActivity().startActivity(intent);

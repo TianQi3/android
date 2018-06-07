@@ -104,7 +104,7 @@ public class CustomerSelectorActivity extends AbstractActivity {
                     @Override
                     public void onRefresh(PullToRefreshBase<ListView> refreshView) {
                         CuspageNo++;
-                        queryCustomer(flag, pageNos + "");
+                        queryCustomer(flag, CuspageNo + "");
                     }
                 });
             }

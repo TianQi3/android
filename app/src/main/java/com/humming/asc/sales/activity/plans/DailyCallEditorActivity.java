@@ -99,6 +99,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
     private DBDailycall dbDailycall;
     private String draftCome = "";
     String subjectName = "";
+    String customerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +118,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
         mHandler = mAPP.getHandler();
         dailyCallService = Application.getDailyCallService();
         assoc_type = getIntent().getStringExtra(DailyCallEditorActivity.ASSOC_TYPE);
-        String customerName = getIntent().getStringExtra(DailyCallEditorActivity.CUSTOMER_NAME);
+        customerName = getIntent().getStringExtra(DailyCallEditorActivity.CUSTOMER_NAME);
         String taskName = getIntent().getStringExtra(DailyCallEditorActivity.TASK_NAME);
         subjectName = getIntent().getStringExtra(DailyCallEditorActivity.SUBJECT_NAME);
         followUp = getIntent().getStringExtra(DailyCallEditorActivity.FOLLOW_UP);
@@ -272,7 +273,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
 
     private void setValue(DailyCallDetailVO dailyCallDetail) {
         salesTitleValue.setText(dailyCallDetail.getSaleName());
-        customerValue.setText(dailyCallDetail.getAccountName());
+        customerValue.setText(customerName);
         taskValue.setText(dailyCallDetail.getTaskName());
         subjectValue.setText(dailyCallDetail.getSubject());
         typeValue.setText(dailyCallDetail.getType());
@@ -286,6 +287,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
         resultValut.setText(dailyCallDetail.getResult());
         photoValue.setText(dailyCallDetail.getPicList().size() + "");
         acCompanyValue.setText(dailyCallDetail.getAcmpUserName());
+        acRowId = dailyCallDetail.getAcmpUserId();
+        //customerRowId = dailyCallDetail.getRowId();
         if ("true".equals(followUp)) {
             customerValue.setTextColor(this.getResources().getColor(R.color.textGray));
             taskValue.setTextColor(this.getResources().getColor(R.color.textGray));
@@ -821,14 +824,15 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                         finish();
                                     } else {
                                         if ("true".equals(getIntent().getStringExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL))) {
+                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
                                             CustomerDailyCallListActivity.DCListActivity.finish();
-                                            Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
-                                            intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
-                                            startActivity(intent);
+                                            //Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
+                                            //intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
+                                            //startActivity(intent);
                                             finish();
                                         } else {
-                                            Intent intent = new Intent(Application.getInstance().getCurrentActivity(), DailyCallListActivity.class);
-                                            startActivity(intent);
+                                           // Intent intent = new Intent(Application.getInstance().getCurrentActivity(), DailyCallListActivity.class);
+                                           // startActivity(intent);
                                             Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
                                             initDailyCall();
                                             finish();
@@ -901,7 +905,15 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                         Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
                                         initDailyCall();
                                         finish();
-                                    } else {
+                                    } else if ("true".equals(getIntent().getStringExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL))) {
+                                        Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
+                                        CustomerDailyCallListActivity.DCListActivity.finish();
+                                       // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
+                                       // intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
+                                       // startActivity(intent);
+                                        finish();
+                                    }
+                                    else {
                                         initDailyCall();
                                         Bundle resultBundle = new Bundle();
                                         resultBundle.putString(
@@ -941,16 +953,17 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                         finish();
                                     } else {
                                         if ("true".equals(getIntent().getStringExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL))) {
+                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
                                             CustomerDailyCallListActivity.DCListActivity.finish();
-                                            Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
-                                            intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
-                                            startActivity(intent);
+                                           // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
+                                            //intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
+                                            //startActivity(intent);
                                             finish();
                                         } else if ("true".equals(draftCome)) {
                                             Intent resultIntent = new Intent();
                                             resultIntent.putExtra(DraftsDailyCallListActivity.RESULT_TEXT_DAILY_CALL, "");
                                             setResult(RESULT_OK, resultIntent);
-                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
                                             finish();
                                         } else {
                                             Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();

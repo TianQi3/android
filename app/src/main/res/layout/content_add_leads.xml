@@ -41,9 +41,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__english_name_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -63,9 +63,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__chinese_name_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -105,8 +105,8 @@
 
             <TextView
                 android:id="@+id/content_add_leads__status_value"
-                android:text="Active"
-                style="@style/editableItemValue" />
+                style="@style/editableItemValue"
+                android:text="Active" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -286,9 +286,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__constact_frist_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -308,9 +308,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__constact_last_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -330,9 +330,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__jobtitle_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -352,9 +352,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__workphone_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -374,9 +374,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__mobilephone_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-               style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -396,9 +396,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__email_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -454,8 +454,8 @@
 
             <TextView
                 android:id="@+id/content_add_leads__target_stage_value"
-                android:text="Reach/Exploration"
-                style="@style/editableItemValue" />
+                style="@style/editableItemValue"
+                android:text="Reach/Exploration" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -515,9 +515,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_demand_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -537,9 +537,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__developement_plan_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -559,9 +559,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_tag_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -581,9 +581,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_tag2_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -603,9 +603,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_tag3_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -625,9 +625,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_tag4_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
@@ -647,9 +647,9 @@
 
             <TextView
                 android:id="@+id/content_add_leads__customer_tag5_value"
-                android:singleLine="true"
+                style="@style/editableItemValue"
                 android:ellipsize="end"
-                style="@style/editableItemValue" />
+                android:singleLine="true" />
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
