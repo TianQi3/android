@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/f0f0f0"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin">
         <!--<TextView-->
         <!--android:id="@+id/textView"-->
         <!--android:layout_width="wrap_content"-->
@@ -23,83 +21,103 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/content_planns__viewpager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/plans_chart_height"/>
+            android:layout_height="@dimen/plans_chart_height"
+            android:background="@color/WhiteBG"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="25dp" />
+
         <com.humming.asc.sales.component.PageIndicator
             android:id="@+id/content_planns__indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:orientation="horizontal">
-        </com.humming.asc.sales.component.PageIndicator>
+            android:orientation="horizontal"></com.humming.asc.sales.component.PageIndicator>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_w"></LinearLayout>
+            android:background="@drawable/bg_w"
+            android:visibility="gone"></LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/magin_15"
+                android:layout_marginRight="@dimen/magin_15"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <com.humming.asc.sales.component.RectItem
                     android:id="@+id/content_planns__task_item"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:iconSrc="@drawable/icon_tasks"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:bottomLabel="Closed:"
+                    app:bottomValue="123"
+                    app:iconSrc="@drawable/plan_task"
                     app:label="Task"
                     app:topLabel="Total:"
-                    app:topValue="123"
-                    app:bottomLabel="Closed:"
-                    app:bottomValue="123">
-                </com.humming.asc.sales.component.RectItem>
+                    app:topValue="123"></com.humming.asc.sales.component.RectItem>
+
                 <com.humming.asc.sales.component.RectItem
                     android:id="@+id/content_planns__leads_item"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    app:bottomLabel="all:"
+                    app:bottomValue="123"
                     app:iconSrc="@drawable/icon_leads"
                     app:label="Leads"
                     app:topLabel="target:"
-                    app:topValue="123"
-                    app:bottomLabel="all:"
-                    app:bottomValue="123">
-                </com.humming.asc.sales.component.RectItem>
+                    app:topValue="123"></com.humming.asc.sales.component.RectItem>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/magin_15"
+                android:layout_marginRight="@dimen/magin_15"
+                android:layout_marginTop="@dimen/magin_15"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <com.humming.asc.sales.component.RectItem
                     android:id="@+id/content_planns__comments_item"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    app:bottomLabel=""
+                    app:bottomValue=""
                     app:iconSrc="@drawable/icon_comments"
                     app:label="Comments"
                     app:topLabel="Total:"
-                    app:topValue="123"
-                    app:bottomLabel=""
-                    app:bottomValue="">
-                </com.humming.asc.sales.component.RectItem>
+                    app:topValue="123"></com.humming.asc.sales.component.RectItem>
+
                 <com.humming.asc.sales.component.RectItem
                     android:id="@+id/content_planns__plans_item"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:iconSrc="@drawable/icon_annual_call"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    app:bottomLabel="Monthly:"
+                    app:bottomValue="123"
+                    app:iconSrc="@drawable/icon_plan"
                     app:label="Plans"
                     app:topLabel="Annual:"
-                    app:topValue="123"
-                    app:bottomLabel="Monthly:"
-                    app:bottomValue="123">
-                </com.humming.asc.sales.component.RectItem>
+                    app:topValue="123"></com.humming.asc.sales.component.RectItem>
             </LinearLayout>
         </LinearLayout>
 

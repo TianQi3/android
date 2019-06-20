@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/WhiteBG"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_product_border"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/item_product_img"
+                    android:layout_width="82dp"
+                    android:layout_height="82dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="28dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/item_product_code"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:background="@color/a81435"
+                android:gravity="center"
+                android:paddingLeft="@dimen/magin_10"
+                android:paddingRight="@dimen/magin_10"
+                android:singleLine="true"
+                android:text="CR002"
+                android:textColor="@color/WhiteBG"
+                android:textSize="@dimen/text_size_15" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_product__name_cn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:singleLine="true"
+                android:text="罗斯柴尔德桃红香槟"
+                android:textColor="@color/f33"
+                android:textSize="@dimen/text_size_17"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_product__name_en"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Champagne Barons de Rothschil…"
+                android:textColor="@color/_f999"
+                android:textSize="@dimen/text_size_14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/product_brand_bg"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:text="@string/brand"
+                    android:textColor="@color/ff6311"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/tem_product__brand_cn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="罗斯柴尔德香槟"
+                    android:textColor="@color/_666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <TextView
+                    android:id="@+id/tem_product__brand_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Rothschild …"
+                    android:textColor="@color/_f999"
+                    android:textSize="@dimen/text_size_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/product_type_bg"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:text="@string/types"
+                    android:textColor="@color/_448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/tem_product__type_cn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="起泡葡萄酒"
+                    android:textColor="@color/_666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <TextView
+                    android:id="@+id/tem_product__type_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Sparkling Wine"
+                    android:textColor="@color/_f999"
+                    android:textSize="@dimen/text_size_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/product_country_bg"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:text="@string/countrys"
+                    android:textColor="@color/ffab22"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/tem_product__country_cn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:text="法国"
+                    android:textColor="@color/_666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <TextView
+                    android:id="@+id/tem_product__country_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ellipsize="end"
+                    android:text="France"
+                    android:textColor="@color/_f999"
+                    android:textSize="@dimen/text_size_14" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:background="@color/f1f1f1"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RP:¥"
+                android:textColor="@color/ff6311"
+                android:textSize="@dimen/text_size_12" />
+
+            <TextView
+                android:id="@+id/item_product_prize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:text="1437.00"
+                android:textColor="@color/ff6311"
+                android:textSize="@dimen/text_size_19" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_product_stock_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stock1"
+                android:textColor="@color/_f999"
+                android:textSize="@dimen/text_size_14" />
+
+            <TextView
+                android:id="@+id/item_product_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="24"
+                android:textColor="@color/ff448fe7"
+                android:textSize="19sp" />
+
+            <ImageView
+                android:id="@+id/item_product_action_down_n_s"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/product_action_down_n" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_product_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/product_item_add_prize_orderbg"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:text="@string/add_ecatalog1"
+            android:textColor="@color/ffbfa574"
+            android:textSize="@dimen/text_size_12" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/magin_10"
+        android:background="@color/f1f1f1"></View>
+
+
+    <LinearLayout
+        android:id="@+id/item_product_stock_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="211dp"
+            android:layout_marginTop="@dimen/magin_15"
+            android:background="@color/e5e5e5"></View>
+
+        <include
+            layout="@layout/list_item_pro_stock_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/magin_15"></include>
+
+        <HorizontalScrollView
+            android:id="@+id/item_product_stock_scroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/magin_15"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/item_product_stock_contain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="211dp"
+                    android:background="@color/e5e5e5"></View>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_product_stock_contain1_no_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/magin_15"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="211dp"
+            android:background="@color/e5e5e5"></View>
+
+        <LinearLayout
+            android:id="@+id/item_product_stock_contain_no_scroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="211dp"
+            android:background="@color/e5e5e5"></View>
+    </LinearLayout>
+</LinearLayout>

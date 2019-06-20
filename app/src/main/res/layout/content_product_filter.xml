@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/magin_15"
+    android:background="@color/WhiteBG"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.product.ProFilterActivity"
+    tools:showIn="@layout/activity_product_filter">
+
+    <com.humming.asc.sales.component.Loading
+        android:id="@+id/activity_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/product_filter_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/country1"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_country_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_country"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/area"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_area_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_area"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/brands"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_brand_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_brands"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/type1"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_type_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_type"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/price1"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_price_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_price"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_sweetness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/swtte"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_sweetness_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_sweet"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/color"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_color_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_color"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_liquorbody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/body"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_liquorbody_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_body"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_capacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/capacity"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_capacity_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/selectcapacity"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_alcohol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/alcoho"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_alcohol_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_alcoho"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/vintage"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_year_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_vintage"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"
+                android:visibility="gone"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_grape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/grape"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_grape_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_grape"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_mainland_channel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/mainland"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_mainland_channel_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_mainland"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+            <LinearLayout
+                android:id="@+id/product_filter_hkandmc_channel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/hk"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_filter_hkandmc_channel_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/magin_30"
+                    android:singleLine="true"
+                    android:text="@string/select_hk"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/text_size_14" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/common_action_nextpage" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F1F1"></View>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/product_filter_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/magin_30"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_pro_common_gray"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/reset"
+            android:textColor="@color/f33"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/product_filter_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="@dimen/magin_30"
+            android:layout_weight="1"
+            android:background="@drawable/button_pro_common_submit"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/sumit"
+            android:textColor="@color/WhiteBG"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

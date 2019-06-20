@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/activity_bg"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.plans.TaskListActivity"
@@ -23,14 +23,14 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
         ptr:ptrAnimationStyle="flip"
-        ptr:ptrHeaderBackground="#383838"
-        ptr:ptrHeaderTextColor="#FFFFFF" />
+        ptr:ptrHeaderBackground="#f0f0f0"
+        ptr:ptrHeaderTextColor="#000" />
 
     <ListView
         android:id="@+id/content_task__listViews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/transparent"
-        android:visibility="gone"
-        android:dividerHeight="0dp"></ListView>
+        android:dividerHeight="0dp"
+        android:visibility="gone"></ListView>
 </LinearLayout>

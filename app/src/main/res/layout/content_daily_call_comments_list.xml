@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/activity_bg"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     android:weightSum="1"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -15,10 +15,10 @@
         android:id="@+id/content_daily_call_comments_list__back"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"
-        android:background="@color/transparentWhiteBG"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="20dp"
+        android:layout_weight="0.25"
+        android:background="@color/mf_item_background"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -30,32 +30,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:paddingTop="10dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
                 <ImageView
                     android:id="@+id/list_item_daily_call_assoc_type"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/icon_cname"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/icon_cname" />
 
 
                 <com.humming.asc.sales.activity.MarqueeTextView
                     android:id="@+id/content_daily_call_comments_list__account_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
+                    android:layout_weight="1"
                     android:ellipsize="marquee"
+                    android:gravity="center_vertical"
                     android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
                     android:text="Name"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -63,24 +63,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:paddingTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
                 <RelativeLayout
                     android:id="@+id/list_item_daily_call_state_type"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    >
+                    android:layout_height="40dp">
 
                     <ImageView
                         android:id="@+id/list_item_daily_call_state"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/icon_tasks"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginRight="0dp"
-                        android:layout_marginTop="0dp" />
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/icon_tasks" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -95,10 +94,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="Task Name"
-                        android:singleLine="true"
                         android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="Task Name"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
                     <TextView
@@ -106,9 +105,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:ellipsize="end"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
                 </LinearLayout>
             </LinearLayout>
@@ -122,38 +121,45 @@
             android:layout_marginLeft="10dp"
             android:src="@drawable/right_w" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/bg_w"></LinearLayout>
+        android:background="@color/WhiteBG"></LinearLayout>
+
     <ListView
         android:id="@+id/content_daily_call_comments_list__listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.65"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
+        android:dividerHeight="0dp"
+        android:scrollbars="none" />
+
     <LinearLayout
-        android:layout_width="match_parent"
         android:id="@+id/content_daily_call_comments_list__add_comments"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_weight="0.1"
-        android:background="@color/colorBlacks"
-        android:layout_height="0dp">
+        android:background="@color/ffbfa574"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:textColor="@color/colorBlack"
-            android:layout_height="match_parent"
-            android:text="@string/add_my_comments"/>
+            android:text="@string/add_my_comments"
+            android:textColor="@color/WhiteBG" />
+
         <ImageView
-            android:layout_width="40dp"
-            android:src="@drawable/icon_dailycall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginRight="20dp"
             android:gravity="center"
-            android:layout_height="40dp" />
+            android:src="@drawable/icon_comments" />
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.humming.asc.sales.activity.ecatalog.CreateEcatalogActivity"
+    tools:showIn="@layout/activity_ecatalog_create">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ecatalog_create__parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    android:layout_marginTop="-2dp"
+                    android:background="@mipmap/create_ecatalog"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/magin_15"
+                    android:layout_marginRight="@dimen/magin_15"
+                    android:layout_marginTop="@dimen/magin_10"
+                    android:background="@drawable/bg_ecatalog_create_card"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/magin_30"
+                    android:paddingLeft="@dimen/magin_15"
+                    android:paddingTop="@dimen/magin_15">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/magin_10"
+                        android:text="@string/messages"
+                        android:textColor="#ff333333"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@mipmap/quotation_icon_title" />
+
+                        <EditText
+                            android:id="@+id/ecatalog_create__title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:hint="@string/enter_title"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:paddingBottom="@dimen/magin_15"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:paddingTop="@dimen/magin_15"
+                            android:singleLine="true"
+                            android:textColor="@color/f33"
+                            android:textColorHint="#ff999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@mipmap/quotation_icon_customer" />
+
+                        <EditText
+                            android:id="@+id/ecatalog_create__customer_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:hint="@string/enter_username"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:paddingBottom="@dimen/magin_15"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:paddingTop="@dimen/magin_15"
+                            android:singleLine="true"
+                            android:textColor="@color/f33"
+                            android:textColorHint="#ff999999"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create_exprot_customer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/magin_20"
+                            android:text="@string/export_account"
+                            android:textColor="#ff448fe7"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@mipmap/quotation_icon_contacts" />
+
+                        <EditText
+                            android:id="@+id/ecatalog_create__contacts"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:hint="@string/enter_contract"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:paddingBottom="@dimen/magin_15"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:paddingTop="@dimen/magin_15"
+                            android:singleLine="true"
+                            android:textColor="@color/f33"
+                            android:textColorHint="#ff999999"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create_exprot_contract"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/magin_15"
+                            android:text="@string/export_user"
+                            android:textColor="#ff448fe7"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@mipmap/quotation_icon_iphone_two" />
+
+                        <EditText
+                            android:id="@+id/ecatalog_create__contact_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:hint="@string/enter_phone"
+                            android:imeOptions="actionNone"
+                            android:inputType="phone"
+                            android:paddingBottom="@dimen/magin_15"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:paddingTop="@dimen/magin_15"
+                            android:singleLine="true"
+                            android:textColor="@color/f33"
+                            android:textColorHint="#ff999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ecatalog_create__date_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/magin_15"
+                        android:paddingTop="@dimen/magin_15">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@mipmap/quotation_icon_date" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create__date"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/select_date"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:textColor="@color/f33"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginRight="@dimen/magin_10"
+                            android:src="@mipmap/common_action_nextpage" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/ecatalog_create__scope_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/magin_15"
+                        android:paddingTop="@dimen/magin_15">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/ecatalog_area" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create__scope"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_fanwei"
+                            android:paddingLeft="@dimen/magin_10"
+                            android:textColor="@color/f33"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginRight="@dimen/magin_10"
+                            android:src="@mipmap/common_action_nextpage" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#ebebeb"></View>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/magin_20"
+                android:layout_marginLeft="@dimen/magin_15"
+                android:layout_marginRight="@dimen/magin_15"
+                android:layout_marginTop="@dimen/magin_10"
+                android:background="@drawable/bg_ecatalog_create_card"
+                android:orientation="vertical">
+
+                <com.humming.asc.sales.component.product.CircleImageView
+                    android:id="@+id/ecatalog_create__user_img"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/magin_20"></com.humming.asc.sales.component.product.CircleImageView>
+
+                <TextView
+                    android:id="@+id/ecatalog_create__user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="@dimen/magin_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@mipmap/quotation_icon_iphone_small" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create__user_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:gravity="center"
+                            android:textColor="#ff999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="17dp"
+                        android:background="#ebebeb"
+                        android:visibility="gone"></View>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@mipmap/quotation_icon_iphone_small" />
+
+                        <TextView
+                            android:id="@+id/ecatalog_create__user_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/magin_5"
+                            android:gravity="center"
+                            android:text="2019-03-26"
+                            android:textColor="#ff999999"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/ecatalog_create__create"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/ffbfa574"
+        android:gravity="center"
+        android:text="@string/save1"
+        android:textColor="#ffffffff"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+</LinearLayout>

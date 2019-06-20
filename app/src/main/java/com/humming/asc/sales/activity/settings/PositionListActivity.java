@@ -45,13 +45,13 @@ public class PositionListActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_position_list);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.position));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         versionService = Application.getVersionService();
         pCIS = new ArrayList<PositionCoditionItem>();
         positionListView = (ListView) findViewById(R.id.content_position__listViews);
         positionListView.setVisibility(View.VISIBLE);
-        toolbar.setTitle(app.getString(R.string.position));
         initData();
 
     }
@@ -170,7 +170,7 @@ public class PositionListActivity extends AbstractActivity {
                 holder = (ItemHolder) row.getTag();
             }
             if (pCIS.get(position).isSelect()) {
-                row.setBackgroundResource(R.color.transparentCoditionright);
+                row.setBackgroundResource(R.color.mf_item_background);
             } else {
                 row.setBackgroundResource(R.color.colors);
             }

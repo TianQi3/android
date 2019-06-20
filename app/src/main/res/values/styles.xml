@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/MyActionBar</item>
+        <!--字体-->
+        <item name="android:fontFamily">@font/pingfang_medium</item>
 
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/activity_bg</item>
@@ -32,6 +34,12 @@
 
     </style>
 
+    <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
+        <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
     </style>
@@ -48,6 +56,12 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <!-- title text color -->
+        <item name="android:textColorPrimary">@color/WhiteBG</item>
+        <!-- subtitle text color -->
+        <item name="android:textColorSecondary">@color/actionbar_title_secondary</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay1" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- title text color -->
         <item name="android:textColorPrimary">@color/actionbar_title_primary</item>
         <!-- subtitle text color -->
         <item name="android:textColorSecondary">@color/actionbar_title_secondary</item>
@@ -61,11 +75,19 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+    <!--<style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
         <item name="tabSelectedTextColor">@color/tab_text_select</item>
         <item name="tabTextColor">@color/tab_text</item>
+        <item name="android:textSize">10sp</item>
         <item name="tabIndicatorColor">@color/tab_text_select</item>
+    </style>-->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/tab_text_select1</item>
+        <item name="tabTextColor">@color/tab_text1</item>
+        <item name="android:textSize">11sp</item>
+        <item name="tabIndicatorColor">@color/tab_text_select1</item>
     </style>
 
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
@@ -126,12 +148,12 @@
     </style>
 
     <style name="editableItemRightArrow">
-        <item name="android:layout_width">10dp</item>
-        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_marginLeft">10dp</item>
         <!--<item name="android:layout_marginRight">10dp</item>-->
-        <item name="android:src">@drawable/right_w</item>
+        <item name="android:src">@mipmap/common_action_nextpage</item>
     </style>
 
     <style name="editableswitch">
@@ -212,4 +234,18 @@
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_weight">1</item>
     </style><!---->
+    <style name="TRM_ANIM_STYLE">
+        <item name="android:windowEnterAnimation">@anim/trm_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/trm_popup_exit</item>
+    </style>
+
+    <style name="CustomDialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@drawable/dialog_custom_bg</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
 </resources>

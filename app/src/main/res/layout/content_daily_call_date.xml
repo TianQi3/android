@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
-    android:background="@drawable/activity_bg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_daily_call_date">
+
     <com.humming.asc.sales.component.Loading
         android:id="@+id/activity_loading"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:gravity="center" />
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -47,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_vertical"
+                android:background="@color/WhiteBG"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -55,11 +58,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginRight="5dp"
-                    android:background="@color/colorAccents"
                     android:gravity="center"
                     android:text="@string/today"
-                    android:textColor="#ffffff"
-                    android:textSize="17sp" />
+                    android:textColor="@color/ffbfa574"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/date_text"
@@ -67,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/ffbfa574"
                     android:textSize="20sp" />
 
                 <TextView
@@ -78,7 +81,7 @@
                     android:layout_marginLeft="10dp"
                     android:gravity="center_horizontal"
                     android:text=""
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/ffbfa574"
                     android:textSize="20sp" />
             </LinearLayout>
         </RelativeLayout>
@@ -86,7 +89,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#ede1d5"
+            android:background="@color/WhiteBG"
             android:orientation="vertical">
 
             <com.humming.asc.sales.component.main.plans.WeekDayView
@@ -98,16 +101,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="200dp" />
         </LinearLayout>
-        <!--<View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/WhiteBG"></View>-->
+
+        <!--
+                <View
+                    android:layout_ width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/WhiteBG"></View>
+        -->
+
         <ListView
             android:id="@+id/content_daily_call_date__listViews"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="0dp"></ListView>
+            android:divider="@color/f1f1f1"
+            android:dividerHeight="1dp"></ListView>
     </LinearLayout>
 </LinearLayout>

@@ -20,18 +20,18 @@
     </item>-->
     <item android:id="@+id/action_leads_search"
         android:title="@string/action_search"
-        android:icon="@drawable/icon_search"
+        android:icon="@mipmap/toolbar_action_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"
         />
     <item android:id="@+id/action_leads_condition"
         android:title="@string/action_condition"
-        android:icon="@drawable/icon_shaixuan"
+        android:icon="@mipmap/product_header_screen1"
         app:showAsAction="ifRoom|collapseActionView"
         />
     <item android:id="@+id/action_leads_add"
         android:title="@string/action_add"
-        android:icon="@drawable/ic_add"
+        android:icon="@mipmap/toolbar_action_add"
         app:showAsAction="ifRoom"/>
 
 </menu>

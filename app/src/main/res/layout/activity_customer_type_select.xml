@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -23,6 +24,7 @@
         android:id="@+id/activity_customer_type_select__keyaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
         android:padding="10dp"
         android:text="@string/menu_item_customer_k" />
 
@@ -30,12 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginLeft="3dp"
-        android:background="@color/transparentWhiteBG"></View>
+        android:background="@color/f1f1f1"></View>
 
     <TextView
         android:id="@+id/activity_customer_type_select__otheraccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
         android:padding="10dp"
         android:text="@string/menu_item_customer_o" />
 
@@ -43,12 +46,13 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginLeft="3dp"
-        android:background="@color/transparentWhiteBG"></View>
+        android:background="@color/f1f1f1"></View>
 
     <TextView
         android:id="@+id/activity_customer_type_select__leads"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
         android:padding="10dp"
         android:text="@string/label_leads" />
 
@@ -56,5 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginLeft="3dp"
-        android:background="@color/transparentWhiteBG"></View>
+        android:background="@color/ffbfa574"
+        android:visibility="gone"></View>
 </LinearLayout>

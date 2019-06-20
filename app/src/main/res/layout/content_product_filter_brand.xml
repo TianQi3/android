@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/WhiteBG"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.product.filter.FilterBrandActivity"
+    tools:showIn="@layout/activity_product_filter_brand">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/brand_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.humming.asc.sales.component.product.brand.AZWaveSideBarView
+            android:id="@+id/bar_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.humming.asc.sales.component.product.brand.AZWaveSideBarView>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/content_product_filter__brand_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/WhiteBG"
+            android:gravity="center"
+            android:paddingBottom="@dimen/magin_10"
+            android:paddingTop="@dimen/magin_10"
+            android:text="@string/reset"
+            android:textColor="@color/_f999"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/content_product_filter__brand_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ffbfa574"
+            android:gravity="center"
+            android:paddingBottom="@dimen/magin_10"
+            android:paddingTop="@dimen/magin_10"
+            android:text="@string/sumit"
+            android:textColor="@color/WhiteBG"
+            android:textSize="@dimen/text_size_15" />
+
+    </LinearLayout>
+</LinearLayout>

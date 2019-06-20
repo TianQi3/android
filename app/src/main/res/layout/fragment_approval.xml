@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/WhiteBG"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="Sample"
+                android:textColor="@color/f33"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_sample__daiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/daiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_sample_daiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/processing"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_sample__yiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/yiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_sample_yiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_sample__my_request"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/shenqing" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_sample_my_request__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/my_request"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_sample__my_banjie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/banjie" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_sample__my_banjie__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/my_approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/WhiteBG"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="Payment"
+                android:textColor="@color/f33"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_payment__daiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/daiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_payment_daiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/processing"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_payment__yiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/yiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_payment_yiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_payment__my_request"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/shenqing" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_payment_my_request__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/my_request"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_payment__my_banjie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/banjie" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_payment__my_banjie__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/my_approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/WhiteBG"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="MF Request"
+                android:textColor="@color/f33"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_mf_request__daiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/daiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_mf_daiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/processing"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_mf_request__yiban"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/yiban" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_mf_request_yiban__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_mf_request__my_request"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/shenqing" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_mf_my_request__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/my_request"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_approval_mf_request__my_banjie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/banjie" />
+
+                        <TextView
+                            android:id="@+id/fragment_approval_mf_request__my_banjie__num"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            android:textColor="@color/WhiteBG"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/my_approved"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

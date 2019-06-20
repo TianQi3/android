@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="53dp"
+    android:layout_marginRight="53dp"
+    android:background="@drawable/stock_warn_dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/magin_30">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/magin_15"
+            android:paddingRight="@dimen/magin_15"
+            android:text="@string/ecatalog_link_dialog"
+            android:textColor="#ff030303"
+            android:textSize="@dimen/text_size_17"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/magin_15"
+            android:gravity="center"
+            android:text="@string/link_address"
+            android:textColor="#ff030303"
+            android:textSize="@dimen/text_size_13" />
+
+        <TextView
+            android:id="@+id/ecatalog_send_dialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/magin_5"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:paddingLeft="@dimen/magin_20"
+            android:paddingRight="@dimen/magin_20"
+            android:singleLine="true"
+            android:textColor="#ff030303"
+            android:textSize="@dimen/text_size_13" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/magin_10"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="@string/link_send_customer"
+            android:textColor="#ff030303"
+            android:textSize="@dimen/text_size_13" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/magin_10"
+            android:background="#384D4D4D"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ecatalog_send_dialog_copy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/copy_lik"
+                android:textColor="#007AFF"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#384D4D4D"></View>
+
+            <TextView
+                android:id="@+id/ecatalog_send_dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/sumit"
+                android:textColor="#007AFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

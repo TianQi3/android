@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/e5e5e5"></View>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/magin_5"
+            android:paddingTop="@dimen/magin_5">
+
+            <TextView
+                android:id="@+id/item_pro_info_stock__years"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2016"
+                android:textColor="@color/ffbfa574"
+                android:textSize="@dimen/text_size_10"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_pro_info_stock__booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/magin_5"
+                android:text="Booking"
+                android:textColor="@color/ffbfa574"
+                android:textSize="@dimen/text_size_10"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__shwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__shwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__shwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__shwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__bjwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__bjwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__bjwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__bjwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__cdwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__cdwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__cdwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__cdwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__gzwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__gzwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__gzwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__gzwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__hkwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__hkwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__hkwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__hkwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_pro_info_stock__mcwh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/magin_5"
+                android:paddingTop="@dimen/magin_5">
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__mcwh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/ff448fe7"
+                    android:textSize="@dimen/text_size_10" />
+
+                <TextView
+                    android:id="@+id/item_pro_info_stock__mcwh_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/magin_5"
+                    android:singleLine="true"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_10" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_pro_info_stock__mcwh_warn"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/stock_icon_haswarning" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/e5e5e5"></View>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+</LinearLayout>

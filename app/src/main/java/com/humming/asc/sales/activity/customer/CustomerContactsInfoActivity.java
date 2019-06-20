@@ -1,11 +1,15 @@
 package com.humming.asc.sales.activity.customer;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
@@ -31,6 +35,8 @@ import java.util.List;
 public class CustomerContactsInfoActivity extends AbstractActivity {
     private ListView addresslistView, infoListView;
     public static final String CUS_CODE = "cus_id";
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 3;
+    private String number = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,18 +126,27 @@ public class CustomerContactsInfoActivity extends AbstractActivity {
             holder.callPhone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String number = finalHolder.phone.getText().toString();
+                    number = finalHolder.phone.getText().toString();
                     if (!"".equals(number)) {
-                        TelephonyManager mTelephonyManager=(TelephonyManager) context.getSystemService(Service.TELEPHONY_SERVICE);
+                        TelephonyManager mTelephonyManager = (TelephonyManager) context.getSystemService(Service.TELEPHONY_SERVICE);
                         int absent = mTelephonyManager.getSimState();
                         if (absent == TelephonyManager.SIM_STATE_ABSENT) {
                             Toast.makeText(Application.getInstance().getCurrentActivity(), "请确认sim卡是否插入或者sim卡暂时不可用！",
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            Intent phoneIntent = new Intent(
-                                    "android.intent.action.CALL", Uri.parse("tel:"
-                                    + number));
-                            startActivity(phoneIntent);
+                            if (ContextCompat.checkSelfPermission(CustomerContactsInfoActivity.this,
+                                    Manifest.permission.CALL_PHONE)
+                                    != PackageManager.PERMISSION_GRANTED) {
+
+                                ActivityCompat.requestPermissions(CustomerContactsInfoActivity.this,
+                                        new String[]{Manifest.permission.CALL_PHONE},
+                                        MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                            } else {
+                                Intent phoneIntent = new Intent(
+                                        "android.intent.action.CALL", Uri.parse("tel:"
+                                        + number));
+                                startActivity(phoneIntent);
+                            }
                         }
                     } else {
                         Toast.makeText(Application.getInstance().getCurrentActivity(), "电话为空",
@@ -208,5 +223,23 @@ public class CustomerContactsInfoActivity extends AbstractActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Intent phoneIntent = new Intent(
+                        "android.intent.action.CALL", Uri.parse("tel:"
+                        + number));
+                startActivity(phoneIntent);
+            } else {
+                // Permission Denied
+                //  Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

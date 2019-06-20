@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/activity_bg"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -20,32 +20,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorBlacks"
+        android:background="@color/WhiteBG"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.3"
-            android:textColor="@color/tab_text"
             android:gravity="center"
-            android:text="@string/sales" />
+            android:text="@string/sales"
+            android:textColor="@color/tab_text" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.1"
-            android:textColor="@color/tab_text"
             android:gravity="center"
-            android:text="@string/qty" />
+            android:text="@string/qty"
+            android:textColor="@color/tab_text" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/tab_text"
             android:gravity="center"
-            android:text="@string/Date" />
+            android:text="@string/Date"
+            android:textColor="@color/tab_text" />
     </LinearLayout>
 
     <ListView

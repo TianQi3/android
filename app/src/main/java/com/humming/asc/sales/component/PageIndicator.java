@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by PuTi(编程即菩提) on 12/29/15.
+ * Created by Zhtq on 12/29/15.
  */
 public class PageIndicator extends LinearLayout implements ViewPager.OnPageChangeListener,TabLayout.OnTabSelectedListener,View.OnClickListener {
     private final Drawable drawableIndicator;

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:background="@color/WhiteBG"
     android:orientation="vertical"
     android:paddingLeft="5dp"
     android:paddingTop="5dp">
@@ -27,6 +28,7 @@
                 <ImageView
                     android:id="@+id/list_item_daily_call_assoc_type"
                     android:layout_width="20dp"
+                    android:tint="@color/ffbfa574"
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp" />
@@ -36,22 +38,23 @@
                     android:id="@+id/list_item_daily_call_account_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
+                    android:layout_weight="1"
                     android:ellipsize="marquee"
+                    android:gravity="center_vertical"
                     android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
                     android:text="Name"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/list_item_daily_call_up_date"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    android:singleLine="true"
                     android:gravity="center_vertical|right"
+                    android:singleLine="true"
                     android:text="Name"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
@@ -63,15 +66,18 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:id="@+id/list_item_daily_call_state_type"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="#f00">
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/list_item_daily_call_state_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
 
                     <ImageView
                         android:id="@+id/list_item_daily_call_state"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginRight="0dp"
@@ -118,9 +124,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:ellipsize="end"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
                 </LinearLayout>
             </LinearLayout>
@@ -132,7 +138,8 @@
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/right_w" />
+            android:src="@drawable/right_w"
+            android:tint="#d5d5d5" />
     </LinearLayout>
 
     <LinearLayout

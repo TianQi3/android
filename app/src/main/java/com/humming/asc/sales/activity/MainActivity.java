@@ -1,5 +1,6 @@
 package com.humming.asc.sales.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
@@ -15,7 +16,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -27,6 +31,8 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,33 +44,45 @@ import com.humming.asc.dp.presentation.vo.cp.VersionInfoVO;
 import com.humming.asc.dp.presentation.vo.cp.postn.PositionInfoVO;
 import com.humming.asc.sales.Application;
 import com.humming.asc.sales.R;
+import com.humming.asc.sales.RequestData.FilterEntity;
 import com.humming.asc.sales.activity.Stocks.SimpleSelectorActivity;
 import com.humming.asc.sales.activity.plans.DailyCallDateActivity;
+import com.humming.asc.sales.activity.product.ProFilterActivity;
+import com.humming.asc.sales.activity.product.SearchProductActivity;
 import com.humming.asc.sales.component.LockableViewPager;
 import com.humming.asc.sales.component.ViewPagerAdapter;
+import com.humming.asc.sales.content.ApprovalContent;
 import com.humming.asc.sales.content.CustomerContent;
+import com.humming.asc.sales.content.MyContent;
 import com.humming.asc.sales.content.PlansContent;
+import com.humming.asc.sales.content.ProductContent;
 import com.humming.asc.sales.content.SettingsContent;
 import com.humming.asc.sales.content.StocksContent;
+import com.humming.asc.sales.model.ApprovalNewCountEvent;
+import com.humming.asc.sales.model.BackRefreshOneEvent;
 import com.humming.asc.sales.service.DailyCallService;
 import com.humming.asc.sales.service.DownLoadReceive;
 import com.humming.asc.sales.service.ICallback;
 import com.humming.asc.sales.service.VersionService;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AbstractActivity {
+public class MainActivity extends AbstractActivity implements View.OnClickListener {
     private ViewPagerAdapter adapter;
-    private LockableViewPager viewPager;
+    public static LockableViewPager viewPager;
 
     private long mExitTime; //退出时间
     private String CURRENT_KEYACCOUNT_LEADS_OTHER_ACCOUNT = "Key Account";
     private ArrayList<String> ItemCode;//存放task中的product里的itemcode
-    private int[] tabIcons = {R.drawable.icon_customer, R.drawable.icon_stock, R.drawable.icon_plans, R.drawable.icon_setting};
-    private int[] tabSelectedIcons = {R.drawable.icon_customer_selected, R.drawable.icon_stock_selected, R.drawable.icon_plans_selected, R.drawable.icon_setting_selected};
+    private int[] tabIcons = {R.mipmap.tab_icon_customer_n, R.mipmap.tab_icon_product_n, R.mipmap.tab_icon_plan_n, R.mipmap.tab_icon_approval_n, R.mipmap.tab_icon_my_n};
+    private int[] tabSelectedIcons = {R.mipmap.tab_icon_customer_s, R.mipmap.tab_icon_product_s, R.mipmap.tab_icon_plan_s, R.mipmap.tab_icon_approval_s, R.mipmap.tab_icon_my_s};
     //    private TabLayout.Tab[] tabs;
-    private final String[] titles = {"Key Account", "My Stocks", "My Plans", "My Settings"};
+    private final String[] titles = {"Key Account", "Products", "My Plans", "Approval", "My Settings"};
     private DailyCallService dailyCallService;
     private VersionService versionService;
     private MenuItem plansFilterMenu, seacherFilterMenu;
@@ -74,52 +92,78 @@ public class MainActivity extends AbstractActivity {
 
     private CustomerContent customerContent;
     private StocksContent stocksContent;
+    private ProductContent productContent;
     private PlansContent plansContent;
+    private ApprovalContent approvalContent;
     private SettingsContent settingsContent;
+    private MyContent myContent;
     public static Toolbar toolbar;
     public static Activity activity;
     private Application mAPP;
     private MyHandler mHandler;
     private VersionInfoVO versionInfo;
-    private DownloadManager downloadManager;
+    public DownloadManager downloadManager;
     public static String stockCityPosition = "";
-    public static final int CHAIN_CODE = 1009;
     public static boolean chainOrOther = false;
     public static ActionBar actionBar;
-    private DownLoadReceive receiver;
+    public DownLoadReceive receiver;
+    public static int REQUESTPERMISSION = 110;
+    private LinearLayout toolbarSearchLayout;
+    private LinearLayout toolbarSearch;
+    private TextView toolbarSearchEd;
+    private ImageView toolbarFilter;
+    private AppBarLayout appBarLayout;
+    private TextView filterDot;
+    public TabLayout.TabLayoutOnPageChangeListener onPageChangeListener;
+    public TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        appBarLayout = findViewById(R.id.activity_main_appbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         ItemCode = new ArrayList<String>();
         mAPP = (Application) getApplication();
         mHandler = new MyHandler();
         mAPP.setHandler(mHandler);
+
+        toolbarSearchLayout = (LinearLayout) findViewById(R.id.toolbar_search_layout);
+        toolbarSearch = (LinearLayout) findViewById(R.id.toolbar_search);
+        toolbarFilter = (ImageView) findViewById(R.id.toolbar_filter);
+        filterDot = findViewById(R.id.filter_dot);
+        toolbarSearchEd = (TextView) findViewById(R.id.toolbar_search_ed);
+        //toolbarSearch.setOnClickListener(this);
+        toolbarFilter.setOnClickListener(this);
+        toolbarSearchEd.setOnClickListener(this);
         downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.content_main_tab_layout);
-        final TabLayout.Tab[] tabs = {tabLayout.newTab().setText(R.string.tab_customer).setIcon(tabIcons[0]), tabLayout.newTab().setText(R.string.tab_stocks).setIcon(tabIcons[1]), tabLayout.newTab().setText(R.string.tab_plans).setIcon(tabIcons[2]), tabLayout.newTab().setText(R.string.tab_settings).setIcon(tabIcons[3])};
+        tabLayout = (TabLayout) findViewById(R.id.content_main_tab_layout);
+        final TabLayout.Tab[] tabs = {tabLayout.newTab().setText(R.string.tab_customer).setIcon(tabIcons[0]), tabLayout.newTab().setText(R.string.tab_stocks).setIcon(tabIcons[1]), tabLayout.newTab().setText(R.string.tab_plans).setIcon(tabIcons[2]), tabLayout.newTab().setText(R.string.tab_apprval).setIcon(tabIcons[3]), tabLayout.newTab().setText(R.string.tab_settings).setIcon(tabIcons[4])};
 
         tabLayout.addTab(tabs[0]);
         tabLayout.addTab(tabs[1]);
         tabLayout.addTab(tabs[2]);
         tabLayout.addTab(tabs[3]);
+        tabLayout.addTab(tabs[4]);
         activity = this;
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         viewPager = (LockableViewPager) findViewById(R.id.content_main_viewpager);
         initPageContent();
         List<View> list = new ArrayList<View>();
         list.add(customerContent);
-        list.add(stocksContent);
+        list.add(productContent);
         list.add(plansContent);
-        list.add(settingsContent);
+        list.add(approvalContent);
+        list.add(myContent);
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
         adapter = new ViewPagerAdapter(list);
-        viewPager.setSwipeable(true);
+        viewPager.setSwipeable(false);
         viewPager.setAdapter(adapter);
-        TabLayout.TabLayoutOnPageChangeListener onPageChangeListener = new TabLayout.TabLayoutOnPageChangeListener(tabLayout) {
+        onPageChangeListener = new TabLayout.TabLayoutOnPageChangeListener(tabLayout) {
             private int lastIndex = -1;
 
             @Override
@@ -133,6 +177,18 @@ public class MainActivity extends AbstractActivity {
                     setTitle(CustomerContent.Title);
                 } else {
                     setTitle(titles[position]);
+                }
+                if (position == 4) {
+                    appBarLayout.setVisibility(View.GONE);
+                    myContent.initData();
+                } else {
+                    appBarLayout.setVisibility(View.VISIBLE);
+                }
+                if (position == 1) {
+                    toolbarSearchLayout.setVisibility(View.VISIBLE);
+                    // productContent.initData();
+                } else {
+                    toolbarSearchLayout.setVisibility(View.GONE);
                 }
                 invalidateOptionsMenu();
             }
@@ -200,14 +256,24 @@ public class MainActivity extends AbstractActivity {
         });*/
 
         checkUpdate();
+
     }
+
+    /*public static void setPageChange(int position) {
+        onPageChangeListener.onPageSelected(position);
+        viewPager.setCurrentItem(position);
+        tabLayout.getTabAt(position).select();
+    }*/
 
     private void initPageContent() {
         Context context = getBaseContext();
         customerContent = new CustomerContent(context);
-        stocksContent = new StocksContent(context);
+        //  stocksContent = new StocksContent(context);
+        productContent = new ProductContent(context);
         plansContent = new PlansContent(context);
+        approvalContent = new ApprovalContent(context);
         settingsContent = new SettingsContent(context);
+        myContent = new MyContent(context);
     }
 
     @Override
@@ -399,6 +465,47 @@ public class MainActivity extends AbstractActivity {
             case CustomerContent.RESULT_CODE:
                 customerContent.updateData(text);
                 break;
+            case ProductContent.SEARCH_RESULT_CODE://关键字搜索
+                // 搜索返回关键字
+                filterDot.setVisibility(View.GONE);
+                Application.getInstance().setUdcListResponse(null);
+                toolbarSearchEd.setText(text);
+                productContent.serach(text);
+                break;
+            case ProductContent.SEARCH_RESULT_CODE2://筛选
+                FilterEntity datas = (FilterEntity) data.getExtras().getSerializable("data");
+                if (Application.getInstance().getUdcListResponse() != null && Application.getInstance().getUdcListResponse().isUpdate()) {
+                    filterDot.setVisibility(View.VISIBLE);
+                    if (datas != null) {
+                        productContent.filter(datas);
+                    }
+                } else {
+                    filterDot.setVisibility(View.GONE);
+                    if (datas != null) {
+                        productContent.filter(datas);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_search://搜索
+                //去产品搜索页面
+                Intent intent = new Intent(this, SearchProductActivity.class);
+                startActivityForResult(intent, ProductContent.SEARCH_RESULT_CODE);
+                break;
+            case R.id.toolbar_search_ed://搜索
+                //去产品搜索页面
+                Intent intent2 = new Intent(this, SearchProductActivity.class);
+                startActivityForResult(intent2, ProductContent.SEARCH_RESULT_CODE);
+                break;
+            case R.id.toolbar_filter:
+                Intent intent1 = new Intent(this, ProFilterActivity.class);
+                startActivityForResult(intent1, ProductContent.SEARCH_RESULT_CODE2);
+                break;
         }
     }
 
@@ -446,7 +553,10 @@ public class MainActivity extends AbstractActivity {
                 }
                 if (Float.parseFloat(versionInfo.getAndrVersion()) > Float.parseFloat((pi.versionName))) {
                     //提示更新
-                    showUpdataDialog();
+                    myContent.setNewVersionDot(true, versionInfo.getAndrVersion());
+                    if ("1".equals(versionInfo.getAndrNeedUpd())) {
+                        showUpdataDialog();
+                    }
                 } else {
                 }
             }
@@ -471,21 +581,26 @@ public class MainActivity extends AbstractActivity {
         }
         builer.setMessage(sb.toString());
         //当点确定按钮时从服务器上下载 新的apk 然后安装
-        builer.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        builer.setPositiveButton(Application.getInstance().getString(R.string.date_submit), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 String netType = GetNetworkType();
                 if ("wifi".equalsIgnoreCase(netType)) {
-                    downLoadApk();
+                    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        //申请权
+                        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUESTPERMISSION);
+                    } else {
+                        downLoadApk();
+                    }
                 } else {
                     dialog.dismiss();
                     showNetWorkDialog();
                 }
             }
         });
-        //如果是andrNeedUpd = 1; 必须更新  0 则可以选择取消
-        if ("0".equals(versionInfo.getAndrNeedUpd())) {
+        //如果是AndrMustUpdate = 1; 必须更新  0 则可以选择取消
+        if ("0".equals(versionInfo.getAndrMustUpdate())) {
             //当点取消按钮时进行登录
-            builer.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            builer.setNegativeButton(Application.getInstance().getString(R.string.date_cancel), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                 }
@@ -498,6 +613,7 @@ public class MainActivity extends AbstractActivity {
         dialog.show();
     }
 
+
     //提示更新的dailog
     private void showNetWorkDialog() {
         AlertDialog.Builder builer = new AlertDialog.Builder(this);
@@ -505,14 +621,19 @@ public class MainActivity extends AbstractActivity {
 
         builer.setMessage(Application.getInstance().getString(R.string.net_type_message));
         //当点确定按钮时从服务器上下载 新的apk 然后安装
-        builer.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        builer.setPositiveButton(Application.getInstance().getString(R.string.date_submit), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                downLoadApk();
+                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    //申请权
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUESTPERMISSION);
+                } else {
+                    downLoadApk();
+                }
             }
         });
 
         //当点取消按钮时进行登录
-        builer.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        builer.setNegativeButton(Application.getInstance().getString(R.string.date_cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 showUpdataDialog();
@@ -525,8 +646,7 @@ public class MainActivity extends AbstractActivity {
     }
 
     //下载apk
-
-    private void downLoadApk() {
+    public void downLoadApk() {
         //    final ProgressDialog pd;    //进度条对话框
         //   pd = new ProgressDialog(this);
         //   pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -541,7 +661,7 @@ public class MainActivity extends AbstractActivity {
                     String apkUrl = "http://101.231.101.70:8080/mobile-sales.apk";
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(apkUrl));
                     request.setDestinationInExternalPublicDir("download", "salesMobile.apk");
-                    request.setDescription("salesMobile新版本下载");
+                    request.setDescription(Application.getInstance().getResources().getString(R.string.new_version));
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
                     request.setMimeType("application/vnd.android.package-archive");
                     // 设置为可被媒体扫描器找到
@@ -567,6 +687,7 @@ public class MainActivity extends AbstractActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
         //   unregisterReceiver(receiver);
     }
 
@@ -632,6 +753,41 @@ public class MainActivity extends AbstractActivity {
         }
         return strNetworkType;
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUESTPERMISSION) {
+            if (permissions[0].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    downLoadApk();
+                } else {
+                    //提示没有权限，安装不了咯
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.no_perssion), Toast.LENGTH_SHORT).show();
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUESTPERMISSION);
+                }
+            }
+        }
+    }
+
+    //eventBus回调
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void handleEvent(ApprovalNewCountEvent myEvent) {
+        approvalContent.initData();
+    }
+
+    //eventBus回调
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void handleMessageEvent(BackRefreshOneEvent myEvent) {
+        if ("消息刷新".equals(myEvent.getMessage())) {
+            myContent.initData();
+        } else if ("报价单刷新".equals(myEvent.getMessage())) {
+            myContent.initData();
+        }
+    }
+
 }
+
 
 

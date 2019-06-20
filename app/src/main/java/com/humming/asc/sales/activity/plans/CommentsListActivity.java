@@ -287,7 +287,7 @@ public class CommentsListActivity extends AbstractActivity {
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -358,7 +358,7 @@ public class CommentsListActivity extends AbstractActivity {
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) centerView
+            viewHolder.type = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.upd = (TextView) centerView.findViewById(R.id.list_item_daily_call_up_date);
             viewHolder.salesName = (TextView) centerView.findViewById(R.id.list_item_daily_call_sales_name);
@@ -428,7 +428,7 @@ public class CommentsListActivity extends AbstractActivity {
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
             viewHolder.salesName.setText(dailyCallVO.getSaleName());
             viewHolder.commentsCount.setText(dailyCallVO.getCommentsCount() + "");

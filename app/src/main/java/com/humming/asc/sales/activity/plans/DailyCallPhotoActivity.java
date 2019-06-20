@@ -1,12 +1,16 @@
 package com.humming.asc.sales.activity.plans;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.Menu;
@@ -17,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.humming.asc.dp.presentation.vo.cp.ResultVO;
 import com.humming.asc.sales.Application;
@@ -48,6 +53,7 @@ import me.nereo.imagechoose.MultiImageSelectorActivity;
 public class DailyCallPhotoActivity extends AbstractActivity {
 
     private GridView imageGridView;
+    private static final int MY_PERMISSIONS_REQUEST_READ = 5;
     private static final int REQUEST_IMAGE = 2;
     private Application app = Application.getInstance();
     private Toolbar toolbar;
@@ -57,6 +63,7 @@ public class DailyCallPhotoActivity extends AbstractActivity {
     private ArrayList<ImageItem> finallyPathList;
     PhotoListArrayAdapter adapter;
     public String KEY_IMAGE = "fileName";
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 10;
     public String KEY_NAME = "files";
     private ArrayList<ImageItem> lists;
     public static final String PHOTO_LISTS = "photo_list";
@@ -90,21 +97,36 @@ public class DailyCallPhotoActivity extends AbstractActivity {
         imageChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selectedMode = MultiImageSelectorActivity.MODE_SINGLE;
-                // selectedMode = MultiImageSelectorActivity.MODE_MULTI;//裁切
-
-                boolean showCamera = true;//启用相机
-                boolean showText = false;//启用文本
-                int maxNum = 9;
-                Intent intent = new Intent(DailyCallPhotoActivity.this, MultiImageSelectorActivity.class);
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA, showCamera);// 是否显示拍摄图片
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_TEXT, showText);//显示文本
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT, maxNum);// 最大可选择图片数量
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE, selectedMode); // 选择模式
-                if (mSelectPath != null && mSelectPath.size() > 0) {// 回显已经选择的图片
-//                    intent.putExtra(MultiImageSelectorActivity.EXTRA_DEFAULT_SELECTED_LIST, mSelectPath);
+                if (ContextCompat.checkSelfPermission(DailyCallPhotoActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    //申请CAMERA的权限
+                    ActivityCompat.requestPermissions(DailyCallPhotoActivity.this,
+                            new String[]{Manifest.permission.CAMERA},
+                            MY_PERMISSIONS_REQUEST_READ_CONTACTS);
                 }
-                startActivityForResult(intent, REQUEST_IMAGE);
+                if (ContextCompat.checkSelfPermission(DailyCallPhotoActivity.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(DailyCallPhotoActivity.this,
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_READ);
+                } else {
+                    int selectedMode = MultiImageSelectorActivity.MODE_SINGLE;
+                    // selectedMode = MultiImageSelectorActivity.MODE_MULTI;//裁切
+
+                    boolean showCamera = true;//启用相机
+                    boolean showText = false;//启用文本
+                    int maxNum = 9;
+                    Intent intent = new Intent(DailyCallPhotoActivity.this, MultiImageSelectorActivity.class);
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA, showCamera);// 是否显示拍摄图片
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_TEXT, showText);//显示文本
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT, maxNum);// 最大可选择图片数量
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE, selectedMode); // 选择模式
+                    if (mSelectPath != null && mSelectPath.size() > 0) {// 回显已经选择的图片
+//                    intent.putExtra(MultiImageSelectorActivity.EXTRA_DEFAULT_SELECTED_LIST, mSelectPath);
+                    }
+                    startActivityForResult(intent, REQUEST_IMAGE);
+                }
             }
         });
 
@@ -140,6 +162,8 @@ public class DailyCallPhotoActivity extends AbstractActivity {
                     mSelectPaths.add(imageItem);
                 }
                 upLoadImage();
+
+
             } else {
                 // if (HDApp.getInstance().getSingleChooseFile() != null && HDApp.getInstance().getSingleChooseFile().getTotalSpace() > 0) {
                 //     Bitmap loacalBitmap = getLoacalBitmap(HDApp.getInstance().getSingleChooseFile());
@@ -402,5 +426,68 @@ public class DailyCallPhotoActivity extends AbstractActivity {
 
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_CONTACTS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED) {
+
+                        ActivityCompat.requestPermissions(this,
+                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                MY_PERMISSIONS_REQUEST_READ);
+                    } else {
+                        int selectedMode = MultiImageSelectorActivity.MODE_SINGLE;
+                        // selectedMode = MultiImageSelectorActivity.MODE_MULTI;//裁切
+
+                        boolean showCamera = true;//启用相机
+                        boolean showText = false;//启用文本
+                        int maxNum = 9;
+                        Intent intent = new Intent(DailyCallPhotoActivity.this, MultiImageSelectorActivity.class);
+                        intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA, showCamera);// 是否显示拍摄图片
+                        intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_TEXT, showText);//显示文本
+                        intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT, maxNum);// 最大可选择图片数量
+                        intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE, selectedMode); // 选择模式
+                        if (mSelectPath != null && mSelectPath.size() > 0) {// 回显已经选择的图片
+//                    intent.putExtra(MultiImageSelectorActivity.EXTRA_DEFAULT_SELECTED_LIST, mSelectPath);
+                        }
+                        startActivityForResult(intent, REQUEST_IMAGE);
+                    }
+                } else {
+                    Toast.makeText(DailyCallPhotoActivity.this, "请打开相机权限", Toast.LENGTH_LONG).show();
+
+                }
+                break;
+            case MY_PERMISSIONS_REQUEST_READ:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    int selectedMode = MultiImageSelectorActivity.MODE_SINGLE;
+                    // selectedMode = MultiImageSelectorActivity.MODE_MULTI;//裁切
+
+                    boolean showCamera = true;//启用相机
+                    boolean showText = false;//启用文本
+                    int maxNum = 9;
+                    Intent intent = new Intent(DailyCallPhotoActivity.this, MultiImageSelectorActivity.class);
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA, showCamera);// 是否显示拍摄图片
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_TEXT, showText);//显示文本
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT, maxNum);// 最大可选择图片数量
+                    intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE, selectedMode); // 选择模式
+                    if (mSelectPath != null && mSelectPath.size() > 0) {// 回显已经选择的图片
+//                    intent.putExtra(MultiImageSelectorActivity.EXTRA_DEFAULT_SELECTED_LIST, mSelectPath);
+                    }
+                    startActivityForResult(intent, REQUEST_IMAGE);
+
+                } else {
+                    // Permission Denied
+                    //  Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+                break;
+        }
     }
 }

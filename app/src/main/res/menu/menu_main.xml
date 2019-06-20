@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/action_search_customer"
-        android:icon="@drawable/icon_search"
+        android:icon="@mipmap/toolbar_action_search"
         android:title="@string/action_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView">
@@ -13,7 +13,7 @@
     </item>
     <item
         android:id="@+id/action_customer"
-        android:icon="@drawable/icon_shaixuan"
+        android:icon="@mipmap/product_header_screen1"
         android:title="XXX1"
         app:showAsAction="always">
         <menu>
@@ -52,14 +52,14 @@
     </item>-->
     <item
         android:id="@+id/action_date"
-        android:icon="@drawable/icon_wenhao"
+        android:icon="@mipmap/toolbar_action_date"
         android:title="@string/action_search"
         app:showAsAction="ifRoom|collapseActionView">
 
     </item>
     <item
         android:id="@+id/action_plans"
-        android:icon="@drawable/icon_shaixuan"
+        android:icon="@mipmap/product_header_screen1"
         android:title="Filter"
         app:showAsAction="always">
         <menu>

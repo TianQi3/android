@@ -40,8 +40,8 @@
 
     <ImageView
         android:id="@+id/list_item_client_contact_call"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:src="@drawable/call60x60" />
 

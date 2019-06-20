@@ -4,13 +4,14 @@
     tools:context=".activity.CustomerSelectorActivity">
     <item
         android:id="@+id/action_customer_search"
-        android:icon="@drawable/icon_search"
+        android:icon="@mipmap/toolbar_action_search"
         android:title="@string/action_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"/>
     <item
+
         android:id="@+id/action_customer_filter"
-        android:icon="@drawable/icon_shaixuan"
+        android:icon="@mipmap/product_header_screen1"
         android:visible="false"
         android:title="Filter"
         app:showAsAction="always">

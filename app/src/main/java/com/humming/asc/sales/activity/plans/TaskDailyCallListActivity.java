@@ -137,7 +137,7 @@ public class TaskDailyCallListActivity extends AbstractActivity implements ICall
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -170,7 +170,7 @@ public class TaskDailyCallListActivity extends AbstractActivity implements ICall
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) rowView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) rowView
+            viewHolder.type = (ImageView) rowView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.upd = (TextView) rowView.findViewById(R.id.list_item_daily_call_up_date);
             viewHolder.salesName = (TextView) rowView.findViewById(R.id.list_item_daily_call_sales_name);
@@ -218,7 +218,7 @@ public class TaskDailyCallListActivity extends AbstractActivity implements ICall
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
 
             viewHolder.salesName.setText(dailyCallVO.getSaleName());

@@ -7,7 +7,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
-        android:src="@drawable/city_40x40" />
+        android:src="@drawable/city_40x40"
+        android:tint="@color/ffbfa574" />
 
     <TextView
         android:id="@+id/list_item_inventory_detail_group_header__text"
@@ -17,9 +18,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_weight="1"
+        android:textStyle="bold"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/WhiteBG" />
+        android:textColor="@color/ffbfa574" />
 
     <TextView
         android:id="@+id/list_item_inventory_detail_group_header__icon"

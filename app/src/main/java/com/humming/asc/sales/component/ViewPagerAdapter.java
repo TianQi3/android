@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Created by PuTi(编程即菩提) on 1/7/16.
+ * Created by Zhtq on 1/7/16.
  */
 public class ViewPagerAdapter extends PagerAdapter {
     private final List<View> listView;

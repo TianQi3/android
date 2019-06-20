@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.humming.asc.sales.activity.product.ProductInfoAndStockActivity"
+    tools:showIn="@layout/activity_product_info_stock">
+
+    <!--<com.humming.asc.sales.component.LockableViewPager
+        android:id="@+id/content_main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp" />-->
+    <com.humming.asc.sales.content.product.ProductInfoContent
+        android:id="@+id/product_info_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"></com.humming.asc.sales.content.product.ProductInfoContent>
+
+    <com.humming.asc.sales.content.product.ProductStockContent
+        android:id="@+id/product_stock_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone"></com.humming.asc.sales.content.product.ProductStockContent>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/content_pro_info_collection"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/WhiteBG"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/content_pro_info_collection_icon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@mipmap/product_detail_action_collection_n" />
+
+                <TextView
+                    android:id="@+id/content_pro_info_collection_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/add_collect"
+                    android:textColor="@color/_f999"
+                    android:textSize="@dimen/text_size_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/content_pro_info_ecatalog_add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/ffbfa574"
+                android:gravity="center"
+                android:text="@string/add_ecatalog"
+                android:textColor="@color/WhiteBG"
+                android:textSize="@dimen/text_size_17"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

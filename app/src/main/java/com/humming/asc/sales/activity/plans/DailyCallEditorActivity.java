@@ -9,15 +9,19 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -41,14 +45,18 @@ import com.humming.asc.sales.activity.customer.CustomerTypeSelectorActivity;
 import com.humming.asc.sales.activity.settings.DraftsDailyCallListActivity;
 import com.humming.asc.sales.content.PlansContent;
 import com.humming.asc.sales.datebase.DBManger;
+import com.humming.asc.sales.model.BackRefreshEvent;
 import com.humming.asc.sales.model.DBDailycall;
 import com.humming.asc.sales.model.ImageItem;
 import com.humming.asc.sales.service.DailyCallService;
 import com.humming.asc.sales.service.ICallback;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class DailyCallEditorActivity extends AbstractActivity {
     private DailyCallDetailVO dailyCallDetail;
@@ -100,6 +108,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
     private String draftCome = "";
     String subjectName = "";
     String customerName;
+    String[] minuts = new String[]{"00", "30"};//间隔30的数组，用来表示可设置的分钟值
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -273,7 +283,9 @@ public class DailyCallEditorActivity extends AbstractActivity {
 
     private void setValue(DailyCallDetailVO dailyCallDetail) {
         salesTitleValue.setText(dailyCallDetail.getSaleName());
-        customerValue.setText(customerName);
+        Log.v("accountName:-----", dailyCallDetail.getAccountName());
+        customerValue.setText(dailyCallDetail.getAccountName());
+
         taskValue.setText(dailyCallDetail.getTaskName());
         subjectValue.setText(dailyCallDetail.getSubject());
         typeValue.setText(dailyCallDetail.getType());
@@ -813,6 +825,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                     if ("true".equalsIgnoreCase(ifTrueDCList)) {
                                         DailyCallListActivity.DCListActivity.finish();
                                     } else {
+                                        EventBus.getDefault().post(new BackRefreshEvent("1"));
                                     }
                                     if (getIntent().getStringExtra(TASK_COME) != null) {
                                         Intent intent1 = new Intent(getBaseContext(), TaskDailyCallListActivity.class);
@@ -831,8 +844,8 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                             //startActivity(intent);
                                             finish();
                                         } else {
-                                           // Intent intent = new Intent(Application.getInstance().getCurrentActivity(), DailyCallListActivity.class);
-                                           // startActivity(intent);
+                                            // Intent intent = new Intent(Application.getInstance().getCurrentActivity(), DailyCallListActivity.class);
+                                            // startActivity(intent);
                                             Toast.makeText(Application.getInstance().getCurrentActivity(), "修改Daily Call成功", Toast.LENGTH_SHORT).show();
                                             initDailyCall();
                                             finish();
@@ -908,12 +921,11 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                     } else if ("true".equals(getIntent().getStringExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL))) {
                                         Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
                                         CustomerDailyCallListActivity.DCListActivity.finish();
-                                       // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
-                                       // intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
-                                       // startActivity(intent);
+                                        // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
+                                        // intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
+                                        // startActivity(intent);
                                         finish();
-                                    }
-                                    else {
+                                    } else {
                                         initDailyCall();
                                         Bundle resultBundle = new Bundle();
                                         resultBundle.putString(
@@ -952,10 +964,11 @@ public class DailyCallEditorActivity extends AbstractActivity {
                                         initDailyCall();
                                         finish();
                                     } else {
+                                        EventBus.getDefault().post(new BackRefreshEvent("1"));
                                         if ("true".equals(getIntent().getStringExtra(CustomerDailyCallListActivity.CUSTOMER_DETAIL_ADD_DAILY_CALL))) {
                                             Toast.makeText(Application.getInstance().getCurrentActivity(), "添加Daily Call成功", Toast.LENGTH_SHORT).show();
                                             CustomerDailyCallListActivity.DCListActivity.finish();
-                                           // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
+                                            // Intent intent = new Intent(getBaseContext(), CustomerDailyCallListActivity.class);
                                             //intent.putExtra(CustomerDailyCallListActivity.ROW_ID, customerRowId);
                                             //startActivity(intent);
                                             finish();
@@ -1040,7 +1053,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
             result = true;
         } else if (!locationValue.getText().toString().equals(dailyCallDetail.getLocation().toString())) {
             result = true;
-        }else if (!acCompanyValue.getText().toString().equals(dailyCallDetail.getAcmpUserName().toString())) {
+        } else if (!acCompanyValue.getText().toString().equals(dailyCallDetail.getAcmpUserName().toString())) {
             result = true;
         } else if (!subjectValue.getText().toString().equals(dailyCallDetail.getSubject().toString())) {
             result = true;
@@ -1313,6 +1326,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
 
         DatePicker datePicker = (DatePicker) view.findViewById(R.id.content_popup_datepicker);
         TimePicker timePicker = (TimePicker) view.findViewById(R.id.content_popup_timepicker);
+        setNumberPickerTextSize(timePicker);
         timePicker.setVisibility(View.VISIBLE);
         timePicker.setIs24HourView(true);
         Calendar calendar = Calendar.getInstance();
@@ -1450,7 +1464,7 @@ public class DailyCallEditorActivity extends AbstractActivity {
             @Override
             public void onTimeChanged(TimePicker arg0, int hours, int minutes) {
                 DailyCallEditorActivity.this.hour = hours;
-                DailyCallEditorActivity.this.minute = minutes;
+                DailyCallEditorActivity.this.minute = minutes*30;
             }
         });
         TextView dateCancel = (TextView) view.findViewById(R.id.date_cancel);
@@ -1532,6 +1546,46 @@ public class DailyCallEditorActivity extends AbstractActivity {
             }
         });
     }
+
+    //设置时间间隔
+    private void setNumberPickerTextSize(ViewGroup viewGroup) {
+        List<NumberPicker> npList = findNumberPicker(viewGroup);
+        if (null != npList) {
+            for (NumberPicker mMinuteSpinner : npList) {
+//              System.out.println("mMinuteSpinner.toString()="+mMinuteSpinner.toString());
+                if (mMinuteSpinner.toString().contains("id/minute")) {//对分钟进行间隔设置
+
+                    mMinuteSpinner.setMinValue(0);
+                    mMinuteSpinner.setMaxValue(minuts.length - 1);
+                    mMinuteSpinner.setDisplayedValues(minuts);  //这里的minuts是一个String数组，就是要显示的分钟值
+                }
+                //对小时进行间隔设置 使用 if(mMinuteSpinner.toString().contains("id/hour")){}即可
+            }
+        }
+    }
+
+    private List<NumberPicker> findNumberPicker(ViewGroup viewGroup) {
+        List<NumberPicker> npList = new ArrayList<NumberPicker>();
+        View child = null;
+
+        if (null != viewGroup) {
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                child = viewGroup.getChildAt(i);
+                if (child instanceof NumberPicker) {
+                    npList.add((NumberPicker) child);
+                } else if (child instanceof LinearLayout) {
+                    List<NumberPicker> result = findNumberPicker((ViewGroup) child);
+                    if (result.size() > 0) {
+                        return result;
+                    }
+                }
+
+            }
+        }
+
+        return npList;
+    }
+
 
     public void initDailyCall() {
         dailyCallService.getSummary(new ICallback<CPSummaryResultVO>() {

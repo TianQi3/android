@@ -17,7 +17,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDarkss"
+            android:background="@color/WhiteBG"
             android:orientation="vertical"
             android:paddingBottom="20dp">
 
@@ -210,6 +210,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:tint="@color/ffbfa574"
                         android:src="@drawable/icon_kucun" />
 
                     <LinearLayout
@@ -220,7 +221,8 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:text="@string/activity_client_product__label_inventory" />
 
                         <TextView
@@ -237,6 +239,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
+                        android:visibility="gone"
                         android:background="@drawable/button_details_no_radius"
                         android:text="@string/activity_client_product__button_details" />
                 </LinearLayout>

@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 
 /**
- * Created by PuTi(编程即菩提) on 1/9/16.
+ * Created by Zhtq on 1/9/16.
  */
 public abstract class AbstractArrayAdapter<TypeViewHolder,TypeRowData> extends ArrayAdapter {
     private int resource;

@@ -126,7 +126,7 @@ public class LeadsDailyCallListActivity extends AbstractActivity implements ICal
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -158,7 +158,7 @@ public class LeadsDailyCallListActivity extends AbstractActivity implements ICal
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) rowView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) rowView
+            viewHolder.type = (ImageView) rowView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.upd = (TextView) rowView.findViewById(R.id.list_item_daily_call_up_date);
         }
@@ -205,7 +205,7 @@ public class LeadsDailyCallListActivity extends AbstractActivity implements ICal
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
         }
     }

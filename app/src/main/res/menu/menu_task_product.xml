@@ -5,7 +5,7 @@
     tools:context=".activity.plans.TaskProductListActivity">
     <item
         android:id="@+id/action_product_add"
-        android:icon="@drawable/ic_add"
+        android:icon="@mipmap/toolbar_action_add"
         android:title="@string/action_add"
         app:showAsAction="ifRoom" />
 </menu>

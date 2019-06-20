@@ -3,7 +3,7 @@ package com.humming.asc.sales.activity;
 import android.view.inputmethod.EditorInfo;
 
 /**
- * Created by PuTi(编程即菩提) on 1/6/16.
+ * Created by Zhtq on 1/6/16.
  */
 public class TextEditorData {
     private String title;

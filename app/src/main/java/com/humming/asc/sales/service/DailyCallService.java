@@ -1,5 +1,6 @@
 package com.humming.asc.sales.service;
 
+
 import com.humming.asc.dp.presentation.ro.cp.dailycall.AddDailyCallCommentRO;
 import com.humming.asc.dp.presentation.ro.cp.dailycall.AddDailyCallRO;
 import com.humming.asc.dp.presentation.ro.cp.dailycall.UpdateDailyCallRO;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by PuTi(编程即菩提) on 12/22/15.
+ * Created by Zhtq on 12/22/15.
  */
 public class DailyCallService extends AbstractService {
     public void query(ICallback callback, String pageNo) {
@@ -132,7 +133,7 @@ public class DailyCallService extends AbstractService {
     public void queryByCOnditionValue(ICallback callback, String menu, String menuValue) {
 
         Map<String, String> params = new HashMap<String, String>();
-        params.put("status", "Planned");
+        //params.put("status", "Planned");
         params.put(menu, menuValue);
         this.get(Config.URL_SERVICE_DAILY_CALL_QUERY, params, callback, DailyCallQueryResultVO.class, null);
     }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-   >
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -24,7 +23,9 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/f0f0f0"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -44,8 +45,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:background="@color/colorPrimaryDarks"
                         android:layout_marginTop="20dp"
+                        android:background="@color/WhiteBG"
                         android:orientation="vertical"
                         android:paddingBottom="30dp"
                         android:showDividers="beginning">
@@ -86,8 +87,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -109,8 +110,8 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
                                     android:gravity="center_vertical"
                                     android:text="MTD:" />
 
@@ -118,11 +119,12 @@
                                     android:id="@+id/activity_customer_message__mtd_count"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="5dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -139,8 +141,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -154,8 +156,8 @@
                                     android:id="@+id/activity_customer_message__last_ytd_count"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
 
@@ -171,11 +173,12 @@
                                     android:id="@+id/activity_customer_message__last_mtd_count"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="5dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -192,8 +195,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -206,16 +209,16 @@
                                 <TextView
                                     android:id="@+id/activity_customer_message__full_year"
                                     android:layout_width="0dp"
-                                    android:layout_marginRight="10dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
                                     android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_marginLeft="10dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
                                     android:text="Month:" />
@@ -224,11 +227,12 @@
                                     android:id="@+id/activity_customer_message__full_month"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="5dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -245,8 +249,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -260,15 +264,15 @@
                                     android:id="@+id/activity_customer_message__budget_year"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_marginLeft="10dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
                                     android:layout_weight="1"
                                     android:gravity="center_vertical"
                                     android:text="Month:" />
@@ -277,11 +281,12 @@
                                     android:id="@+id/activity_customer_message__budget_month"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginRight="5dp"
+                                    android:layout_weight="1"
                                     android:gravity="right|center_vertical"
                                     android:text="YID:" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -290,7 +295,7 @@
                                 android:paddingBottom="5dp"
                                 android:paddingTop="5dp"
                                 android:singleLine="true"
-                                android:text="状态"
+                                android:text="@string/state"
                                 android:textAppearance="?android:attr/textAppearanceMediumInverse"
                                 android:textColor="@color/WhiteBG" />
 
@@ -298,8 +303,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal">
 
 

@@ -34,6 +34,7 @@
                         android:id="@+id/leads_cus_type"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:tint="@color/ffbfa574"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="5dp" />
 
@@ -96,6 +97,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
+            android:tint="#d4d4d4"
+            android:paddingRight="@dimen/magin_5"
             android:layout_marginLeft="10dp"
             android:src="@drawable/right_w" />
     </LinearLayout>
@@ -105,5 +108,6 @@
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="35dp"
-        android:background="@drawable/bg_w"></LinearLayout>
+        android:visibility="gone"
+        android:background="@color/ffbfa574"></LinearLayout>
 </LinearLayout>

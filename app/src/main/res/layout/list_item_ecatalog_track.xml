@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/WhiteBG"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/magin_20"
+    android:paddingRight="@dimen/magin_20">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ecatalog_track" />
+
+        <TextView
+            android:id="@+id/item_ecatalog_track_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:textColor="#ff666666"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_ecatalog_track_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#ff999999"
+            android:textSize="9sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/ecatalog_track_line"
+            android:gravity="center"></TextView>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_ecatalog_track_img"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="23dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/magin_30"
+        android:layout_marginLeft="@dimen/magin_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_ecatalog_track_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#ff333333"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_ecatalog_track_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/magin_5"
+            android:textColor="#ff999999"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

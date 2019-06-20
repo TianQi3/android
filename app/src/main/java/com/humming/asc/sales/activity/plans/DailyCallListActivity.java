@@ -85,17 +85,17 @@ public class DailyCallListActivity extends AbstractActivity {
                 if ("1".equals(pageNos)) {
                     dclists = currentlist;
                     int sum = 0;
-                    if(currentlist!=null &&currentlist.size()>0){
+                    if (currentlist != null && currentlist.size() > 0) {
                         sum = currentlist.size();
+                        MyArrayAdapter arrayAdapter = new MyArrayAdapter(app.getCurrentActivity(),
+                                R.layout.list_item_view_pager_delete, currentlist, itemPageResArray, 0, "");
+                        listView.setAdapter(arrayAdapter);
                     }
                     getSupportActionBar().setTitle(app.getString(R.string.edit_task_daily_call) + "(" + sum + ")");
-                    MyArrayAdapter arrayAdapter = new MyArrayAdapter(app.getCurrentActivity(),
-                            R.layout.list_item_view_pager_delete, currentlist, itemPageResArray, 0, "");
-                    listView.setAdapter(arrayAdapter);
                 } else {
                     int currentSize = currentlist.size();
-                    int scorllCurrentItem =0;
-                    if(currentSize>=0){
+                    int scorllCurrentItem = 0;
+                    if (currentSize >= 0) {
                         scorllCurrentItem = dclists.size();
                     }
                     for (int i = 0; i < currentSize; i++) {
@@ -113,7 +113,7 @@ public class DailyCallListActivity extends AbstractActivity {
                 listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
                     @Override
                     public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-                        PageNo=1;
+                        PageNo = 1;
                         queryDailyCall("1");
                     }
 
@@ -140,14 +140,14 @@ public class DailyCallListActivity extends AbstractActivity {
             @Override
             public void onDataReady(DailyCallQueryResultVO data) {
                 currentlist = (ArrayList<DailyCallVO>) data.getData();
-                int scorllCurrentItem =0;
+                int scorllCurrentItem = 0;
 
                 mLoading.hide();
                 if ("1".equals(pageNos)) {
                     dclists = currentlist;
                 } else {
                     int currentSize = currentlist.size();
-                    if(currentSize>=0){
+                    if (currentSize >= 0) {
                         scorllCurrentItem = dclists.size();
                     }
                     for (int i = 0; i < currentSize; i++) {
@@ -165,7 +165,7 @@ public class DailyCallListActivity extends AbstractActivity {
                 listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
                     @Override
                     public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-                        keyWordPageNo =1;
+                        keyWordPageNo = 1;
                         QueryByName(keywords, "1");
                     }
 
@@ -198,7 +198,7 @@ public class DailyCallListActivity extends AbstractActivity {
                     dclists = currentlist;
                 } else {
                     int currentSize = currentlist.size();
-                    if(currentSize>=0){
+                    if (currentSize >= 0) {
                         scorllCurrentItem = dclists.size();
                     }
                     for (int i = 0; i < currentSize; i++) {
@@ -303,7 +303,7 @@ public class DailyCallListActivity extends AbstractActivity {
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -350,9 +350,9 @@ public class DailyCallListActivity extends AbstractActivity {
                             Application.getInstance().setDailyCallDetail4Edit(data1);
                             Intent intent = new Intent(getBaseContext(), DailyCallEditorActivity.class);
                             intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, data1.getAssocType());
-                            intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME,items.get(position).getAccountName());
+                            intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME, items.get(position).getAccountName());
                             if ("Key Account".equals(data1.getAssocType())) {
-                              //  intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, data1.getRowId());
+                                //  intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, data1.getRowId());
                                 intent.putExtra(DailyCallEditorActivity.TASK_ID, data1.getTaskId());
                             } else if ("Other Account".equals(data1.getAssocType())) {
                                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, data1.getOtherAccountId());
@@ -397,7 +397,7 @@ public class DailyCallListActivity extends AbstractActivity {
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) centerView
+            viewHolder.type = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.salesName = (TextView) centerView.findViewById(R.id.list_item_daily_call_sales_name);
             viewHolder.upd = (TextView) centerView.findViewById(R.id.list_item_daily_call_up_date);
@@ -468,7 +468,7 @@ public class DailyCallListActivity extends AbstractActivity {
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
             viewHolder.salesName.setText(dailyCallVO.getSaleName());
             viewHolder.commentsCount.setText(dailyCallVO.getCommentsCount() + "");
@@ -499,9 +499,9 @@ public class DailyCallListActivity extends AbstractActivity {
                     conditionMenu = "assoctype";
                 } else if ("sales".equalsIgnoreCase(conditionMenu)) {
                     conditionMenu = "sale";
-                }else if ("subject".equalsIgnoreCase(conditionMenu)){
+                } else if ("subject".equalsIgnoreCase(conditionMenu)) {
                     conditionMenu = "dcsubject";
-                }else if("region".equalsIgnoreCase(conditionMenu)){
+                } else if ("region".equalsIgnoreCase(conditionMenu)) {
                     conditionMenu = "region";
                 }
                 conditionPageNo = 1;

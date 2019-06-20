@@ -13,7 +13,13 @@
         android:id="@+id/content_main_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/main_tab_height" />
+        android:layout_marginBottom="61dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_above="@+id/content_main_tab_layout"
+        android:background="#ebebeb"></View>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/content_main_tab_layout"
@@ -21,9 +27,10 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_tab_height"
         android:layout_alignParentBottom="true"
-        android:background="?attr/colorPrimary"
+        android:background="@color/WhiteBG"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:tabTextAppearance="@style/MyCustomTabLayout" />
 
     <!--android:elevation="6dp"-->
     <!--android:layout_below="@+id/toolbar"-->

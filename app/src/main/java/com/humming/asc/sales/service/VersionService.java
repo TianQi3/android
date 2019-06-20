@@ -8,7 +8,7 @@ import com.humming.asc.sales.Config;
 import com.humming.asc.sales.model.PositionRequest;
 
 /**
- * Created by PuTi(编程即菩提) on 12/22/15.
+ * Created by Zhtq on 12/22/15.
  */
 public class VersionService extends AbstractService {
     public void query(ICallback callback) {

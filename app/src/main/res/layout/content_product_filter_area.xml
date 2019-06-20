@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.product.filter.FilterAreaActivity"
+    tools:showIn="@layout/activity_product_filter_area">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/WhiteBG"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/screen_icon_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_one"
+                    android:textColor="#ff333333"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/WhiteBG"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_30"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp">
+
+                <com.humming.asc.sales.component.product.TagFlowLayout
+                    android:id="@+id/content_product_filter_area_flowlayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                </com.humming.asc.sales.component.product.TagFlowLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/WhiteBG"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/screen_icon_two" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_two"
+                    android:textColor="#ff333333"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/WhiteBG"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/magin_30"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp">
+
+                <com.humming.asc.sales.component.product.TagFlowLayout
+                    android:id="@+id/content_product_filter_area_flowlayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                </com.humming.asc.sales.component.product.TagFlowLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/content_product_filter__area_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="@dimen/magin_15"
+                android:layout_marginRight="@dimen/magin_15"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/button_pro_common_submit"
+                android:gravity="center"
+                android:paddingBottom="@dimen/magin_10"
+                android:paddingTop="@dimen/magin_10"
+                android:text="@string/sumit"
+                android:textColor="@color/WhiteBG"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

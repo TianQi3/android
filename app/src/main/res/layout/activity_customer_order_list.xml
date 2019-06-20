@@ -23,6 +23,7 @@
         android:id="@+id/activity_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/f0f0f0"
         android:gravity="center" />
 
     <include
@@ -36,14 +37,15 @@
     <LinearLayout
         android:id="@+id/activity__body_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/f0f0f0">
 
         <ListView
             android:id="@+id/activity_client_order__list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:divider="#ffffff"
+            android:divider="@color/ffbfa574"
             android:dividerHeight="1px"></ListView>
     </LinearLayout>
 

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:background="@color/WhiteBG"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="5dp">
@@ -29,7 +30,8 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:tint="@color/ffbfa574" />
 
 
                 <com.humming.asc.sales.activity.MarqueeTextView
@@ -64,15 +66,19 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:id="@+id/list_item_daily_call_state_type"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="#f00">
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/list_item_daily_call_state_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tint="@color/ffbfa574" />
 
                     <ImageView
                         android:id="@+id/list_item_daily_call_state"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginRight="0dp"
@@ -165,11 +171,13 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/right_w" />
+            android:layout_marginRight="@dimen/magin_10"
+            android:src="@drawable/right_w"
+            android:tint="#d5d5d5" />
     </LinearLayout>
 
     <LinearLayout

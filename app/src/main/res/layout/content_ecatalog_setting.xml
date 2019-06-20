@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/WhiteBG"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.humming.asc.sales.activity.ecatalog.EcatalogSettingActivity"
+    tools:showIn="@layout/activity_ecatalog_setting">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/magin_15">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/read_notification"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <Switch
+                android:id="@+id/content_setting_ecatalog_read_notification_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textOff="@string/close"
+                android:textOn="@string/open" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ebebeb"
+            android:paddingLeft="@dimen/magin_15"
+            android:paddingRight="@dimen/magin_15"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/magin_15"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save_temp"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <Switch
+                android:id="@+id/content_setting_ecatalog_tempate_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textOff="@string/close"
+                android:textOn="@string/open" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ebebeb"
+            android:paddingLeft="@dimen/magin_15"
+            android:paddingRight="@dimen/magin_15"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/content_setting_ecatalog_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/magin_15"
+            android:layout_marginRight="@dimen/magin_15"
+            android:layout_marginTop="@dimen/magin_30"
+            android:background="@drawable/ecatalog_setting_radius_red"
+            android:gravity="center"
+            android:paddingBottom="@dimen/text_size_12"
+            android:paddingTop="@dimen/text_size_12"
+            android:text="@string/delete_ecatalog"
+            android:textColor="#ffa81435"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</LinearLayout>

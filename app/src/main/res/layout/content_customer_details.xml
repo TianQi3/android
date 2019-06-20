@@ -3,12 +3,140 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__customer_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_customer1"
+            app:labels="@string/customer_message">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__ar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_ar"
+            app:labels="@string/customer_ar">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__customer_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_order"
+            app:labels="@string/customer_order">
+
+        </com.humming.asc.sales.component.DetailsItem>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__gc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_customer1"
+            app:labels="@string/customer_cg">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_contract"
+            app:labels="@string/customer_contact">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__task"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_tasks"
+            app:labels="@string/customer_task">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__daily_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:icons="@drawable/icon_dailycall"
+            app:labels="@string/customer_dailycall"></com.humming.asc.sales.component.DetailsItem>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__keyaccount_daily_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_dailycall"
+            app:labels="@string/customer_dailycall">
+
+        </com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__mf_request"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icons="@drawable/icon_mf_request"
+            app:labels="@string/customer_mf_request"></com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></com.humming.asc.sales.component.DetailsItem>
+
+        <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__null"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"></com.humming.asc.sales.component.DetailsItem>
+    </LinearLayout>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -91,14 +219,15 @@
         <com.humming.asc.sales.component.DetailsItem
             android:id="@+id/content_customer_details__daily_call"
             android:layout_width="wrap_content"
-            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:visibility="gone"
             app:icons="@drawable/icon_dailycall"
             app:labels="@string/customer_dailycall">
 
         </com.humming.asc.sales.component.DetailsItem>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/content_customer_details__keyaccount_show"
         android:layout_width="match_parent"
@@ -116,37 +245,14 @@
             app:labels="@string/customer_dailycall">
 
         </com.humming.asc.sales.component.DetailsItem>
+
         <com.humming.asc.sales.component.DetailsItem
+            android:id="@+id/content_customer_details__mf_request"
             android:layout_width="wrap_content"
-            android:visibility="invisible"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             app:icons="@drawable/icon_dailycall"
-            app:labels="@string/customer_dailycall">
-
-        </com.humming.asc.sales.component.DetailsItem>
-    </LinearLayout>
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <com.humming.asc.sales.component.DetailsItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            app:icons="@drawable/icon_annual_call"
-            app:labels="ffff">
-
-        </com.humming.asc.sales.component.DetailsItem>
-
-        <com.humming.asc.sales.component.DetailsItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            app:icons="@drawable/icon_monthly_call"
-            app:labels="fff">
+            app:labels="@string/customer_mf_request">
 
         </com.humming.asc.sales.component.DetailsItem>
     </LinearLayout>-->

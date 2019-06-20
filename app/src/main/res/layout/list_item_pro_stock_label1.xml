@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/ffbfa574"
+        android:gravity="center"
+        android:text="@string/warehouse"
+        android:textColor="@color/WhiteBG"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="SHWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="BJWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="CDWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="GZWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="HKWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="MCWH"
+        android:textColor="@color/ffbfa574"
+        android:textSize="@dimen/text_size_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/e5e5e5"></View>
+
+</LinearLayout>
+

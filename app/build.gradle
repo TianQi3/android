@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 27
@@ -8,8 +9,13 @@ android {
         applicationId "com.humming.asc.sales"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 4
-        versionName "2.8"
+        versionCode 7
+        versionName "4.2"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters "armeabi", "armeabi-v7a", 'x86'
+        }
     }
     signingConfigs {
         relealse {
@@ -33,6 +39,8 @@ android {
             //      signingConfig signingConfigs.relealse
         }
     }
+
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/NOTICE'
@@ -61,8 +69,23 @@ dependencies {
     compile files('libs/httpcore-4.3.2.jar')
     compile files('libs/httpmime-4.3.5.jar')
     compile files('libs/universal-image-loader-1.9.0.jar')
-    compile files('libs/vo.jar')
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'org.greenrobot:eventbus:3.1.1'
+    implementation files('libs/vo.jar')
+    implementation files('libs/ecatalog.jar')
 
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.githang:status-bar-compat:0.3'
+
+    //ali推送
+    compile 'com.aliyun.ams:alicloud-android-utils:1.1.3'
+    compile 'com.aliyun.ams:alicloud-android-beacon:1.0.1'
+    compile 'com.aliyun.ams:alicloud-android-ut:5.4.0'
+    compile 'com.aliyun.ams:alicloud-android-push:3.1.4'
 }

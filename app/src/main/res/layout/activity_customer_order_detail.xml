@@ -22,11 +22,14 @@
         android:id="@+id/activity_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/f0f0f0"
         android:gravity="center" />
+
     <LinearLayout
         android:id="@+id/activity__body_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/f0f0f0"
         android:orientation="vertical">
 
         <LinearLayout
@@ -35,7 +38,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDarkss"
+            android:background="@color/WhiteBG"
             android:orientation="vertical"
             android:paddingBottom="30dp">
 
@@ -66,8 +69,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="0dp"
@@ -84,8 +87,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="0dp"
@@ -143,8 +146,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:divider="#ffffff"
-            android:dividerHeight="1px"></ListView>
+            android:divider="@color/ffbfa574"
+            android:dividerHeight="1px"
+            android:scrollbars="none"></ListView>
     </LinearLayout>
 
 </LinearLayout>

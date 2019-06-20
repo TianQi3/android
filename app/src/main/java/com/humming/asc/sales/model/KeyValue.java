@@ -1,7 +1,7 @@
 package com.humming.asc.sales.model;
 
 /**
- * Created by PuTi(编程即菩提) on 1/7/16.
+ * Created by Zhtq on 1/7/16.
  */
 public final class KeyValue{
     private String key;

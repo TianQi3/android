@@ -14,19 +14,32 @@
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <!--推送-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".Application"
         android:allowBackup="true"
-        android:icon="@mipmap/icon_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,84 +50,105 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.plans.DailyCallListActivity"
             android:label="@string/title_activity_my_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerDetailsActivity"
             android:label="@string/title_activity_customer_detials"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerSelectorActivity"
             android:label="@string/title_activity_customer_selector"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".activity.plans.LeadsListActivity"
             android:label="@string/title_activity_my_leads"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallEditorActivity"
             android:label="@string/title_activity_edit_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallConditionActivity"
             android:label="@string/title_activity_my_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TextEditorActivity"
             android:label="@string/title_activity_text_editor"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".activity.plans.TaskListActivity"
             android:label="@string/title_activity_task_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskConditionActivity"
             android:label="@string/title_activity_task_condition"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".activity.plans.TaskAddActivity"
             android:label="@string/task_add"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskEditActivity"
             android:label="@string/edit_add"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskProductListActivity"
             android:label="@string/edit_product"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskProductEditActivity"
             android:label="@string/edit_product"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskProductItemCodeListActivity"
             android:label="@string/edit_product_item_code"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TypeAndStatusSelectActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallTaskListActivity"
             android:label="@string/title_activity_task_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallCommentsListActivity"
             android:label="@string/comments"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.TaskDailyCallListActivity"
             android:label="@string/title_activity_my_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallPhotoActivity"
             android:label="@string/title_activity_daily_call_photo"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="me.nereo.imagechoose.MultiImageSelectorActivity"
@@ -133,115 +167,328 @@
         <activity
             android:name=".activity.plans.LeadsAddActivity"
             android:label="@string/title_activity_add_leads"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.LeadsClassesAndStatusSelectActivity"
             android:label="@string/title_activity_add_leads"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.LeadsConditionActivity"
             android:label="@string/title_activity_leads_condition"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.CommentsListActivity"
             android:label="@string/comments"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.LeadsDailyCallListActivity"
             android:label="@string/daily_call_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.InventoryListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.SimpleSelectorActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerMessageActivity"
             android:label="@string/customer_message"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerARActivity"
             android:label="@string/customer_ar"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.ProductDetailActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.InventoryDetailActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.WOTSListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Stocks.BookingListActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerCGActivity"
             android:label="@string/customer_cg"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerOrderActivity"
             android:label="@string/customer_order"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerOrderDetailActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerTaskListActivity"
             android:label="@string/title_activity_task_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerDailyCallListActivity"
             android:label="@string/title_activity_my_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerContactsInfoActivity"
             android:label="@string/title_activity_info_address"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.UserMangerActivity"
             android:label="@string/user_manger"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.customer.CustomerTypeSelectorActivity"
             android:label="@string/type"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.MyDraftsActivity"
             android:label="@string/drafts"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.DraftsTaskListActivity"
             android:label="@string/title_activity_task_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.DraftsDailyCallListActivity"
             android:label="@string/customer_dailycall"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.DraftsLeadsListActivity"
             android:label="@string/label_leads"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DcImageDetailActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.settings.PositionListActivity"
             android:label="@string/position"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.DailyCallDateActivity"
             android:label="@string/title_activity_my_daily_call"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.ProductCalculatorActivity"
             android:label="@string/activity_client_product__button_calculator"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.plans.AcCompanyListActivity"
             android:label="@string/activity_label_accompany"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.settings.MySettingActivity"
+            android:label="@string/user_manger"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".activity.approval.CustomerListActivity"
+            android:label="@string/tab_customer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.approval.PaymentInfoActivity"
+            android:label="Payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.approval.PaymentListActivity"
+            android:label="Payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.approval.SampleInfoActivity"
+            android:label="Sample"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.approval.SampleListActivity"
+            android:label="Sample"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.customer.CustomerMFInfoActivity"
+            android:label="MF"
+
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.customer.CustomerMFItemCodeListActivity"
+            android:label="Item Code"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.customer.CustomerMFListActivity"
+            android:label="MF"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.customer.CustomerMFRequestActivity"
+            android:label="MF Request"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.approval.MFListActivity"
+            android:label="MF Request"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.customer.CustomerMFEditActivity"
+            android:label="MF Request"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.SearchProductActivity"
+            android:label="Search"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".activity.product.BookingListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.ProductInfoAndStockActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.ProFilterActivity"
+            android:label="@string/filtera"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.filter.FilterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.filter.FilterPriceActivity"
+            android:label="@string/select_price1"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.filter.FilterAreaActivity"
+            android:label="@string/select_areas"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.product.filter.FilterBrandActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.MyEcatalogActivity"
+            android:label="@string/my_ecatalog"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.CreateEcatalogActivity"
+            android:label="@string/create_ecatalog"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/ecatalog_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogSettingActivity"
+            android:label="@string/ecatalog_setting"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogTrackActivity"
+            android:label="@string/ecatalog_track"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogEditActivity"
+            android:label="@string/ecatalog_edit"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.settings.MyMessageActivity"
+            android:label="@string/my_message"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.settings.MyCollectActivity"
+            android:label="@string/collect"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogWebViewActivity"
+            android:label="@string/see"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ecatalog.EcatalogAddProActivity"
+            android:label="@string/add_pro"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.product.filter.FilterChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <!--阿里推送-->
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="26257986" /> <!-- 请填写你自己的- appKey -->
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="4fa4931c7a03a72d74d433ba4122680b" /> <!-- 请填写你自己的appSecret -->
+
+
+        <!-- 消息接收监听器 （用户可自主扩展） -->
+        <receiver
+            android:name="com.humming.asc.sales.service.MyMessageReceiver"
+            android:exported="false"> <!-- 为保证receiver安全，建议设置不可导出，如需对其他应用开放可通过android：permission进行限制 -->
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

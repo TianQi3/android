@@ -23,6 +23,7 @@
         android:id="@+id/activity__body_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/f0f0f0"
         android:orientation="vertical">
 
         <ListView
@@ -31,7 +32,8 @@
             android:layout_height="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.4"></ListView>
+            android:layout_weight="0.35"
+            android:scrollbars="none"></ListView>
 
         <ListView
             android:id="@+id/activity_contact__list_view"
@@ -39,8 +41,8 @@
             android:layout_height="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="0.6"></ListView>
+            android:layout_weight="0.65"
+            android:scrollbars="none"></ListView>
     </LinearLayout>
 
 </LinearLayout>

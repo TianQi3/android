@@ -14,7 +14,7 @@ import android.view.View;
 import com.humming.asc.sales.R;
 
 /**
- * Created by PuTi(编程即菩提) on 12/31/15.
+ * Created by Zhtq on 12/31/15.
  */
 public class PieChart extends View {
     private int completedColor;

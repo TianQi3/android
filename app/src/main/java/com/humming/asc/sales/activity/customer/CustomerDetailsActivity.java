@@ -23,14 +23,14 @@ public class CustomerDetailsActivity extends AbstractActivity {
     public static final String CUSTOMER_CODE = "customer_code";
     public static final String CUSTOMER_ROW_ID = "row_ids";
     public static final String CUSTOMER_NAME = "cus_names";
-    private View keyAccountDCShow;
-    private DetailsItem cusMessage, cusAr, cusOrder, cusCg, cusTask, cusDailyCall, cusContact,keyDailyCall;
+    private DetailsItem cusMessage, cusAr, cusOrder, cusCg, cusTask, cusDailyCall, cusContact, keyDailyCall, mfRequest, nullItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.title_activity_customer_detials));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         cus_code = getIntent().getStringExtra(CustomerDetailsActivity.CUSTOMER_CODE);
@@ -45,7 +45,9 @@ public class CustomerDetailsActivity extends AbstractActivity {
         cusDailyCall = (DetailsItem) findViewById(R.id.content_customer_details__daily_call);
         cusContact = (DetailsItem) findViewById(R.id.content_customer_details__contact);
         keyDailyCall = (DetailsItem) findViewById(R.id.content_customer_details__keyaccount_daily_call);
-        keyAccountDCShow = findViewById(R.id.content_customer_details__keyaccount_show);
+        nullItem = (DetailsItem) findViewById(R.id.content_customer_details__null);
+        mfRequest = findViewById(R.id.content_customer_details__mf_request);
+        mfRequest.setOnClickListener(itemClickListener);
         cusMessage.setOnClickListener(itemClickListener);
         keyDailyCall.setOnClickListener(itemClickListener);
         cusAr.setOnClickListener(itemClickListener);
@@ -54,70 +56,82 @@ public class CustomerDetailsActivity extends AbstractActivity {
         cusDailyCall.setOnClickListener(itemClickListener);
         cusCg.setOnClickListener(itemClickListener);
         cusContact.setOnClickListener(itemClickListener);
-        if("Key Account".equalsIgnoreCase(type)){
+        if ("Key Account".equalsIgnoreCase(type)) {
             cusDailyCall.setVisibility(View.GONE);
             cusTask.setVisibility(View.VISIBLE);
-            keyAccountDCShow.setVisibility(View.VISIBLE);
-        }else{
+            keyDailyCall.setVisibility(View.VISIBLE);
+            nullItem.setVisibility(View.GONE);
+        } else {
             cusDailyCall.setVisibility(View.VISIBLE);
             cusTask.setVisibility(View.GONE);
-            keyAccountDCShow.setVisibility(View.GONE);
+            keyDailyCall.setVisibility(View.GONE);
+            nullItem.setVisibility(View.VISIBLE);
         }
     }
+
     View.OnClickListener itemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             onItemClick(v.getId());
         }
     };
+
     private void onItemClick(int id) {
         switch (id) {
             case R.id.content_customer_details__customer_message:
-                Intent intent = new Intent(this,CustomerMessageActivity.class);
-                intent.putExtra(CustomerMessageActivity.CUS_CODE,cus_code);
+                Intent intent = new Intent(this, CustomerMessageActivity.class);
+                intent.putExtra(CustomerMessageActivity.CUS_CODE, cus_code);
                 startActivity(intent);
                 break;
             case R.id.content_customer_details__ar:
-                Intent intent1 = new Intent(this,CustomerARActivity.class);
-                intent1.putExtra(CustomerARActivity.CUS_CODE,cus_code);
+                Intent intent1 = new Intent(this, CustomerARActivity.class);
+                intent1.putExtra(CustomerARActivity.CUS_CODE, cus_code);
                 startActivity(intent1);
                 break;
             case R.id.content_customer_details__customer_order:
-                Intent intentOrder = new Intent(this,CustomerOrderActivity.class);
-                intentOrder.putExtra(CustomerOrderActivity.CUS_CODE,cus_code);
+                Intent intentOrder = new Intent(this, CustomerOrderActivity.class);
+                intentOrder.putExtra(CustomerOrderActivity.CUS_CODE, cus_code);
                 startActivity(intentOrder);
                 break;
             case R.id.content_customer_details__gc:
-                Intent intent2 = new Intent(this,CustomerCGActivity.class);
-                intent2.putExtra(CustomerCGActivity.CUS_CODE,cus_code);
+                Intent intent2 = new Intent(this, CustomerCGActivity.class);
+                intent2.putExtra(CustomerCGActivity.CUS_CODE, cus_code);
                 startActivity(intent2);
                 break;
             case R.id.content_customer_details__task:
-                Intent intent3 = new Intent(this,CustomerTaskListActivity.class);
-                intent3.putExtra(CustomerTaskListActivity.ROW_ID,row_id);
-                intent3.putExtra(CustomerTaskListActivity.CUS_NAME,cus_name);
+                Intent intent3 = new Intent(this, CustomerTaskListActivity.class);
+                intent3.putExtra(CustomerTaskListActivity.ROW_ID, row_id);
+                intent3.putExtra(CustomerTaskListActivity.CUS_NAME, cus_name);
                 startActivity(intent3);
                 break;
             case R.id.content_customer_details__daily_call:
-                Intent intent4 = new Intent(this,CustomerDailyCallListActivity.class);
-                intent4.putExtra(CustomerDailyCallListActivity.CUS_NAME,cus_name);
-                intent4.putExtra(CustomerDailyCallListActivity.ROW_ID,row_id);
-                intent4.putExtra(CustomerDailyCallListActivity.OTHER_OR_KEY,"false");
+                Intent intent4 = new Intent(this, CustomerDailyCallListActivity.class);
+                intent4.putExtra(CustomerDailyCallListActivity.CUS_NAME, cus_name);
+                intent4.putExtra(CustomerDailyCallListActivity.ROW_ID, row_id);
+                intent4.putExtra(CustomerDailyCallListActivity.OTHER_OR_KEY, "false");
                 startActivity(intent4);
                 break;
             case R.id.content_customer_details__contact:
-                Intent intentContact = new Intent(this,CustomerContactsInfoActivity.class);
-                intentContact.putExtra(CustomerContactsInfoActivity.CUS_CODE,cus_code);
+                Intent intentContact = new Intent(this, CustomerContactsInfoActivity.class);
+                intentContact.putExtra(CustomerContactsInfoActivity.CUS_CODE, cus_code);
                 startActivity(intentContact);
                 break;
             case R.id.content_customer_details__keyaccount_daily_call:
-                Intent intentKeyDailyCall = new Intent(this,CustomerDailyCallListActivity.class);
-                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.CUS_NAME,cus_name);
-                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.ROW_ID,row_id);
-                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.OTHER_OR_KEY,"true");
+                Intent intentKeyDailyCall = new Intent(this, CustomerDailyCallListActivity.class);
+                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.CUS_NAME, cus_name);
+                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.ROW_ID, row_id);
+                intentKeyDailyCall.putExtra(CustomerDailyCallListActivity.OTHER_OR_KEY, "true");
                 startActivity(intentKeyDailyCall);
+                break;
+            case R.id.content_customer_details__mf_request:
+                Intent intent5 = new Intent(this, CustomerMFListActivity.class);
+                intent5.putExtra("cus_code", cus_code);
+                intent5.putExtra("cusrowId", row_id);
+                startActivity(intent5);
+                break;
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // getMenuInflater().inflate(R.menu.menu_task_add, menu);

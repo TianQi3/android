@@ -2,6 +2,7 @@ package com.humming.asc.sales.service;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -10,6 +11,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.humming.asc.dp.presentation.vo.ad.InsertMfRequestVO;
 import com.humming.asc.dp.presentation.vo.cp.AbsResultVO;
 import com.humming.asc.sales.Application;
 import com.humming.asc.sales.R;
@@ -23,7 +25,7 @@ import java.net.URLEncoder;
 import java.util.Map;
 
 /**
- * Created by PuTi(编程即菩提) on 1/4/16.
+ * Created by Zhtq on 1/4/16.
  */
 public abstract class AbstractService {
     static String urlEncodeUTF8(String s) {
@@ -77,7 +79,7 @@ public abstract class AbstractService {
                     urlEncodeUTF8(entry.getValue().toString())
             ));
         }
-
+        Log.v("url:----", sb.toString());
         return sb.toString();
     }
 
@@ -116,6 +118,7 @@ public abstract class AbstractService {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            Log.v("xxxxx", response);
                             parseJSON(response, typeReference, callback);
                         }
 
@@ -144,14 +147,18 @@ public abstract class AbstractService {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try {
+            Log.v("xxxxx", response);
             T result = mapper.readValue(response, resultVOClass);
-            callback.onDataReady(result);
-            /*if (result instanceof AbsResultVO) {
-                AbsResultVO absResultVO = (AbsResultVO) result;
-                if (absResultVO.getState() == -10 || absResultVO.getState() == 10) {
-                    backLogin();
+            if (result instanceof InsertMfRequestVO) {
+                InsertMfRequestVO insertMfRequestVO = (InsertMfRequestVO) result;
+                if (insertMfRequestVO.getState() == 0) {
+                    callback.onError(new Throwable(insertMfRequestVO.getMsg()));
+                } else {
+                    callback.onDataReady(result);
                 }
-            }*/
+            } else {
+                callback.onDataReady(result);
+            }
         } catch (IOException e) {
             handleException(callback, e);
         }
@@ -175,6 +182,9 @@ public abstract class AbstractService {
                 if (absResultVO.getState() == -10 || absResultVO.getState() == 10) {
                     backLogin();
                 }
+                if (absResultVO.getState() == 0) {
+
+                }
             }
         } catch (IOException e) {
             handleException(callback, e);
@@ -189,5 +199,4 @@ public abstract class AbstractService {
         ServiceError error = new ServiceError();
         callback.onError(error);
     }
-
 }

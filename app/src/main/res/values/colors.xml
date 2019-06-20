@@ -4,12 +4,13 @@
     <!--<color name="colorPrimaryDark">#303F9F</color>-->
     <!--<color name="colorAccent">#FF4081</color>-->
 
-    <color name="colorPrimary">#e8d8c9</color>
-    <color name="colorPrimaryDark">#e8d8c9</color>
+    <!--<color name="colorPrimary">#F3E6DC</color>-->
+    <color name="colorPrimary">#BFA574</color>
+    <color name="colorPrimaryDark">#BFA574</color>
     <color name="colorPrimaryDarkss">#80e8d8c9</color>
     <color name="colorPrimaryDarks">#50e8d8c9</color>
-    <color name="colorAccent">#643820</color>
-    <color name="colorAccents">#60643820</color>
+    <color name="colorAccent">#5A3D22</color>
+    <color name="colorAccents">#605A3D22</color>
     <color name="colorBlack">#000000</color>
     <color name="colors">#00000000</color>
     <color name="colorBlacks">#f2eded</color>
@@ -26,6 +27,9 @@
     <color name="tab_text_select">#f98e1a</color>
     <color name="tab_text">#9A9997</color>
 
+    <color name="tab_text_select1">#BFA574</color>
+    <color name="tab_text1">#999999</color>
+
     <color name="arcBackgroundColor">#eee</color>
     <color name="completedColor">#54d795</color>
     <color name="plannedColor">#fbb03b</color>
@@ -41,7 +45,7 @@
 
     <color name="delete_orange">#FF9001</color>
     <color name="delete_green">#22B173</color>
-    <color name="delete_blue">#3FA3EF </color>
+    <color name="delete_blue">#3FA3EF</color>
     <color name="delete_red">#FF0000</color>
 
     <color name="condition_left">#D4D1CE</color>
@@ -49,4 +53,34 @@
     <color name="condition_right">#EFEEEE</color>
     <color name="list_item_content_color">#15120d</color>
     <color name="list_item_label_color">#3f4146</color>
+
+
+    <!--MF-->
+    <color name="mf_item_background">#E9D0B5</color>
+    <color name="mf_item_left_text">#82664C</color>
+    <color name="_9F8A76">#9F8A76</color>
+    <color name="_f999">#ff999999</color>
+
+    <!--product-->
+    <color name="_666">#666</color>
+    <color name="f0f0f0">#f0f0f0</color>
+    <color name="ffab22">#FFAB22</color>
+    <color name="f33">#ff333333</color>
+    <color name="ff6311">#FF6311</color>
+    <color name="f1f1f1">#F1F1F1</color>
+    <color name="ff448fe7">#ff448fe7</color>
+    <color name="ffbfa574">#ffbfa574</color>
+    <color name="_448fe7">#448FE7</color>
+    <color name="e5e5e5">#E5E5E5</color>
+    <color name="e8e8e8">#e8e8e8</color>
+    <color name="f5f5f5">#f5f5f5</color>
+    <color name="dedede">#dedede</color>
+    <color name="a81435">#A81435</color>
+    <color name="ffffedd8">#ffffedd8</color>
+    <color name="ff7ed321">#7ED321</color>
+    <color name="f5a623">#F5A623</color>
+    <color name="link_color">#448FE7</color>
+    <color name="yello">#FFE9E3B2</color>
+    <color name="fcfcfc">#fffcfcfc</color>
+    <color name="login_bg">#4C3F3E</color>
 </resources>

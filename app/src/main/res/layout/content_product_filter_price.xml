@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.product.filter.FilterPriceActivity"
+    tools:showIn="@layout/activity_product_filter_price">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/screen_icon_price" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_price_region"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/magin_30"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp">
+
+        <com.humming.asc.sales.component.product.TagFlowLayout
+            android:id="@+id/content_product_filter__flowlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        </com.humming.asc.sales.component.product.TagFlowLayout>
+
+        <TextView
+            android:id="@+id/filter_price_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_border_radius_gray"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/magin_10"
+            android:paddingRight="@dimen/magin_10"
+            android:paddingTop="2dp"
+            android:text="0-99"
+            android:textColor="#ff999999"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/filter_price_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/magin_10"
+            android:background="@drawable/bg_border_radius_gray"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/magin_10"
+            android:paddingRight="@dimen/magin_10"
+            android:paddingTop="2dp"
+            android:text="100-499"
+            android:textColor="#ff999999"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/filter_price_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/magin_10"
+            android:background="@drawable/bg_border_radius_gray"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/magin_10"
+            android:paddingRight="@dimen/magin_10"
+            android:paddingTop="2dp"
+            android:text="500-1000"
+            android:textColor="#ff999999"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/filter_price_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/magin_10"
+            android:background="@drawable/bg_border_radius_gray"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/magin_10"
+            android:paddingRight="@dimen/magin_10"
+            android:paddingTop="2dp"
+            android:text=">1000"
+            android:textColor="#ff999999"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/WhiteBG"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/screen_icon_price" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_price_region"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/magin_30"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp">
+
+        <EditText
+            android:id="@+id/filter_price_edittext1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_radius_gray"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/enter_price_low"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:padding="6dp"
+            android:textColor="@color/_f999"
+            android:textColorHint="@color/_f999"
+            android:textSize="@dimen/text_size_12"></EditText>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#d0d0d0"></View>
+
+        <EditText
+            android:id="@+id/filter_price_edittext2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_radius_gray"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/enter_price_hight"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:padding="6dp"
+            android:textColor="@color/_f999"
+            android:textColorHint="@color/_f999"
+            android:textSize="@dimen/text_size_12"></EditText>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content_product_filter__price_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/magin_15"
+        android:layout_marginRight="@dimen/magin_15"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_pro_common_submit"
+        android:gravity="center"
+        android:paddingBottom="@dimen/magin_10"
+        android:paddingTop="@dimen/magin_10"
+        android:text="@string/sumit"
+        android:textColor="@color/WhiteBG"
+        android:textSize="@dimen/text_size_15" />
+
+</LinearLayout>

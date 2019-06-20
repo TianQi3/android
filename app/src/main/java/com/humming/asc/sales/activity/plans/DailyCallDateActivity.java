@@ -26,11 +26,16 @@ import com.humming.asc.sales.R;
 import com.humming.asc.sales.activity.AbstractActivity;
 import com.humming.asc.sales.activity.MainActivity;
 import com.humming.asc.sales.component.main.plans.MonthDateView;
+import com.humming.asc.sales.model.BackRefreshEvent;
 import com.humming.asc.sales.model.DailyCallDate;
 import com.humming.asc.sales.service.DailyCallService;
 import com.humming.asc.sales.service.ICallback;
 import com.puti.view.list.AbstractItemPagerArrayAdapter;
 import com.puti.view.list.ItemViewPagerAdapter;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -50,7 +55,6 @@ public class DailyCallDateActivity extends AbstractActivity {
     private TextView tv_today;
     private List<String> dateList;
     private List<DailyCallDate> DCDateList;
-    private int Clickposition = 0;
     private int[] itemPageResArray;
     private String dates = "";
 
@@ -69,6 +73,9 @@ public class DailyCallDateActivity extends AbstractActivity {
         dailyCallService = Application.getDailyCallService();
         monthDateView = (MonthDateView) findViewById(R.id.monthDateView);
         itemPageResArray = new int[]{R.layout.list_item_daily_call, R.layout.list_item_view_page_right};
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
         queryDailyCallDateTotal();
         int month = monthDateView.getmSelMonth() + 1;
         StringBuilder sb = null;
@@ -223,7 +230,7 @@ public class DailyCallDateActivity extends AbstractActivity {
             Application.getInstance().setDailyCallDetail4Edit(null);
             Intent intent = new Intent(getBaseContext(), DailyCallEditorActivity.class);
             intent.putExtra(DailyCallEditorActivity.DAILY_CALL_DATE, dates + " " + "00:00");
-            intent.putExtra(DailyCallEditorActivity.IFDAILY_CALL_LIST, "true");
+            intent.putExtra(DailyCallEditorActivity.IFDAILY_CALL_LIST, "false");
             startActivity(intent);
             return true;
         }
@@ -234,7 +241,7 @@ public class DailyCallDateActivity extends AbstractActivity {
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -277,7 +284,7 @@ public class DailyCallDateActivity extends AbstractActivity {
                         public void onDataReady(DailyCallDetailResultVO data) {
 
                             DailyCallDetailVO data1 = data.getData();
-                            data1.setAccountName(currentlist.get(Clickposition).getAccountName());
+                            data1.setAccountName(currentlist.get(position).getAccountName());
                             Application.getInstance().setDailyCallDetail4Edit(data1);
                             Intent intent = new Intent(getBaseContext(), DailyCallEditorActivity.class);
                             intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, data1.getAssocType());
@@ -290,7 +297,10 @@ public class DailyCallDateActivity extends AbstractActivity {
                                 intent.putExtra(DailyCallEditorActivity.CUSTOMER_ROWID, data1.getTargetLeadId());
                                 intent.putExtra(DailyCallEditorActivity.ASSOC_TYPE, "Leads");
                             }
-                            intent.putExtra(DailyCallEditorActivity.IFDAILY_CALL_LIST, "true");
+                            Log.v("-----accountName:-----",data1.getAccountName());
+                            intent.putExtra(DailyCallEditorActivity.CUSTOMER_NAME,data1.getAccountName());
+                        //    intent.putExtra(DailyCallEditorActivity.IFDAILY_CALL_LIST, "true");
+                            intent.putExtra(DailyCallEditorActivity.IFDAILY_CALL_LIST, "false");
                             startActivity(intent);
                             updateViewPagerState(position, 0, true);
                             notifyDataSetChanged();
@@ -327,7 +337,7 @@ public class DailyCallDateActivity extends AbstractActivity {
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) centerView
+            viewHolder.type = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.upd = (TextView) centerView.findViewById(R.id.list_item_daily_call_up_date);
             viewHolder.salesName = (TextView) centerView.findViewById(R.id.list_item_daily_call_sales_name);
@@ -400,7 +410,7 @@ public class DailyCallDateActivity extends AbstractActivity {
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
             viewHolder.salesName.setText(dailyCallVO.getSaleName());
             viewHolder.commentsCount.setText(dailyCallVO.getCommentsCount() + "");
@@ -424,6 +434,35 @@ public class DailyCallDateActivity extends AbstractActivity {
         });
     }
 
+
+    //eventBus回调(Item Cost 返回的回调)
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void handleEvent(BackRefreshEvent backRefreshEvent) {
+        queryDailyCallDateTotal();
+        int month = monthDateView.getmSelMonth() + 1;
+        StringBuilder sb = null;
+        String months = "";
+        if (month < 10) {
+            sb = new StringBuilder();
+            sb.append("0" + month);
+            months = sb.toString();
+        } else {
+            months = month + "";
+        }
+        StringBuilder sbDay = null;
+        String days = "";
+        int day = monthDateView.getmSelDay();
+        if (day < 10) {
+            sbDay = new StringBuilder();
+            sbDay.append("0" + day);
+            days = sbDay.toString();
+        } else {
+            days = day + "";
+        }
+        dates = monthDateView.getmSelYear() + "-" + months + "-" + days;
+        queryDailyCall(dates);
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -432,4 +471,11 @@ public class DailyCallDateActivity extends AbstractActivity {
         }
         return false;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
 }

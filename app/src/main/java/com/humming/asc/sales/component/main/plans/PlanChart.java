@@ -12,7 +12,7 @@ import com.humming.asc.sales.model.KeyValue;
 import java.util.List;
 
 /**
- * Created by PuTi(编程即菩提) on 1/1/16.
+ * Created by Zhtq on 1/1/16.
  */
 public class PlanChart extends LinearLayout {
     private final TextView label1;

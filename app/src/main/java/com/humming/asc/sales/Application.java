@@ -1,9 +1,18 @@
 package com.humming.asc.sales;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.alibaba.sdk.android.push.CloudPushService;
+import com.alibaba.sdk.android.push.CommonCallback;
+import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,6 +30,9 @@ import com.humming.asc.sales.model.DBDailycall;
 import com.humming.asc.sales.model.DBLeads;
 import com.humming.asc.sales.model.DBTask;
 import com.humming.asc.sales.model.ImageItem;
+import com.humming.asc.sales.model.product.MLAndHKChannelEntity;
+import com.humming.asc.sales.model.product.UDCListResponse;
+import com.humming.asc.sales.service.ApprovalService;
 import com.humming.asc.sales.service.AuthService;
 import com.humming.asc.sales.service.CustomerService;
 import com.humming.asc.sales.service.DailyCallService;
@@ -33,11 +45,13 @@ import com.humming.asc.sales.service.MAuthService;
 import com.humming.asc.sales.service.SettingService;
 import com.humming.asc.sales.service.Taskservice;
 import com.humming.asc.sales.service.VersionService;
+import com.humming.dto.ecatalogResponse.user.UserResponse;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
- * Created by PuTi(编程即菩提) on 12/22/15.
+ * Created by Zhtq on 12/22/15.
  */
 public class Application extends android.app.Application {
     public static final String HEADER_TOKEN = "Token";
@@ -53,6 +67,8 @@ public class Application extends android.app.Application {
     private static InventoryService inventoryService;
     private static InfoService infoService;
     private static VersionService versionService;
+    private static ApprovalService approvalService;
+    private static Stack<Activity> activityStack;
 
     static {
         if (Config.DEBUG) {
@@ -67,6 +83,7 @@ public class Application extends android.app.Application {
             taskservice = new Taskservice();
             inventoryService = new InventoryService();
             versionService = new VersionService();
+            approvalService = new ApprovalService();
         }
     }
 
@@ -84,6 +101,9 @@ public class Application extends android.app.Application {
     private TextEditorData textEditorData;
     private Activity currentActivity;
     private ArrayList<String> ItemCodeLists;
+    private UDCListResponse udcListResponse;
+    private UserResponse userResponse;
+    private MLAndHKChannelEntity mlAndHKChannelEntity;
 
     // 数据库:
     private DBTask dbTask;
@@ -129,7 +149,7 @@ public class Application extends android.app.Application {
     /**
      * Log or request TAG
      */
-    public static final String TAG = "VolleyPatterns";
+    public static final String TAG = "Init";
 
     /**
      * Global request queue for Volley
@@ -140,19 +160,96 @@ public class Application extends android.app.Application {
      * A singleton instance of the application class for easy access in other places
      */
     private static Application sInstance;
+    private static CloudPushService pushService;
+
 
     @Override
     public void onCreate() {
         super.onCreate();
         // initialize the singleton
         sInstance = this;
+        initCloud();
+        initCloudChannel(this);
+    }
+
+    //兼容8.0以上收不到推送
+    private void initCloud() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            // 通知渠道的id
+            String id = "1";
+            // 用户可以看到的通知渠道的名字.
+            CharSequence name = "notification channel";
+            // 用户可以看到的通知渠道的描述
+            String description = "notification description";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            @SuppressLint("WrongConstant")
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            // 配置通知渠道的属性
+            mChannel.setDescription(description);
+            // 设置通知出现时的闪灯（如果 android 设备支持的话）
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            // 设置通知出现时的震动（如果 android 设备支持的话）
+            mChannel.enableVibration(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            //最后在notificationmanager中创建该通知渠道
+            mNotificationManager.createNotificationChannel(mChannel);
+        }
+    }
+
+
+    /**
+     * 初始化云推送通道
+     *
+     * @param applicationContext
+     */
+    private void initCloudChannel(Context applicationContext) {
+        PushServiceFactory.init(applicationContext);
+        pushService = PushServiceFactory.getCloudPushService();
+        pushService.register(applicationContext, new CommonCallback() {
+            @Override
+            public void onSuccess(String response) {
+                Log.d(TAG, "init cloudchannel success");
+                //pushService.getDeviceId();
+            }
+
+            @Override
+            public void onFailed(String errorCode, String errorMessage) {
+                Log.d(TAG, "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+            }
+        });
     }
 
     /**
      * @return Application singleton instance
      */
+
     public static synchronized Application getInstance() {
         return sInstance;
+    }
+
+
+    /**
+     * 结束所有Activity
+     */
+    public void finishAllActivity() {
+        for (int i = 0, size = activityStack.size(); i < size; i++) {
+            if (null != activityStack.get(i)) {
+                activityStack.get(i).finish();
+            }
+        }
+        activityStack.clear();
+    }
+
+    /**
+     * 添加Activity到堆栈
+     */
+    public void addActivity(Activity activity) {
+        if (activityStack == null) {
+            activityStack = new Stack<Activity>();
+        }
+        activityStack.add(activity);
     }
 
     /**
@@ -228,8 +325,19 @@ public class Application extends android.app.Application {
         return userId;
     }
 
-    public static void setUserId(String userId) {
+    public static void setUserId(final String userId) {
         Application.userId = userId;
+        pushService.bindAccount(userId, new CommonCallback() {
+            @Override
+            public void onSuccess(String s) {
+                Log.d(TAG, "init bind success");
+            }
+
+            @Override
+            public void onFailed(String s, String s1) {
+                Log.d(TAG, "init bind failed");
+            }
+        });
     }
 
     public Activity getCurrentActivity() {
@@ -304,6 +412,10 @@ public class Application extends android.app.Application {
         return versionService;
     }
 
+    public static ApprovalService getApprovalService() {
+        return approvalService;
+    }
+
     public void setDailyCallDetail4Edit(DailyCallDetailVO dailyCallDetail4Edit) {
         this.dailyCallDetail4Edit = dailyCallDetail4Edit;
     }
@@ -343,5 +455,30 @@ public class Application extends android.app.Application {
     // get方法
     public MainActivity.MyHandler getHandler() {
         return handler;
+    }
+
+
+    public UDCListResponse getUdcListResponse() {
+        return udcListResponse;
+    }
+
+    public void setUdcListResponse(UDCListResponse udcListResponse) {
+        this.udcListResponse = udcListResponse;
+    }
+
+    public UserResponse getUserResponse() {
+        return userResponse;
+    }
+
+    public void setUserResponse(UserResponse userResponse) {
+        this.userResponse = userResponse;
+    }
+
+    public MLAndHKChannelEntity getMlAndHKChannelEntity() {
+        return mlAndHKChannelEntity;
+    }
+
+    public void setMlAndHKChannelEntity(MLAndHKChannelEntity mlAndHKChannelEntity) {
+        this.mlAndHKChannelEntity = mlAndHKChannelEntity;
     }
 }

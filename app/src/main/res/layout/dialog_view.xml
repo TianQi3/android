@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 加载对话框布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#80000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminateTint="@color/colorPrimary"
+        android:indeterminateTintMode="src_atop" />
+
+    <ImageView
+        android:id="@+id/progress_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone" />
+
+    <!--android:indeterminateDrawable="@drawable/indeterminate_drawable"-->
+    <!--android:indeterminateDuration="1800"-->
+
+    <TextView
+        android:id="@+id/tvcontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Loading"
+        android:textColor="@color/WhiteBG"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</LinearLayout>

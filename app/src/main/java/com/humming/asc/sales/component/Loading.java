@@ -11,17 +11,17 @@ import com.humming.asc.sales.R;
 
 
 /**
- * Created by PuTi(编程即菩提) on 12/29/15.
+ * Created by Zhtq on 12/29/15.
  */
-public class Loading extends LinearLayout{
-    private  TextView mText;
+public class Loading extends LinearLayout {
+    private TextView mText;
 
     public Loading(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater layoutInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.content_loading_4_cd_layout, this);
-        mText = (TextView)findViewById(R.id.activity_loading_content__text);
+        mText = (TextView) findViewById(R.id.activity_loading_content__text);
         hide();
     }
 
@@ -33,11 +33,11 @@ public class Loading extends LinearLayout{
         mText.setText(stringRes);
     }
 
-    public void show(){
+    public void show() {
         setVisibility(View.VISIBLE);
     }
 
-    public void hide(){
+    public void hide() {
         setVisibility(View.GONE);
     }
 }

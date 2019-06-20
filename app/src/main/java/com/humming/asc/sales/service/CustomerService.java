@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by PuTi(编程即菩提) on 12/22/15.
+ * Created by Zhtq on 12/22/15.
  */
 public class CustomerService extends AbstractService {
     public void query(ICallback callback, String type, String pageno) {

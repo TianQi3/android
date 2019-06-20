@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_info_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.humming.asc.sales.activity.product.ProductInfoAndStockActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/WhiteBG"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/magin_15">
+
+        <ImageView
+            android:id="@+id/product_info_toolbar_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="@dimen/magin_10"
+            android:src="@mipmap/common_action_back_black" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/product_info_toolbar_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/product_info_toolbar_info_label"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/info"
+                    android:textColor="@color/ffbfa574"
+                    android:textSize="@dimen/text_size_17"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/product_info_toolbar_info"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/ffbfa574"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/product_info_toolbar_info_line"
+                android:layout_width="80dp"
+                android:layout_height="3dp"
+                android:layout_gravity="right"
+                android:background="@color/ffbfa574"
+                android:gravity="bottom|right"></View>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="23dp"
+            android:background="#f3f3f3"></View>
+
+        <LinearLayout
+            android:id="@+id/product_info_toolbar_stock_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/product_info_toolbar_stock_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_17"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/product_info_toolbar_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0)"
+                    android:textColor="@color/f33"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/product_info_toolbar_stock_line"
+                android:layout_width="80dp"
+                android:layout_height="3dp"
+                android:background="@color/ffbfa574"
+                android:gravity="bottom"
+                android:visibility="gone"></View>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/product_info_toolbar_share"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/common_action_share"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="-2dp"
+        android:background="@color/f0f0f0"></View>
+
+    <include layout="@layout/content_product_info_and_stock" />
+</LinearLayout>

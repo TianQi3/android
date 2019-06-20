@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/content_add_leads__sales_name"
@@ -29,7 +32,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__english_name"
@@ -51,7 +54,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__chinese_name"
@@ -73,7 +76,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__classes"
@@ -93,7 +96,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__status"
@@ -114,7 +117,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__region"
@@ -134,7 +137,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__province"
@@ -154,7 +157,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__city"
@@ -174,7 +177,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__address"
@@ -194,7 +197,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__channal"
@@ -214,7 +217,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__subchannal"
@@ -234,7 +237,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__chain"
@@ -254,7 +257,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__sub_chain"
@@ -274,7 +277,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__constact_frist"
@@ -296,7 +299,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__constact_last"
@@ -318,7 +321,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__jobtitle"
@@ -340,7 +343,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__workphone"
@@ -362,7 +365,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__mobilephone"
@@ -384,7 +387,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__email"
@@ -421,6 +424,7 @@
     <LinearLayout
         android:id="@+id/content_add_leads_trun_off"
         style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG"
         android:visibility="gone">
 
         <LinearLayout
@@ -442,7 +446,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__target_stage"
@@ -463,7 +467,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__estimate_month"
@@ -483,7 +487,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__estimate_sales"
@@ -503,7 +507,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer_demand"
@@ -525,7 +529,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__developement_plan"
@@ -547,7 +551,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer_tag"
@@ -569,7 +573,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer_tag2"
@@ -591,7 +595,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer3_tag"
@@ -613,7 +617,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer_tag4"
@@ -635,7 +639,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/content_add_leads__customer_tag5"
@@ -655,7 +659,9 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/content_add_leads__daily_call"

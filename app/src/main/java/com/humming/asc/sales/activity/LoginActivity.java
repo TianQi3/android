@@ -4,20 +4,26 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.githang.statusbar.StatusBarCompat;
 import com.humming.asc.dp.presentation.vo.AuthVO;
 import com.humming.asc.dp.presentation.vo.cp.baseinfo.MenuResultVO;
 import com.humming.asc.sales.Application;
 import com.humming.asc.sales.Config;
 import com.humming.asc.sales.R;
+import com.humming.asc.sales.component.CustomDialog;
 import com.humming.asc.sales.service.ICallback;
 import com.humming.asc.sales.service.InfoService;
 
@@ -37,6 +43,7 @@ public class LoginActivity extends AbstractActivity implements ICallback<AuthVO>
     public static final String SETTING_INFOS = "setting_infos";
     public static final String NAME = "NAME";
     public static final String PASSWORD = "PASSWORD";
+    private CustomDialog customDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +52,28 @@ public class LoginActivity extends AbstractActivity implements ICallback<AuthVO>
         SharedPreferences preferences = getSharedPreferences("language", Activity.MODE_PRIVATE);
         String currentLanguage = preferences.getString("currentLanguage", "");
         if (currentLanguage == null || "".equals(currentLanguage)) {
-
         } else {
             Configuration config = getResources().getConfiguration();//获取系统的配置
-            if ("chinese".equals(currentLanguage)) {
-                config.locale = Locale.ENGLISH;//将语言更改为简体中文
+            if ("english".equals(currentLanguage)) {
+                config.locale = Locale.ENGLISH;//将语言更改为英文
             } else {
-                config.locale = Locale.SIMPLIFIED_CHINESE;//将语言更改为英文
+                config.locale = Locale.SIMPLIFIED_CHINESE;//将语言更改为简体中文
             }
+            new WebView(Application.getInstance().getApplicationContext()).destroy();
             getResources().updateConfiguration(config, getResources().getDisplayMetrics());//更新配置
         }
+        StatusBarCompat.setStatusBarColor(this, this.getResources().getColor(R.color.login_bg), true);
         setContentView(R.layout.activity_login);
-        // Set up the login form.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.login_bg));
 
+            //底部导航栏
+            window.setNavigationBarColor(this.getResources().getColor(R.color.login_bg));
+        }
+        // Set up the login form.
+        customDialog = new CustomDialog(this, "Loading...");
         mUsernameView = (EditText) findViewById(R.id.username);
         mPasswordView = (EditText) findViewById(R.id.password);
         mSignInButton = (Button) findViewById(R.id.sign_in_button);
@@ -73,6 +89,7 @@ public class LoginActivity extends AbstractActivity implements ICallback<AuthVO>
         mUsernameView.setText(userName);
         mPasswordView.setText(passWord);
 //        mLoginFormView = findViewById(R.id.frame_login);
+
     }
 
     /**
@@ -140,12 +157,14 @@ public class LoginActivity extends AbstractActivity implements ICallback<AuthVO>
             mUsernameView.setEnabled(false);
             mPasswordView.setEnabled(false);
             mSignInButton.setEnabled(false);
-            mLoading.show();
+            customDialog.show();
+            //  mLoading.show();
         } else {
             mUsernameView.setEnabled(true);
             mPasswordView.setEnabled(true);
             mSignInButton.setEnabled(true);
-            mLoading.hide();
+            customDialog.dismiss();
+            //  mLoading.hide();
         }
     }
 
@@ -172,7 +191,6 @@ public class LoginActivity extends AbstractActivity implements ICallback<AuthVO>
 
     @Override
     public void onDataReady(AuthVO vo) {
-
         Application.setUserId(vo.getUserid());
         if (vo.getState() == 1) {
             Application.setIsLeadSale(vo.getIsLeadSale());

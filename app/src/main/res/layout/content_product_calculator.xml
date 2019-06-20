@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorActivityBgGradient1"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     android:padding="12dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -14,7 +14,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="120dip"
-        android:background="@drawable/screen_bg"
+        android:background="@drawable/stock_warn_dialog_bg"
         android:gravity="right"
         android:orientation="vertical"
         android:padding="12dip" >

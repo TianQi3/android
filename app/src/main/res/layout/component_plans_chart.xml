@@ -7,26 +7,26 @@
     <com.humming.asc.sales.component.main.plans.PieChart
         android:id="@+id/pie_chart"
         android:layout_width="160dp"
-        android:layout_height="@dimen/plans_chart_height" />
+        android:layout_height="180dp" />
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="@dimen/plans_chart_height"
+        android:layout_height="180dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/plans_chart_text_item_height"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/pie_chart_label1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:gravity="right|center_vertical"
-
-                android:id="@+id/pie_chart_label1"
                 android:text="label1" />
 
             <TextView
@@ -39,27 +39,28 @@
 
             <TextView
                 android:id="@+id/item_completed_value"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:gravity="left|center_vertical"
-                android:textColor="@color/colorAccent"
-                android:text="0" />
+                android:paddingRight="30dp"
+                android:text="0"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/plans_chart_text_item_height"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/pie_chart_label2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:gravity="right|center_vertical"
-                android:textColor="@color/colorAccent"
                 android:text="label2"
-                android:id="@+id/pie_chart_label2" />
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:layout_width="20dp"
@@ -71,27 +72,28 @@
 
             <TextView
                 android:id="@+id/item_planned_value"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:gravity="left|center_vertical"
-                android:textColor="@color/colorAccent"
-                android:text="0" />
+                android:paddingRight="30dp"
+                android:text="0"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/plans_chart_text_item_height"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/pie_chart_label3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:gravity="right|center_vertical"
-                android:textColor="@color/colorAccent"
                 android:text="label3"
-                android:id="@+id/pie_chart_label3" />
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:layout_width="20dp"
@@ -103,12 +105,12 @@
 
             <TextView
                 android:id="@+id/item_canceled_value"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:gravity="left|center_vertical"
-                android:textColor="@color/colorAccent"
-                android:text="0" />
+                android:paddingRight="30dp"
+                android:text="0"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
     </LinearLayout>
 

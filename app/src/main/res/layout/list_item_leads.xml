@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:orientation="vertical"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     android:paddingTop="5dp">
 
     <LinearLayout
@@ -35,20 +35,21 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="5dp" />
+                        android:layout_marginLeft="5dp"
+                        android:tint="@color/ffbfa574" />
 
                     <com.humming.asc.sales.activity.MarqueeTextView
                         android:id="@+id/leads_rowid"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
-                        android:singleLine="true"
                         android:ellipsize="marquee"
-                        android:textSize="18sp"
-                        android:marqueeRepeatLimit="marquee_forever"
                         android:gravity="center_vertical"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
                         android:text="Name"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
 
@@ -64,46 +65,47 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:paddingLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="2"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="35dp">
 
                 <TextView
                     android:id="@+id/leads_account_nameEn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:text="Name"
                     android:ellipsize="end"
+                    android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="Name"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
+
                 <TextView
                     android:id="@+id/leads_account_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:text="Name"
                     android:ellipsize="end"
+                    android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="Name"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
         </LinearLayout>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/right_w" />
+            android:src="@mipmap/common_action_nextpage" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="35dp"
-        android:background="@drawable/bg_w"></LinearLayout>
+        android:layout_marginTop="5dp"
+        android:background="@color/f1f1f1"></LinearLayout>
 </LinearLayout>

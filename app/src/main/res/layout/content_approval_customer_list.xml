@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.approval.CustomerListActivity"
+    tools:showIn="@layout/activity_approval_customer_list">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/WhiteBG"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/customer_search__layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/f1f1f1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="7dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="7dp">
+
+            <EditText
+                android:id="@+id/customer_search_ed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="@string/action_search"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccents" />
+
+            <ImageView
+                android:id="@+id/customer_search_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/search" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.humming.asc.sales.component.Loading
+        android:id="@+id/activity_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/customer_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * Created by PuTi(编程即菩提) on 12/30/15.
+ * Created by Zhtq on 12/30/15.
  */
 public class LockableViewPager extends ViewPager {
 

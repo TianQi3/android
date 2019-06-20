@@ -1,18 +1,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:padding="6dip"
-    android:paddingBottom="20dp" >
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="30dp"
-        android:background="@color/colorPrimaryDarkss"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp" >
+        android:background="@color/WhiteBG"
+        android:layout_marginTop="@dimen/magin_10"
+        android:paddingBottom="@dimen/magin_10"
+        android:paddingTop="10dp">
 
         <ImageView
             android:id="@+id/imageView1"
@@ -20,7 +17,8 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/icon_address" />
+            android:src="@drawable/icon_address"
+            android:tint="@color/ffbfa574" />
 
         <TextView
             android:id="@+id/list_item_client_address__address"
@@ -29,9 +27,11 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
+            android:paddingRight="@dimen/magin_15"
             android:text="Medium Text"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_15" />
 
     </LinearLayout>
 

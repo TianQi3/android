@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f0f0f0"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:background="@color/transparentWhiteBG"
+        android:background="@color/WhiteBG"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin">
@@ -50,7 +51,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
+
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__accompany"
             style="@style/editableItemGroup">
@@ -68,10 +70,11 @@
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__task"
@@ -97,6 +100,7 @@
     <LinearLayout
         android:id="@+id/activity_daily_call_editor__one"
         style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG"
         android:visibility="gone">
 
         <LinearLayout
@@ -117,8 +121,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
-
+            android:background="@color/f1f1f1"></View>
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__type_add"
             style="@style/editableItemGroup">
@@ -139,6 +142,7 @@
     <LinearLayout
         android:id="@+id/activity_daily_call_editor__two"
         style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG"
         android:visibility="gone">
 
         <LinearLayout
@@ -159,7 +163,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__end_time_add"
@@ -180,7 +184,8 @@
 
     <LinearLayout
         android:id="@+id/activity_daily_call_editor__one1"
-        style="@style/editableItemGroupBox">
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__subject"
@@ -198,11 +203,10 @@
 
             <ImageView style="@style/editableItemRightArrow" />
         </LinearLayout>
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__type"
@@ -222,7 +226,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__status"
@@ -242,7 +246,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__start_time"
@@ -262,7 +266,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__end_time"
@@ -282,7 +286,8 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__location"
@@ -304,7 +309,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
+            android:background="@color/f1f1f1"></View>
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__call_plan"
@@ -326,8 +331,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/bg_w"></View>
-
+            android:background="@color/f1f1f1"></View>
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__note"
             style="@style/editableItemGroup">
@@ -356,7 +360,9 @@
             style="@style/editableTargetLeadsSwitch"
             />
     </LinearLayout>-->
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__comment"
@@ -375,7 +381,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__follow_up"
@@ -394,7 +402,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout
+        style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__result"
@@ -415,7 +425,8 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/editableItemGroupBox">
+    <LinearLayout style="@style/editableItemGroupBox"
+        android:background="@color/WhiteBG">
 
         <LinearLayout
             android:id="@+id/activity_daily_call_editor__photo"

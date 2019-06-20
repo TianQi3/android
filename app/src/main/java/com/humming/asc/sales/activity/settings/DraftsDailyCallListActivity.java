@@ -98,7 +98,7 @@ public class DraftsDailyCallListActivity extends AbstractActivity {
 
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -232,7 +232,7 @@ public class DraftsDailyCallListActivity extends AbstractActivity {
             viewHolder.meetcount.setText(itemData.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(itemData.getCreateTime());
             viewHolder.commentsCount.setText("");
             viewHolder.name.setTextColor(getResources().getColor(R.color.colorAccent));

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -375,7 +374,7 @@ public class CustomerDailyCallListActivity extends AbstractActivity {
     }
 
     class ViewHolder {
-        View type;
+        ImageView type;
         ImageView assocType;
         TextView name;
         TextView subject;
@@ -458,7 +457,7 @@ public class CustomerDailyCallListActivity extends AbstractActivity {
                     .findViewById(R.id.list_item_daily_call_meetcount);
             viewHolder.state = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state);
-            viewHolder.type = (View) centerView
+            viewHolder.type = (ImageView) centerView
                     .findViewById(R.id.list_item_daily_call_state_type);
             viewHolder.upd = (TextView) centerView.findViewById(R.id.list_item_daily_call_up_date);
             viewHolder.btnComment.setOnClickListener(onbtnCommentsClickListener);
@@ -528,7 +527,7 @@ public class CustomerDailyCallListActivity extends AbstractActivity {
             viewHolder.meetcount.setText(dailyCallVO.getMeetingContent());
             viewHolder.state.setImageResource(stateImgRes);
             viewHolder.state.setBackgroundResource(stateBgRes);
-            viewHolder.type.setBackgroundResource(typeImgRes);
+            viewHolder.type.setImageResource(typeImgRes);
             viewHolder.upd.setText(dailyCallVO.getLastUpd());
             viewHolder.commentsCount.setText(dailyCallVO.getCommentsCount() + "");
         }

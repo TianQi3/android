@@ -3,7 +3,7 @@ package com.humming.asc.sales.service;
 import com.humming.asc.sales.Application;
 
 /**
- * Created by PuTi(编程即菩提) on 12/31/15.
+ * Created by Zhtq on 12/31/15.
  */
 public class MAuthService implements IAuthService {
     @Override

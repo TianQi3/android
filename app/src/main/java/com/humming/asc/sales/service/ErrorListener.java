@@ -15,7 +15,7 @@ import com.humming.asc.sales.Application;
 import com.humming.asc.sales.R;
 
 /**
- * Created by PuTi(编程即菩提) on 1/4/16.
+ * Created by Zhtq on 1/4/16.
  */
 public class ErrorListener implements Response.ErrorListener {
     protected ICallback callback;
