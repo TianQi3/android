@@ -70,6 +70,7 @@ public class MyContent extends LinearLayout implements View.OnClickListener {
     private String version = "";
     public DownLoadReceive receiver;
     public DownloadManager downloadManager;
+    private String andLink = "";
 
     public MyContent(Context context) {
         this(context, null);
@@ -238,8 +239,9 @@ public class MyContent extends LinearLayout implements View.OnClickListener {
         builder.show();
     }
 
-    public void setNewVersionDot(boolean b, String version) {
+    public void setNewVersionDot(boolean b, String version, String link) {
         this.version = version;
+        andLink = link;
         isUpdate = b;
         if (b) {
             versionDot.setVisibility(View.VISIBLE);
@@ -258,8 +260,8 @@ public class MyContent extends LinearLayout implements View.OnClickListener {
             @Override
             public void run() {
                 try {
-                    //  String apkUrl = versionInfo.getAndrLink();
-                    String apkUrl = "http://101.231.101.70:8080/mobile-sales.apk";
+                    String apkUrl = andLink;
+                    // String apkUrl = "http://101.231.101.70:8080/mobile-sales.apk";
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(apkUrl));
                     request.setDestinationInExternalPublicDir("download", "salesMobile.apk");
                     request.setDescription(Application.getInstance().getResources().getString(R.string.new_version));

@@ -56,6 +56,13 @@ public class SearchProductActivity extends AbstractActivity implements View.OnCl
         setContentView(R.layout.activity_product_search);
         StatusBarCompat.setStatusBarColor(this, this.getResources().getColor(R.color.WhiteBG), true);
         initView();
+        String text = getIntent().getStringExtra("text");
+        if ("".equals(text)) {
+
+        } else {
+            searchEd.setText(text);
+            searchEd.setSelection(searchEd.getText().length());
+        }
         customDialog = new CustomDialog(this, "Loading...");
         initDatas();
     }
@@ -82,7 +89,7 @@ public class SearchProductActivity extends AbstractActivity implements View.OnCl
                         public View getView(FlowLayout parent, int position, SearchResponse searchResponse) {
                             TextView tv = (TextView) inflater.inflate(R.layout.tag_tv,
                                     flowLayout, false);
-                            tv.setText(searchResponse.getText().trim().replace(" ",""));
+                            tv.setText(searchResponse.getText().trim().replace(" ", ""));
                             return tv;
                         }
                     });

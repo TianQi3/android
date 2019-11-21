@@ -116,6 +116,7 @@ public class MainActivity extends AbstractActivity implements View.OnClickListen
     private TextView filterDot;
     public TabLayout.TabLayoutOnPageChangeListener onPageChangeListener;
     public TabLayout tabLayout;
+    private String searchText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -471,6 +472,7 @@ public class MainActivity extends AbstractActivity implements View.OnClickListen
                 Application.getInstance().setUdcListResponse(null);
                 toolbarSearchEd.setText(text);
                 productContent.serach(text);
+                searchText = text;
                 break;
             case ProductContent.SEARCH_RESULT_CODE2://筛选
                 FilterEntity datas = (FilterEntity) data.getExtras().getSerializable("data");
@@ -495,11 +497,13 @@ public class MainActivity extends AbstractActivity implements View.OnClickListen
             case R.id.toolbar_search://搜索
                 //去产品搜索页面
                 Intent intent = new Intent(this, SearchProductActivity.class);
+                intent.putExtra("text", searchText);
                 startActivityForResult(intent, ProductContent.SEARCH_RESULT_CODE);
                 break;
             case R.id.toolbar_search_ed://搜索
                 //去产品搜索页面
                 Intent intent2 = new Intent(this, SearchProductActivity.class);
+                intent2.putExtra("text", searchText);
                 startActivityForResult(intent2, ProductContent.SEARCH_RESULT_CODE);
                 break;
             case R.id.toolbar_filter:
@@ -553,7 +557,7 @@ public class MainActivity extends AbstractActivity implements View.OnClickListen
                 }
                 if (Float.parseFloat(versionInfo.getAndrVersion()) > Float.parseFloat((pi.versionName))) {
                     //提示更新
-                    myContent.setNewVersionDot(true, versionInfo.getAndrVersion());
+                    myContent.setNewVersionDot(true, versionInfo.getAndrVersion(),versionInfo.getAndrLink());
                     if ("1".equals(versionInfo.getAndrNeedUpd())) {
                         showUpdataDialog();
                     }
@@ -658,7 +662,8 @@ public class MainActivity extends AbstractActivity implements View.OnClickListen
             public void run() {
                 try {
                     //  String apkUrl = versionInfo.getAndrLink();
-                    String apkUrl = "http://101.231.101.70:8080/mobile-sales.apk";
+                    // String apkUrl = "http://101.231.101.70:8080/mobile-sales.apk";
+                    String apkUrl = versionInfo.getAndrLink();
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(apkUrl));
                     request.setDestinationInExternalPublicDir("download", "salesMobile.apk");
                     request.setDescription(Application.getInstance().getResources().getString(R.string.new_version));

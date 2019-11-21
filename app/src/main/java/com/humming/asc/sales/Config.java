@@ -14,9 +14,9 @@ public class Config {
     /*ecatalog 地址*/
     //产品详情webView 地址
     //public static final String WEBVIEW_URL = "http://101.231.101.70:8089/dp/catalog/itemDetails/";//测试
-    public static final String WEBVIEW_URL = "http://sm.asc-wines.com/dp/catalog/itemDetails/";//正式
+     public static final String WEBVIEW_URL = "http://sm.asc-wines.com/dp/catalog/itemDetails/";//正式
     //public static final String URL_SERVICE_ECATALOG = "http://test.mdm.asc-wines.com/cgi";//测试ecatalog地址
-    public static final String URL_SERVICE_ECATALOG = "http://mdm.asc-wines.com/cgi";//正式ecatalog地址
+     public static final String URL_SERVICE_ECATALOG = "http://mdm.asc-wines.com/cgi";//正式ecatalog地址
 
 
     public static final String SERVER = "sm.asc-wines.com/dp";
@@ -169,7 +169,7 @@ public class Config {
     public static final String ECATALLOG_COLLECT_LIST = "ecatalog/collection/list";//收藏夹列表
     public static final String ECATALLOG_COLLECT_DELITEM = "ecatalog/collection/delItem";//删除收藏产品
     public static final String ECATALLOG_ECATALOG_SEND = "ecatalog/ecatalog/send";//发送
-    public static final String ECATALLOG_ECATALOG_STATUS_UPDATE= "ecatalog/ecatalog/updateStatus";//状态
+    public static final String ECATALLOG_ECATALOG_STATUS_UPDATE = "ecatalog/ecatalog/updateStatus";//状态
 
 
     public static final String ITEM_CODE = "itemcode";

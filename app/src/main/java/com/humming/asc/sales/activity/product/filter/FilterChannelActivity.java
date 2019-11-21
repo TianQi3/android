@@ -103,7 +103,7 @@ public class FilterChannelActivity extends AbstractActivity implements View.OnCl
                 if (!dcListEntityList.get(position).isCheckSelect()) {
                     view.setBackground(getResources().getDrawable(R.drawable.flower_radius_select));
                     view.setTextColor(getResources().getColor(R.color.ffbfa574));
-                    if (isCheck) {
+                    /*if (isCheck) {
                         for (ProductDCListEntity entity : dcListEntityList) {
                             entity.setCheckSelect(false);
                         }
@@ -111,21 +111,21 @@ public class FilterChannelActivity extends AbstractActivity implements View.OnCl
                         tagAdapter.notifyDataChanged();
                         selectValues.clear();
                         selectValues.add(dcListEntityList.get(position).getUdcList());
-                    } else {
-                        dcListEntityList.get(position).setCheckSelect(true);
-                        tagAdapter.notifyDataChanged();
-                        selectValues.add(dcListEntityList.get(position).getUdcList());
-                    }
+                    } else {*/
+                    dcListEntityList.get(position).setCheckSelect(true);
+                    tagAdapter.notifyDataChanged();
+                    selectValues.add(dcListEntityList.get(position).getUdcList());
+                    //   }
                 } else {
                     view.setBackground(getResources().getDrawable(R.drawable.bg_border_radius_gray));
                     view.setTextColor(getResources().getColor(R.color._f999));
                     dcListEntityList.get(position).setCheckSelect(false);
                     tagAdapter.notifyDataChanged();
-                    if (isCheck) {
-                        selectValues.clear();
-                    } else {
-                        selectValues.remove(dcListEntityList.get(position).getUdcList());
-                    }
+                    // if (isCheck) {
+                    //      selectValues.clear();
+                    //   } else {
+                    selectValues.remove(dcListEntityList.get(position).getUdcList());
+                    //   }
                 }
                 return false;
             }
@@ -163,9 +163,9 @@ public class FilterChannelActivity extends AbstractActivity implements View.OnCl
                     // setChannel(true);
                     isCheck = false;
                 } else {
-                    selectValues.clear();
-                    getIntentSelectValues.clear();
-                    initData();
+                 //   selectValues.clear();
+                 //   getIntentSelectValues.clear();
+                 //   initData();
                     radioButton.setChecked(true);
                     isCheck = true;
                     //setChannel(true);
